@@ -21,7 +21,7 @@ public class Player {
     private int credits;
 
     /** Default starting amount of credits for a player */
-    private final int startingCredits = 1000;
+    private final int STARTINGCREDITS = 1000;
 
     public Player(String name, int pilotPts, int traderPts, int engineerPts, int fighterPts) {
         this.name = name;
@@ -29,7 +29,7 @@ public class Player {
         this.traderPts = traderPts;
         this.engineerPts = engineerPts;
         this.fighterPts = fighterPts;
-        credits = startingCredits;
+        credits = STARTINGCREDITS;
 
         /** individual player skill points cannot be negative */
         if (pilotPts < 0 || traderPts < 0 || engineerPts < 0 || fighterPts < 0) {
