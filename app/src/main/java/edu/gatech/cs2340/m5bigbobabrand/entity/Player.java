@@ -1,4 +1,4 @@
-package edu.gatech.cs2340.m5bigbobabrand.model;
+package edu.gatech.cs2340.m5bigbobabrand.entity;
 
 public class Player {
 
