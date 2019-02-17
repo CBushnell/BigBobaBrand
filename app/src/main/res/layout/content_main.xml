@@ -8,8 +8,8 @@
 
     android:padding="20dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="edu.gatech.cs2340.m5bigbobabrand.views.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context="edu.gatech.cs2340.lab3newcomponents.views.EditStudentActivity"
+    tools:showIn="@layout/activity_edit_student">
 
     <TextView
         android:id="@+id/student_id_field"
@@ -71,26 +71,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginBottom="37dp"
+        android:onClick="onAddPressed"
         android:text="Add" />
-    //android:onClick="onAddPressed"
 
     <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="291dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginBottom="436dp" />
-
-    <Spinner
-        android:id="@+id/difficulty_spinner"
+        android:id="@+id/standing_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/standing_header"
