@@ -29,12 +29,12 @@ public class Player {
     /** Default starting amount of credits for a player */
     private final int STARTINGCREDITS = 1000;
     public Player() {
-        this("placeholder", 0, 0 ,0, 0);
+        this("placeholder", 0, 0 ,0, 0, Difficulty.EASY);
     }
 
 
 
-    public Player(String name, int pilotPts, int traderPts, int engineerPts, int fighterPts) {
+    public Player(String name, int pilotPts, int traderPts, int engineerPts, int fighterPts, Difficulty difficulty) {
         this.name = name;
         this.pilotPts = pilotPts;
         this.traderPts = traderPts;
@@ -42,6 +42,7 @@ public class Player {
         this.fighterPts = fighterPts;
         credits = STARTINGCREDITS;
         this.ship = new Ship();
+        this.difficulty = difficulty;
     }
 
     public String getName() {
