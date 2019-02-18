@@ -107,16 +107,19 @@ public class MainActivity extends AppCompatActivity {
         player.setFighterPts(Integer.parseInt(fighterField.getText().toString()));
         player.setPilotPts(Integer.parseInt(pilotField.getText().toString()));
         player.setTraderPts(Integer.parseInt(traderField.getText().toString()));
-        if(!player.verifySum()) {
-            throw new IllegalArgumentException("INPUTS WRONG");
+        try {
+            if (!player.verifySum()) {
+                throw new IllegalArgumentException("INPUTS WRONG");
+            }
+            Log.d("Edit", "Name:" + player.getName() + "\nPilot Points: "
+                    + player.getPilotPts() + "\nFighter Points: " + player.getFighterPts()
+                    +  "\nTrader Points: " + player.getTraderPts() +
+                    "\nEngineer Points: " + player.getEngineerPts()
+                    + "\n Difficulty: " + player.getDifficulty().getString());
+        } catch (IllegalArgumentException e) {
+            Log.d("Error", e.getMessage());
         }
 
-        Log.d("Edit", "Name:" + player.getName() + "\nPilot Points: "
-                + player.getPilotPts() + "\nFighter Points: " + player.getFighterPts()
-                +  "\nTrader Points: " + player.getTraderPts() +
-                "\nEngineer Points: " + player.getEngineerPts()
-                + "\n Difficulty: " + player.getDifficulty().getString());
 
-        finish();
     }
 }
