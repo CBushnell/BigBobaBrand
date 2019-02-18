@@ -8,6 +8,9 @@ public class Player {
     /** Player's amount of pilot skill points */
     private int pilotPts;
 
+    /** Player's difficulty */
+    private Difficulty difficulty;
+
     /** Player's amount of trader skill points */
     private int traderPts;
 
@@ -22,6 +25,7 @@ public class Player {
 
     /** Default starting amount of credits for a player */
     private final int STARTINGCREDITS = 1000;
+
 
     public Player(String name, int pilotPts, int traderPts, int engineerPts, int fighterPts) {
         this.name = name;
@@ -92,5 +96,12 @@ public class Player {
         this.credits = credits;
     }
 
+    public Difficulty getDifficulty() {
+        return this.difficulty;
+    }
+
+    public void setDifficulty(Difficulty diff) {
+        this.difficulty = diff;
+    }
 
 }

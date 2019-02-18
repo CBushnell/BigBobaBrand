@@ -91,7 +91,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="100dp"
         android:layout_marginTop="200dp"
-        android:text="fighter" />
+        android:text="Fighter" />
 
     <TextView
         android:id="@+id/trader_header"
@@ -100,7 +100,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="200dp"
         android:layout_marginTop="200dp"
-        android:text="trader" />
+        android:text="Trader" />
 
     <TextView
         android:id="@+id/engineer_header"
@@ -109,7 +109,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="280dp"
         android:layout_marginTop="200dp"
-        android:text="engineer" />
+        android:text="Engineer" />
 
     <EditText
         android:id="@+id/pilot_field"
