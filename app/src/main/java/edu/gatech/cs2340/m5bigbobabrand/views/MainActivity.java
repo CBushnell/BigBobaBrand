@@ -51,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
         fighterField = findViewById(R.id.fighter_field);
         traderField = findViewById(R.id.trader_field);
         engineerField = findViewById(R.id.engineer_field);
-
-
         difficultySpinner = findViewById(R.id.difficulty_spinner);
         Difficulty[] difficultyList = Difficulty.values();
         String[] difficultyStrings = new String[difficultyList.length];
@@ -93,10 +91,9 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view the button that was pressed
      */
-    public void onAddPressed(View view) {
-        Log.d("Edit", "Add/Update Student Pressed");
-
-
+    public void onCreatePressed(View view) {
+        Log.d("Edit", "Create Player Pressed");
+        this.player = new Player();
         player.setName(nameField.getText().toString());
         String chosenDiffString = (String) difficultySpinner.getSelectedItem();
         Difficulty[] difficultyList = Difficulty.values();
@@ -110,6 +107,9 @@ public class MainActivity extends AppCompatActivity {
         player.setFighterPts(Integer.parseInt(fighterField.getText().toString()));
         player.setPilotPts(Integer.parseInt(pilotField.getText().toString()));
         player.setTraderPts(Integer.parseInt(traderField.getText().toString()));
+        if(!player.verifySum()) {
+            throw new IllegalArgumentException("INPUTS WRONG");
+        }
 
         Log.d("Edit", "Name:" + player.getName() + "\nPilot Points: "
                 + player.getPilotPts() + "\nFighter Points: " + player.getFighterPts()
@@ -117,12 +117,6 @@ public class MainActivity extends AppCompatActivity {
                 "\nEngineer Points: " + player.getEngineerPts()
                 + "\n Difficulty: " + player.getDifficulty().getString());
 
-        //do the right thing depending on whether this is a new student or an edit
-        if (editing) {
-            viewModel.updateStudent(student);
-        } else {
-            viewModel.addStudent(student);
-        }
         finish();
     }
 }

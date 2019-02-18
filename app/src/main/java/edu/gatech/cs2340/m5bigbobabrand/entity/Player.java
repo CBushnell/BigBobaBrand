@@ -25,6 +25,9 @@ public class Player {
 
     /** Default starting amount of credits for a player */
     private final int STARTINGCREDITS = 1000;
+    public Player() {
+        this("placeholder", 0, 0 ,0, 0);
+    }
 
 
     public Player(String name, int pilotPts, int traderPts, int engineerPts, int fighterPts) {
@@ -35,21 +38,18 @@ public class Player {
         this.fighterPts = fighterPts;
         credits = STARTINGCREDITS;
 
-        /** individual player skill points cannot be negative */
-        if (pilotPts < 0 || traderPts < 0 || engineerPts < 0 || fighterPts < 0) {
-            throw new IllegalArgumentException("Skill points are not properly allocated! " +
-                    "Individual skill points cannot be negative");
-        }
 
-        /** collective player skill points must sum to 16 */
-        if (pilotPts + traderPts + engineerPts + fighterPts != 16) {
-            throw new IllegalArgumentException("Skill points are not properly allocated! " +
-                    "Skill points must sum to 16");
-        }
+
     }
 
     public String getName() {
         return name;
+    }
+
+    /** collective player skill points must sum to 16 and cannot be negative*/
+    public boolean verifySum() {
+        return (pilotPts + traderPts + engineerPts + fighterPts == 16)
+                && (pilotPts >= 0 || traderPts >= 0 || engineerPts >= 0 || fighterPts >= 0);
     }
 
     public void setName(String name) {
