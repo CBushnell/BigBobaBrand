@@ -16,6 +16,8 @@ import android.widget.Spinner;
 import edu.gatech.cs2340.m5bigbobabrand.R;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Difficulty;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Player;
+import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -118,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
                     + "\n Difficulty: " + player.getDifficulty().getString());
         } catch (IllegalArgumentException e) {
             Log.d("Error", e.getMessage());
+            Toast.makeText(this, "Incorrect Inputs", Toast.LENGTH_LONG).show();
         }
 
 
