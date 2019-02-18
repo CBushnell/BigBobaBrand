@@ -8,8 +8,8 @@
 
     android:padding="20dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="edu.gatech.cs2340.lab3newcomponents.views.EditStudentActivity"
-    tools:showIn="@layout/activity_edit_student">
+    tools:context="edu.gatech.cs2340.m5bigbobabrand.views.MainActivity"
+    tools:showIn="@layout/activity_main">
 
     <TextView
         android:id="@+id/student_id_field"
@@ -28,14 +28,14 @@
         android:text="Major" />
 
     <TextView
-        android:id="@+id/standing_header"
+        android:id="@+id/difficulty_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/student_name_input"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="220dp"
-        android:text="Standing" />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="239dp"
+        android:text="Difficulty" />
 
     <EditText
         android:id="@+id/student_name_input"
@@ -77,10 +77,10 @@
         android:text="Add" />
 
     <Spinner
-        android:id="@+id/standing_spinner"
+        android:id="@+id/difficulty_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/standing_header"
+        android:layout_below="@+id/difficulty_header"
         android:layout_alignParentStart="true"
         android:layout_marginTop="32dp" />
 

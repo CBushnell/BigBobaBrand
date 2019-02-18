@@ -17,7 +17,6 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.Difficulty;
 public class MainActivity extends AppCompatActivity {
     private Spinner difficultySpinner;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,15 +24,19 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        difficultySpinner = findViewById(R.id.difficulty_spinner);
+        Difficulty[] difficultyList = Difficulty.values();
+        String[] difficultyStrings = new String[difficultyList.length];
+        for (int i = 0; i < difficultyStrings.length; i++) {
+            difficultyStrings[i] = difficultyList[i].getString();
+        }
+        ArrayAdapter<String> difficultyArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, difficultyStrings);
+        difficultyArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        difficultySpinner.setAdapter(difficultyArrayAdapter);
+
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
