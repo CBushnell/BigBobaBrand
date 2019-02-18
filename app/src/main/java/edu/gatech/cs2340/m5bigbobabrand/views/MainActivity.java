@@ -113,11 +113,13 @@ public class MainActivity extends AppCompatActivity {
             if (!player.verifySum()) {
                 throw new IllegalArgumentException("INPUTS WRONG");
             }
-            Log.d("Edit", "Name:" + player.getName() + "\nPilot Points: "
+            Log.d("Edit", "\nName: " + player.getName() + "\nPilot Points: "
                     + player.getPilotPts() + "\nFighter Points: " + player.getFighterPts()
                     +  "\nTrader Points: " + player.getTraderPts() +
                     "\nEngineer Points: " + player.getEngineerPts()
-                    + "\n Difficulty: " + player.getDifficulty().getString());
+                    + "\nDifficulty: " + player.getDifficulty().getString()
+                    + "\nCredits: " + player.getCredits()
+                    + "\nShip Type: " + player.getShip().toString());
             Toast.makeText(this, "Player " + player.getName() + " created",
                     Toast.LENGTH_LONG).show();
         } catch (IllegalArgumentException e) {

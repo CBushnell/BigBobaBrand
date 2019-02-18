@@ -5,6 +5,9 @@ public class Player {
     /** Player's name */
     private String name;
 
+    /** Player's ship*/
+    private Ship ship;
+
     /** Player's amount of pilot skill points */
     private int pilotPts;
 
@@ -30,6 +33,7 @@ public class Player {
     }
 
 
+
     public Player(String name, int pilotPts, int traderPts, int engineerPts, int fighterPts) {
         this.name = name;
         this.pilotPts = pilotPts;
@@ -37,9 +41,7 @@ public class Player {
         this.engineerPts = engineerPts;
         this.fighterPts = fighterPts;
         credits = STARTINGCREDITS;
-
-
-
+        this.ship = new Ship();
     }
 
     public String getName() {
@@ -102,6 +104,14 @@ public class Player {
 
     public void setDifficulty(Difficulty diff) {
         this.difficulty = diff;
+    }
+
+    public Ship getShip() {
+        return ship;
+    }
+
+    public void setShip(Ship ship) {
+        this.ship = ship;
     }
 
 }
