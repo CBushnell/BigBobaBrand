@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_edit_student"
+    android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
@@ -12,33 +12,32 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
-        android:id="@+id/student_id_field"
+        android:id="@+id/player_id_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />
 
     <TextView
-        android:id="@+id/major_header"
+        android:id="@+id/attribute_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/student_name_input"
+        android:layout_below="@id/player_name_input"
         android:layout_alignParentStart="true"
         android:layout_marginTop="38dp"
-        android:text="Major" />
+        android:text="Attributes: 16 Total" />
 
     <TextView
         android:id="@+id/difficulty_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/student_name_input"
+        android:layout_below="@id/player_name_input"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="239dp"
+        android:layout_marginTop="238dp"
         android:text="Difficulty" />
 
     <EditText
-        android:id="@+id/student_name_input"
+        android:id="@+id/player_name_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/name_header"
@@ -48,33 +47,16 @@
         android:inputType="textPersonName"
         android:text="Name" />
 
-    <TextView
-        android:id="@+id/name_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/student_id_field"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp"
-        android:text="Name:" />
-
-    <Spinner
-        android:id="@+id/major_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/major_header"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="32dp" />
-
     <Button
-        android:id="@+id/add_button"
+        android:id="@+id/create_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="300dp"
+        android:layout_marginStart="250dp"
         android:layout_marginBottom="37dp"
         android:onClick="onAddPressed"
-        android:text="Add" />
+        android:text="Create Player" />
 
     <Spinner
         android:id="@+id/difficulty_spinner"
@@ -83,5 +65,91 @@
         android:layout_below="@+id/difficulty_header"
         android:layout_alignParentStart="true"
         android:layout_marginTop="32dp" />
+
+    <TextView
+        android:id="@+id/name_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/player_id_field"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:text="Name:" />
+
+    <TextView
+        android:id="@+id/pilot_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="200dp"
+
+        android:text="Pilot" />
+
+    <TextView
+        android:id="@+id/fighter_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="200dp"
+        android:text="fighter" />
+
+    <TextView
+        android:id="@+id/trader_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="200dp"
+        android:text="trader" />
+
+    <TextView
+        android:id="@+id/engineer_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="200dp"
+        android:text="engineer" />
+
+    <EditText
+        android:id="@+id/pilot_field"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="242dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/fighter_field"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="242dp"
+        android:ems="10"
+        android:inputType="number" />
+    <EditText
+        android:id="@+id/trader_field"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="242dp"
+        android:ems="10"
+        android:inputType="number" />
+    <EditText
+        android:id="@+id/engineer_field"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="285dp"
+        android:layout_marginTop="242dp"
+        android:ems="10"
+        android:inputType="number" />
 
 </RelativeLayout>
