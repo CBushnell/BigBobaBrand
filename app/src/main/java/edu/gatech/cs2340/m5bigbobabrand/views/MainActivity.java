@@ -118,6 +118,8 @@ public class MainActivity extends AppCompatActivity {
                     +  "\nTrader Points: " + player.getTraderPts() +
                     "\nEngineer Points: " + player.getEngineerPts()
                     + "\n Difficulty: " + player.getDifficulty().getString());
+            Toast.makeText(this, "Player " + player.getName() + " created",
+                    Toast.LENGTH_LONG).show();
         } catch (IllegalArgumentException e) {
             Log.d("Error", e.getMessage());
             Toast.makeText(this, "Incorrect Inputs", Toast.LENGTH_LONG).show();
