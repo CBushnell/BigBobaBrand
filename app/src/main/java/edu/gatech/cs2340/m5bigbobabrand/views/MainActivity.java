@@ -1,5 +1,6 @@
 package edu.gatech.cs2340.m5bigbobabrand.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -120,13 +121,15 @@ public class MainActivity extends AppCompatActivity {
                     + "\nDifficulty: " + player.getDifficulty().getString()
                     + "\nCredits: " + player.getCredits()
                     + "\nShip Type: " + player.getShip().toString());
-            Toast.makeText(this, "Player " + player.getName() + " created",
-                    Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Universe created", Toast.LENGTH_LONG).show();
         } catch (IllegalArgumentException e) {
             Log.d("Error", e.getMessage());
             Toast.makeText(this, "Incorrect Inputs", Toast.LENGTH_LONG).show();
         }
-
-
+        Intent intent = new Intent(this, SecondActivity.class);
+        this.startActivity(intent);
     }
+
+
+
 }
