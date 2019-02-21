@@ -1,5 +1,11 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
+/**
+ * @author Charlie Comeau
+ * @version 1.0
+ *
+ * A tech level enum class for holding valid options for a planet's tech level
+ */
 public enum TechLevel {
     PREAGRICULTURE("PRE-AGRICULTURE", 0),
     AGRICULTURE("AGRICULTURE", 1),
