@@ -10,19 +10,27 @@ public enum TechLevel {
     POSTINDUSTRIAL("POST-INDUSTRIAL", 6),
     HITECH("HI-TECH", 7);
 
-    private final String name;
-    private final int num;
+    private final String techLevelName;
+    private final int techLevelNum;
 
-    private TechLevel(String name, int num) {
-        this.name = name;
-        this.num = num;
+    private TechLevel(String techLevelName, int techLevelNum) {
+        this.techLevelName = techLevelName;
+        this.techLevelNum = techLevelNum;
     }
 
     /**
      * getter method for name variable
      * @return name of tech level enum
      */
-    public String getName() {
-        return name;
+    public String getTechLevelName() {
+        return techLevelName;
+    }
+
+    /**
+     * getter method for tech level num
+     * @return num of assigned tech level
+     */
+    public int getTechLevelNum() {
+        return techLevelNum;
     }
 }
