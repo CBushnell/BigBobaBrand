@@ -5,8 +5,14 @@ public class Player {
     /** Player's name */
     private String name;
 
+    /** Player's ship*/
+    private Ship ship;
+
     /** Player's amount of pilot skill points */
     private int pilotPts;
+
+    /** Player's difficulty */
+    private Difficulty difficulty;
 
     /** Player's amount of trader skill points */
     private int traderPts;
@@ -22,30 +28,31 @@ public class Player {
 
     /** Default starting amount of credits for a player */
     private final int STARTINGCREDITS = 1000;
+    public Player() {
+        this("placeholder", 0, 0 ,0, 0, Difficulty.EASY);
+    }
 
-    public Player(String name, int pilotPts, int traderPts, int engineerPts, int fighterPts) {
+
+
+    public Player(String name, int pilotPts, int traderPts, int engineerPts, int fighterPts, Difficulty difficulty) {
         this.name = name;
         this.pilotPts = pilotPts;
         this.traderPts = traderPts;
         this.engineerPts = engineerPts;
         this.fighterPts = fighterPts;
         credits = STARTINGCREDITS;
-
-        /** individual player skill points cannot be negative */
-        if (pilotPts < 0 || traderPts < 0 || engineerPts < 0 || fighterPts < 0) {
-            throw new IllegalArgumentException("Skill points are not properly allocated! " +
-                    "Individual skill points cannot be negative");
-        }
-
-        /** collective player skill points must sum to 16 */
-        if (pilotPts + traderPts + engineerPts + fighterPts != 16) {
-            throw new IllegalArgumentException("Skill points are not properly allocated! " +
-                    "Skill points must sum to 16");
-        }
+        this.ship = new Ship();
+        this.difficulty = difficulty;
     }
 
     public String getName() {
         return name;
+    }
+
+    /** collective player skill points must sum to 16 and cannot be negative*/
+    public boolean verifySum() {
+        return (pilotPts + traderPts + engineerPts + fighterPts == 16)
+                && (pilotPts >= 0 || traderPts >= 0 || engineerPts >= 0 || fighterPts >= 0);
     }
 
     public void setName(String name) {
@@ -92,5 +99,20 @@ public class Player {
         this.credits = credits;
     }
 
+    public Difficulty getDifficulty() {
+        return this.difficulty;
+    }
+
+    public void setDifficulty(Difficulty diff) {
+        this.difficulty = diff;
+    }
+
+    public Ship getShip() {
+        return ship;
+    }
+
+    public void setShip(Ship ship) {
+        this.ship = ship;
+    }
 
 }
