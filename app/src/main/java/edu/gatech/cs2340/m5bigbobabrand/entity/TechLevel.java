@@ -18,6 +18,10 @@ public enum TechLevel {
         this.num = num;
     }
 
+    /**
+     * getter method for name variable
+     * @return name of tech level enum
+     */
     public String getName() {
         return name;
     }
