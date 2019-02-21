@@ -75,11 +75,11 @@ public class SolarSystem {
         this.resourceLevel = resourceLevel;
     }
 
-    public Coordiates getCoordinate() {
+    public Coordinates getCoordinate() {
         return coordinate;
     }
 
-    public void setCoordinate(Coordiates coordinate) {
+    public void setCoordinate(Coordinates coordinate) {
         this.coordinate = coordinate;
     }
 }
