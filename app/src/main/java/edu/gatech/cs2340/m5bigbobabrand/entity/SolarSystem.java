@@ -1,7 +1,5 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
-import java.util.Random;
-
 /**
  * @author Connor Bushnell
  * @version 1.0
@@ -13,19 +11,44 @@ public class SolarSystem {
     private String name;
     private TechLevel techLevel;
     private ResourceLevel resourceLevel;
-    private Coordiate coordinate;
+    private Coordinates coordinate;
 
-    public SolarSystem(String name, TechLevel techLevel, ResourceLevel resourceLevel,
-                       Coordinate coordinate) {
-        this.name = name;
+    public SolarSystem(Coordinates coordinate) {
+        this.name = randomName();
         this.techLevel = techLevel;
         this.resourceLevel = resourceLevel;
         this.coordinate = coordinate;
     }
 
+    private String randomName() {
+        int length = (int) (Math.random() * 17) + 3;
+        String name = "";
+        for (int i = 0; i < length; ++i) {
+            String letter = "" + (char) ((Math.random() * 123) + 97);
+            if (i == 0) {
+                letter.toUpperCase();
+            }
+            name += letter;
+        }
+        return name;
+    }
+
+    private TechLevel randomTech() {
+        return null;
+    }
+
+    private ResourceLevel randomResource() {
+        return null;
+    }
+
     @Override
     public int hashCode() {
-        ;
+        return 0;
+    }
+
+    @Override
+    public boolean equals() {
+
     }
 
     public String getName() {
@@ -52,11 +75,11 @@ public class SolarSystem {
         this.resourceLevel = resourceLevel;
     }
 
-    public Coordiate getCoordinate() {
+    public Coordiates getCoordinate() {
         return coordinate;
     }
 
-    public void setCoordinate(Coordiate coordinate) {
+    public void setCoordinate(Coordiates coordinate) {
         this.coordinate = coordinate;
     }
 }
