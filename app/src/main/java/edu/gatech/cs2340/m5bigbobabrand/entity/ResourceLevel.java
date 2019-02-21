@@ -8,7 +8,7 @@ public enum ResourceLevel {
 
     private final int resourceInt;
 
-    private Resources(int resourceInt) {
+    private ResourceLevel(int resourceInt) {
         this.resourceInt = resourceInt;
     }
 
