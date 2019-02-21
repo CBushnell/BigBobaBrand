@@ -5,4 +5,5 @@ public class SolarSystem {
     private String name;
     private int technologyLevel;
 
+
 }
