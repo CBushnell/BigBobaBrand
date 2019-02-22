@@ -30,10 +30,18 @@ public class Coordinates {
         }
     }
 
+    /**
+     * Get x-coordinate of planet
+     * @return x-coordinate of planet
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     * Get y-coordinate of planet
+     * @return y-coordinate of planet
+     */
     public int getY() {
         return y;
     }
