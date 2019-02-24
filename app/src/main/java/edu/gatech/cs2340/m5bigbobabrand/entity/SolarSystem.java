@@ -22,12 +22,27 @@ public class SolarSystem {
     private static final int MEDIEVAL_CHANCE = 70;
     private static final int RENAISSANCE_CHANCE = 85;
     private static final int EARLYINDUSTRIAL_CHANCE = 90;
-    private static final int INDUSTRIAL_CHANCE = 95;
-    private static final int POSTINDUSTRIAL_CHANCE = 98;
+    private static final int INDUSTRIAL_CHANCE = 94;
+    private static final int POSTINDUSTRIAL_CHANCE = 97;
+    private static final int HITECH_CHANCE = 99;
+
+    //Resource probabilities
+    private static final int NOSPECIALRESOURCES = 40;
+    private static final int DESERT = 50;
+    private static final int MINERALRICH = 55;
+    private static final int MINERALPOOR = 60;
+    private static final int LOTSOFWATER = 62;
+    private static final int RICHSOIL = 66;
+    private static final int RICHFAUNA = 72;
+    private static final int LIFELESS = 85;
+    private static final int WEIRDMUSHROOMS = 87;
+    private static final int LOTSOFHERBS = 92;
+    private static final int ARTISTIC = 96;
+    private static final int WARLIKE = 100;
 
     public SolarSystem(Coordinates coordinate) {
         this.name = randomName();
-        this.techLevel = techLevel;
+        this.techLevel = randomTech();
         this.resourceLevel = resourceLevel;
         this.coordinate = coordinate;
     }
@@ -49,22 +64,50 @@ public class SolarSystem {
         int probability = (int) (Math.random() * 101) + 1;
         if (probability < PREAGRICULTURE_CHANCE) {
             return TechLevel.PREAGRICULTURE;
-        } else if (probability >= PREAGRICULTURE_CHANCE && probability < AGRICULTURE_CHANCE) {
-
-        } else if (probability >= AGRICULTURE_CHANCE && probability < MEDIEVAL_CHANCE) {
-
-        } else if (probability >= MEDIEVAL_CHANCE && probability < RENAISSANCE_CHANCE) {
-
-        } else if (probability >= RENAISSANCE_CHANCE && probability < EARLYINDUSTRIAL_CHANCE) {
-
-        } else if (probability >= EARLYINDUSTRIAL_CHANCE
-                    && probability < AGRICULTURE_CHANCE) {
-
+        } if (probability >= PREAGRICULTURE_CHANCE && probability < AGRICULTURE_CHANCE) {
+            return TechLevel.PREAGRICULTURE;
+        } if (probability >= AGRICULTURE_CHANCE && probability < MEDIEVAL_CHANCE) {
+            return TechLevel.AGRICULTURE;
+        } if (probability >= MEDIEVAL_CHANCE && probability < RENAISSANCE_CHANCE) {
+            return TechLevel.MEDIEVAL;
+        } if (probability >= RENAISSANCE_CHANCE && probability < EARLYINDUSTRIAL_CHANCE) {
+            return TechLevel.RENAISSANCE;
+        } if (probability >= EARLYINDUSTRIAL_CHANCE && probability < INDUSTRIAL_CHANCE) {
+            return TechLevel.EARLYINDUSTRIAL;
+        } if (probability >= INDUSTRIAL_CHANCE && probability < POSTINDUSTRIAL_CHANCE) {
+            return TechLevel.INDUSTRIAL;
+        } if (probability >= POSTINDUSTRIAL_CHANCE && probability < HITECH_CHANCE) {
+            return TechLevel.POSTINDUSTRIAL;
         }
+        return TechLevel.HITECH;
     }
 
     private ResourceLevel randomResource() {
-        return null;
+        int probability = (int) (Math.random() * 101) + 1;
+        if (probability < NOSPECIALRESOURCES) {
+            return ResourceLevel.NOSPECIALRESOURCES;
+        } if (probability >= NOSPECIALRESOURCES && probability < DESERT) {
+            return ResourceLevel.DESERT;
+        } if (probability >= DESERT && probability < MINERALRICH) {
+            return ResourceLevel.MINERALRICH;
+        } if (probability >= MINERALRICH && probability < MINERALPOOR) {
+            return ResourceLevel.MINERALPOOR;
+        } if (probability >= MINERALPOOR && probability < LOTSOFWATER) {
+            return ResourceLevel.LOTSOFWATER;
+        } if (probability >= LOTSOFWATER && probability < RICHSOIL) {
+            return ResourceLevel.RICHSOIL;
+        } if (probability >= RICHSOIL && probability < RICHFAUNA) {
+            return ResourceLevel.RICHFAUNA;
+        } if (probability >= RICHFAUNA && probability < LIFELESS) {
+            return ResourceLevel.LIFELESS;
+        } if (probability >= LIFELESS && probability < WEIRDMUSHROOMS) {
+            return ResourceLevel.WEIRDMUSHROOMS;
+        } if (probability >= WEIRDMUSHROOMS && probability < LOTSOFHERBS) {
+            return ResourceLevel.LOTSOFHERBS;
+        } if (probability >= LOTSOFHERBS && probability < ARTISTIC) {
+            return ResourceLevel.ARTISTIC;
+        }
+        return ResourceLevel.WARLIKE;
     }
 
     @Override
