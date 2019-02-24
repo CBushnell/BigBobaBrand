@@ -167,9 +167,7 @@ public class SolarSystem {
             return false;
         }
         SolarSystem solsys = (SolarSystem) other;
-        return (solsys.getName().equals(this.name)  && solsys.getCoordinates() == this.coordinates
-                && solsys.getTechLevel() == this.techLevel
-                && solsys.getResourceLevel() == this.resourceLevel);
+        return (solsys.getName().equals(this.name) && solsys.getId() == this.id);
     }
 
     /**
@@ -180,7 +178,7 @@ public class SolarSystem {
     }
 
     /**
-     * Sets name of the SolarSystem
+     * @param name Sets name of the SolarSystem
      */
     public void setName(String name) {
         this.name = name;
@@ -194,7 +192,7 @@ public class SolarSystem {
     }
 
     /**
-     * Sets Tech Level of the SolarSystem
+     * @param techLevel Sets Tech Level of the SolarSystem
      */
     public void setTechLevel(TechLevel techLevel) {
         this.techLevel = techLevel;
@@ -208,7 +206,7 @@ public class SolarSystem {
     }
 
     /**
-     * Sets Resource Level of the SolarSystem
+     * @param resourceLevel Sets Resource Level of the SolarSystem
      */
     public void setResourceLevel(ResourceLevel resourceLevel) {
         this.resourceLevel = resourceLevel;
@@ -222,9 +220,23 @@ public class SolarSystem {
     }
 
     /**
-     * Sets coordinates of the SolarSystem within the universe;
+     * @param coordinates Sets coordinates of the SolarSystem within the universe;
      */
     public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
+    }
+
+    /**
+     * @return Id of the SolarSystem
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id Sets of the id of the SolarSystem
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 }
