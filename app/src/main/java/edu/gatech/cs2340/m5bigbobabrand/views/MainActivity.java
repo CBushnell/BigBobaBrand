@@ -132,8 +132,10 @@ public class MainActivity extends AppCompatActivity {
             while (gameUniverse.size() < 10) {
                 gameUniverse.addSolarSystem(new SolarSystem(new Coordinates()));
             }
-            SolarSystem[] printMapArr = (SolarSystem[]) gameUniverse.getUniverse().values().toArray();
-            Log.d("Edit", "Solar Systems:\nPlanet 1: " + printMapArr[0].toString()
+
+            Object[] printMapArr = gameUniverse.getUniverse().values().toArray();
+
+             Log.d("Edit", "Solar Systems:\nPlanet 1: " + printMapArr[0].toString()
                     + "\nPlanet 2: " + printMapArr[1].toString()
                     + "\nPlanet 3: " + printMapArr[2].toString()
                     + "\nPlanet 4: " + printMapArr[3].toString()
@@ -143,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
                     + "\nPlanet 8: " + printMapArr[7].toString()
                     + "\nPlanet 9: " + printMapArr[8].toString()
                     + "\nPlanet 10: " + printMapArr[9].toString());
+
             Toast.makeText(this, "Universe and Player Created", Toast.LENGTH_LONG).show();
         } catch (IllegalArgumentException e) {
             Log.d("Error", e.getMessage());
