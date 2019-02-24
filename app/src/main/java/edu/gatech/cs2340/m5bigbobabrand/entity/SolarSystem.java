@@ -12,6 +12,7 @@ public class SolarSystem {
     private TechLevel techLevel;
     private ResourceLevel resourceLevel;
     private Coordinates coordinate;
+    private PoliticalSystem politicalSystem;
 
     private static final int NAME_MIN_LENGTH = 3;
     private static final int NAME_MAX_LENGTH = 17;
@@ -25,6 +26,7 @@ public class SolarSystem {
     private static final int INDUSTRIAL_CHANCE = 94;
     private static final int POSTINDUSTRIAL_CHANCE = 97;
     private static final int HITECH_CHANCE = 99;
+
 
     //Resource probabilities
     private static final int NOSPECIALRESOURCES = 40;
@@ -45,6 +47,7 @@ public class SolarSystem {
         this.techLevel = randomTech();
         this.resourceLevel = resourceLevel;
         this.coordinate = coordinate;
+        this.politicalSystem = randomPoliticalSystem();
     }
 
     private String randomName() {
@@ -58,6 +61,10 @@ public class SolarSystem {
             name += letter;
         }
         return name;
+    }
+
+    private PoliticalSystem randomPoliticalSystem() {
+        return PoliticalSystem.values()[(int) (Math.random() * 17)];
     }
 
     private TechLevel randomTech() {
@@ -141,6 +148,14 @@ public class SolarSystem {
 
     public Coordinates getCoordinate() {
         return coordinate;
+    }
+
+    public void setPoliticalSystem(PoliticalSystem politicalSystem) {
+        this.politicalSystem = politicalSystem;
+    }
+
+    public PoliticalSystem getPoliticalSystem() {
+        return this.politicalSystem;
     }
 
     public void setCoordinate(Coordinates coordinate) {
