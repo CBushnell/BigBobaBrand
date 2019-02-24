@@ -10,6 +10,11 @@ public class Coordinates {
         this.y = y;
     }
 
+    public Coordinates() {
+        this.x = (int) (Math.random() * 100) + 1;
+        this.y = (int) (Math.random() * 100) + 1;
+    }
+
     /**
      * Set x-coordinate of planet
      * @param x x-coordinate of planet

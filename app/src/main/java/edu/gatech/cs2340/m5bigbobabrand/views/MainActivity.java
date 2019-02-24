@@ -15,9 +15,16 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import edu.gatech.cs2340.m5bigbobabrand.R;
+import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Difficulty;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Player;
+import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
+import edu.gatech.cs2340.m5bigbobabrand.entity.Universe;
+
 import android.widget.Toast;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -121,7 +128,22 @@ public class MainActivity extends AppCompatActivity {
                     + "\nDifficulty: " + player.getDifficulty().getString()
                     + "\nCredits: " + player.getCredits()
                     + "\nShip Type: " + player.getShip().toString());
-            Toast.makeText(this, "Universe created", Toast.LENGTH_LONG).show();
+            Universe gameUniverse = new Universe();
+            while (gameUniverse.size() < 10) {
+                gameUniverse.addSolarSystem(new SolarSystem(new Coordinates()));
+            }
+            SolarSystem[] printMapArr = (SolarSystem[]) gameUniverse.getUniverse().values().toArray();
+            Log.d("Edit", "Solar Systems:\nPlanet 1: " + printMapArr[0].toString()
+                    + "\nPlanet 2: " + printMapArr[1].toString()
+                    + "\nPlanet 3: " + printMapArr[2].toString()
+                    + "\nPlanet 4: " + printMapArr[3].toString()
+                    + "\nPlanet 5: " + printMapArr[4].toString()
+                    + "\nPlanet 6: " + printMapArr[5].toString()
+                    + "\nPlanet 7: " + printMapArr[6].toString()
+                    + "\nPlanet 8: " + printMapArr[7].toString()
+                    + "\nPlanet 9: " + printMapArr[8].toString()
+                    + "\nPlanet 10: " + printMapArr[9].toString());
+            Toast.makeText(this, "Universe and Player Created", Toast.LENGTH_LONG).show();
         } catch (IllegalArgumentException e) {
             Log.d("Error", e.getMessage());
             Toast.makeText(this, "Incorrect Inputs", Toast.LENGTH_LONG).show();

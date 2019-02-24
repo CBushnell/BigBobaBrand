@@ -1,9 +1,13 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Universe {
-    private HashMap<Coordinates, SolarSystem> gameUniverse;
+    private Map<Coordinates, SolarSystem> gameUniverse;
+    public Universe() {
+        this.gameUniverse = new HashMap<Coordinates, SolarSystem>();
+    }
 
     /**
      *
@@ -11,7 +15,7 @@ public class Universe {
      * @return whether or not the solar system was added
      */
     public boolean addSolarSystem(SolarSystem solarSystem) {
-        Coordinates currCoordinates = solarSystem.getCoordinate();
+        Coordinates currCoordinates = solarSystem.getCoordinates();
         if (gameUniverse.containsKey(currCoordinates)) {
             return false;
         }
@@ -23,8 +27,11 @@ public class Universe {
      *
      * @return the current universe's solar systems
      */
-    public HashMap<Coordinates, SolarSystem> getSolarSystem() {
+    public Map<Coordinates, SolarSystem> getUniverse() {
         return this.gameUniverse;
+    }
+    public int size() {
+        return this.gameUniverse.size();
     }
 
 }

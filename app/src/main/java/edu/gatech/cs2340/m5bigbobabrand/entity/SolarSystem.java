@@ -12,6 +12,7 @@ public class SolarSystem {
     private TechLevel techLevel;
     private ResourceLevel resourceLevel;
     private Coordinates coordinates;
+    private PoliticalSystem politicalSystem;
     private int id;
 
     private static final int HASH_SEED = 31;
@@ -51,11 +52,12 @@ public class SolarSystem {
      * @param coordinates The coordinates of the SolarSystem within the universe
      */
     public SolarSystem(String name, TechLevel techLevel, ResourceLevel resourceLevel,
-                       Coordinates coordinates) {
+                       PoliticalSystem politicalSystem, Coordinates coordinates) {
         this.name = name;
         this.techLevel = techLevel;
         this.resourceLevel = resourceLevel;
         this.coordinates = coordinates;
+        this.politicalSystem = politicalSystem;
         id = hashCode();
     }
 
@@ -65,7 +67,7 @@ public class SolarSystem {
      * @param coordinates The coordinates the SolarSystem will be located at within the universe
      */
     public SolarSystem(Coordinates coordinates) {
-        this(randomName(), randomTech(), randomResource(), coordinates);
+        this(randomName(), randomTech(), randomResource(), randomPoliticalSystem(), coordinates);
     }
 
     /**
@@ -145,6 +147,16 @@ public class SolarSystem {
         }
         return ResourceLevel.WARLIKE;
     }
+
+    /**
+     * gives a random political system
+     * @return a random political system
+     */
+    private static PoliticalSystem randomPoliticalSystem() {
+        PoliticalSystem[] politicalSystemsArr = PoliticalSystem.values();
+        return politicalSystemsArr[(int) (Math.random() * 17)];
+    }
+
 
     @Override
     public int hashCode() {
@@ -227,6 +239,23 @@ public class SolarSystem {
     }
 
     /**
+     *
+     * @param politicalSystem the political system to give the solar system
+     */
+    public void setPoliticalSystem(PoliticalSystem politicalSystem) {
+        this.politicalSystem = politicalSystem;
+    }
+
+    /**
+     *
+     * @return the political system of the solar system
+     */
+    public PoliticalSystem getPoliticalSystem() {
+        return this.politicalSystem;
+    }
+
+
+    /**
      * @return Id of the SolarSystem
      */
     public int getId() {
@@ -238,5 +267,10 @@ public class SolarSystem {
      */
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String toString() {
+        return this.name + " at " + this.coordinates + " (" + this.resourceLevel.toString() + ", "
+                + this.techLevel.toString() + ", " + this.politicalSystem.toString() + ")";
     }
 }
