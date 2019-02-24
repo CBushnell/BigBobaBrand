@@ -11,8 +11,10 @@ public class SolarSystem {
     private String name;
     private TechLevel techLevel;
     private ResourceLevel resourceLevel;
-    private Coordinates coordinate;
+    private Coordinates coordinates;
+    private int id;
 
+    private static final int HASH_SEED = 31;
     private static final int NAME_MIN_LENGTH = 3;
     private static final int NAME_MAX_LENGTH = 17;
 
@@ -40,14 +42,38 @@ public class SolarSystem {
     private static final int ARTISTIC = 96;
     private static final int WARLIKE = 100;
 
-    public SolarSystem(Coordinates coordinate) {
-        this.name = randomName();
-        this.techLevel = randomTech();
+    /**
+     * Constructor for fully customizing SolarSystems.
+     *
+     * @param name The name of the SolarSystem
+     * @param techLevel The Tech Level of the SolarSystem
+     * @param resourceLevel The Resource Level of the SolarSystem
+     * @param coordinates The coordinates of the SolarSystem within the universe
+     */
+    public SolarSystem(String name, TechLevel techLevel, ResourceLevel resourceLevel,
+                       Coordinates coordinates) {
+        this.name = name;
+        this.techLevel = techLevel;
         this.resourceLevel = resourceLevel;
-        this.coordinate = coordinate;
+        this.coordinates = coordinates;
+        id = hashCode();
     }
 
-    private String randomName() {
+    /**
+     * Constructor for a SolarSystem. Generates random values for name, TechLevel, and ResourceLevel
+     *
+     * @param coordinates The coordinates the SolarSystem will be located at within the universe
+     */
+    public SolarSystem(Coordinates coordinates) {
+        this(randomName(), randomTech(), randomResource(), coordinates);
+    }
+
+    /**
+     * Generates a random name for a SolarSystem
+     *
+     * @return Randomly generated name
+     */
+    private static String randomName() {
         int length = (int) (Math.random() * NAME_MAX_LENGTH) + NAME_MIN_LENGTH;
         String name = "";
         for (int i = 0; i < length; ++i) {
@@ -60,7 +86,12 @@ public class SolarSystem {
         return name;
     }
 
-    private TechLevel randomTech() {
+    /**
+     * Generates a random Tech Level for the SolarSystem
+     *
+     * @return Random tech level
+     */
+    private static TechLevel randomTech() {
         int probability = (int) (Math.random() * 101) + 1;
         if (probability < PREAGRICULTURE_CHANCE) {
             return TechLevel.PREAGRICULTURE;
@@ -82,7 +113,12 @@ public class SolarSystem {
         return TechLevel.HITECH;
     }
 
-    private ResourceLevel randomResource() {
+    /**
+     * Generates a random Resource Level for the SolarSystem
+     *
+     * @return
+     */
+    private static ResourceLevel randomResource() {
         int probability = (int) (Math.random() * 101) + 1;
         if (probability < NOSPECIALRESOURCES) {
             return ResourceLevel.NOSPECIALRESOURCES;
@@ -112,38 +148,83 @@ public class SolarSystem {
 
     @Override
     public int hashCode() {
-        return 0;
+        int base = HASH_SEED;
+        base *= name.charAt(0);
+        base *= name.charAt(name.length() - 1);
+        base *= techLevel.getTechLevelNum();
+        base *= resourceLevel.getResourceInt();
+        base *= coordinates.getX();
+        base *= coordinates.getY();
+        return base;
     }
 
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (other == null || other.getClass() != this.getClass()) {
+            return false;
+        }
+        SolarSystem solsys = (SolarSystem) other;
+        return (solsys.getName().equals(this.name)  && solsys.getCoordinates() == this.coordinates
+                && solsys.getTechLevel() == this.techLevel
+                && solsys.getResourceLevel() == this.resourceLevel);
+    }
+
+    /**
+     * @return SolarSystem's name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Sets name of the SolarSystem
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * @return Tech Level of the SolarSystem
+     */
     public TechLevel getTechLevel() {
         return techLevel;
     }
 
+    /**
+     * Sets Tech Level of the SolarSystem
+     */
     public void setTechLevel(TechLevel techLevel) {
         this.techLevel = techLevel;
     }
 
+    /**
+     * @return SolarSystem's name
+     */
     public ResourceLevel getResourceLevel() {
         return resourceLevel;
     }
 
+    /**
+     * Sets Resource Level of the SolarSystem
+     */
     public void setResourceLevel(ResourceLevel resourceLevel) {
         this.resourceLevel = resourceLevel;
     }
 
-    public Coordinates getCoordinate() {
-        return coordinate;
+    /**
+     * @return SolarSystem's coordinates;
+     */
+    public Coordinates getCoordinates() {
+        return coordinates;
     }
 
-    public void setCoordinate(Coordinates coordinate) {
-        this.coordinate = coordinate;
+    /**
+     * Sets coordinates of the SolarSystem within the universe;
+     */
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
     }
 }
