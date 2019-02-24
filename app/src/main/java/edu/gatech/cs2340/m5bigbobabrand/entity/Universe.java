@@ -11,7 +11,7 @@ public class Universe {
      * @return whether or not the solar system was added
      */
     public boolean addSolarSystem(SolarSystem solarSystem) {
-        Coordinates currCoordinates = solarSystem.getCoordinate();
+        Coordinates currCoordinates = solarSystem.getCoordinates();
         if (gameUniverse.containsKey(currCoordinates)) {
             return false;
         }
