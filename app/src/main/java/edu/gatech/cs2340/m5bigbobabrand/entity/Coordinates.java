@@ -52,6 +52,11 @@ public class Coordinates {
     }
 
     @Override
+    public String toString() {
+        return "(" + this.x + "," + this.y + ")";
+    }
+
+    @Override
     public int hashCode() {
         int hash = 7;
         hash = 31 * hash + x + y;
