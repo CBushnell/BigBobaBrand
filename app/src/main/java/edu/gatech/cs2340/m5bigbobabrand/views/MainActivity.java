@@ -107,6 +107,10 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Edit", "Create Player Pressed");
             this.player = new Player();
             player.setName(nameField.getText().toString());
+            player.setEngineerPts(Integer.parseInt(engineerField.getText().toString()));
+            player.setFighterPts(Integer.parseInt(fighterField.getText().toString()));
+            player.setPilotPts(Integer.parseInt(pilotField.getText().toString()));
+            player.setTraderPts(Integer.parseInt(traderField.getText().toString()));
             String chosenDiffString = (String) difficultySpinner.getSelectedItem();
             Difficulty[] difficultyList = Difficulty.values();
             for (Difficulty d: difficultyList) {
@@ -115,10 +119,6 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 }
             }
-            player.setEngineerPts(Integer.parseInt(engineerField.getText().toString()));
-            player.setFighterPts(Integer.parseInt(fighterField.getText().toString()));
-            player.setPilotPts(Integer.parseInt(pilotField.getText().toString()));
-            player.setTraderPts(Integer.parseInt(traderField.getText().toString()));
             try {
                 if (!player.verifySum()) {
                     throw new IllegalArgumentException("Stats must be positive and sum to 16");
