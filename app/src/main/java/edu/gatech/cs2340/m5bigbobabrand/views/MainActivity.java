@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
             player.setTraderPts(Integer.parseInt(traderField.getText().toString()));
             try {
                 if (!player.verifySum()) {
-                    throw new IllegalArgumentException("INPUTS WRONG");
+                    throw new IllegalArgumentException("Stats must be positive and sum to 16");
                 }
                 Log.d("Edit", "\nName: " + player.getName() + "\nPilot Points: "
                         + player.getPilotPts() + "\nFighter Points: " + player.getFighterPts()
