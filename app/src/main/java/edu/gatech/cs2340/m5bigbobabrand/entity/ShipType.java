@@ -6,6 +6,7 @@ public enum ShipType {
     GRASSHOPPER("Grasshopper"), TERMIE("Termie"), WASP("Wasp");
 
     private String rep;
+
     ShipType(String rep) {
         this.rep = rep;
     }
