@@ -2,8 +2,6 @@ package edu.gatech.cs2340.m5bigbobabrand.views;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -19,12 +17,9 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Difficulty;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Player;
 import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
-import edu.gatech.cs2340.m5bigbobabrand.entity.Universe;
+import edu.gatech.cs2340.m5bigbobabrand.Model.Universe;
 
 import android.widget.Toast;
-
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -132,8 +127,8 @@ public class MainActivity extends AppCompatActivity {
             while (gameUniverse.size() < 10) {
                 gameUniverse.addSolarSystem(new SolarSystem(new Coordinates()));
             }
-
             Object[] printMapArr = gameUniverse.getUniverse().values().toArray();
+
 
              Log.d("Edit", "Solar Systems:\nPlanet 1: " + printMapArr[0].toString()
                     + "\nPlanet 2: " + printMapArr[1].toString()
