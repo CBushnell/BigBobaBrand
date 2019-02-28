@@ -102,54 +102,63 @@ public class MainActivity extends AppCompatActivity {
      * @param view the button that was pressed
      */
     public void onCreatePressed(View view) {
-        Log.d("Edit", "Create Player Pressed");
-        this.player = new Player();
-        player.setName(nameField.getText().toString());
-        String chosenDiffString = (String) difficultySpinner.getSelectedItem();
-        Difficulty[] difficultyList = Difficulty.values();
-        for (Difficulty d: difficultyList) {
-            if(chosenDiffString.equals(d.getString())) {
-                player.setDifficulty(d);
-                break;
-            }
-        }
-        player.setEngineerPts(Integer.parseInt(engineerField.getText().toString()));
-        player.setFighterPts(Integer.parseInt(fighterField.getText().toString()));
-        player.setPilotPts(Integer.parseInt(pilotField.getText().toString()));
-        player.setTraderPts(Integer.parseInt(traderField.getText().toString()));
+
         try {
-            if (!player.verifySum()) {
-                throw new IllegalArgumentException("INPUTS WRONG");
+            Log.d("Edit", "Create Player Pressed");
+            this.player = new Player();
+            player.setName(nameField.getText().toString());
+            player.setEngineerPts(Integer.parseInt(engineerField.getText().toString()));
+            player.setFighterPts(Integer.parseInt(fighterField.getText().toString()));
+            player.setPilotPts(Integer.parseInt(pilotField.getText().toString()));
+            player.setTraderPts(Integer.parseInt(traderField.getText().toString()));
+            String chosenDiffString = (String) difficultySpinner.getSelectedItem();
+            Difficulty[] difficultyList = Difficulty.values();
+            for (Difficulty d: difficultyList) {
+                if(chosenDiffString.equals(d.getString())) {
+                    player.setDifficulty(d);
+                    break;
+                }
             }
-            Log.d("Edit", "\nName: " + player.getName() + "\nPilot Points: "
-                    + player.getPilotPts() + "\nFighter Points: " + player.getFighterPts()
-                    +  "\nTrader Points: " + player.getTraderPts() +
-                    "\nEngineer Points: " + player.getEngineerPts()
-                    + "\nDifficulty: " + player.getDifficulty().getString()
-                    + "\nCredits: " + player.getCredits()
-                    + "\nShip Type: " + player.getShip().toString());
-            Universe gameUniverse = new Universe();
-            while (gameUniverse.size() < 10) {
-                gameUniverse.addSolarSystem(new SolarSystem(new Coordinates()));
+            try {
+                if (!player.verifySum()) {
+                    throw new IllegalArgumentException("Stats must be positive and sum to 16");
+                }
+                Log.d("Edit", "\nName: " + player.getName() + "\nPilot Points: "
+                        + player.getPilotPts() + "\nFighter Points: " + player.getFighterPts()
+                        +  "\nTrader Points: " + player.getTraderPts() +
+                        "\nEngineer Points: " + player.getEngineerPts()
+                        + "\nDifficulty: " + player.getDifficulty().getString()
+                        + "\nCredits: " + player.getCredits()
+                        + "\nShip Type: " + player.getShip().toString());
+                Universe gameUniverse = new Universe();
+                while (gameUniverse.size() < 10) {
+                    gameUniverse.addSolarSystem(new SolarSystem(new Coordinates()));
+                }
+
+                Object[] printMapArr = gameUniverse.getUniverse().values().toArray();
+
+                Log.d("Edit", "Solar Systems:\nPlanet 1: " + printMapArr[0].toString()
+                        + "\nPlanet 2: " + printMapArr[1].toString()
+                        + "\nPlanet 3: " + printMapArr[2].toString()
+                        + "\nPlanet 4: " + printMapArr[3].toString()
+                        + "\nPlanet 5: " + printMapArr[4].toString()
+                        + "\nPlanet 6: " + printMapArr[5].toString()
+                        + "\nPlanet 7: " + printMapArr[6].toString()
+                        + "\nPlanet 8: " + printMapArr[7].toString()
+                        + "\nPlanet 9: " + printMapArr[8].toString()
+                        + "\nPlanet 10: " + printMapArr[9].toString());
+                Toast.makeText(this, "Universe and Player Created", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, SecondActivity.class);
+                this.startActivity(intent);
+            } catch (IllegalArgumentException e) {
+                Log.d("Error", e.getMessage());
+                Toast.makeText(this, "Skill points must be positive and sum to 16!", Toast.LENGTH_LONG).show();
             }
-            SolarSystem[] printMapArr = (SolarSystem[]) gameUniverse.getUniverse().values().toArray();
-            Log.d("Edit", "Solar Systems:\nPlanet 1: " + printMapArr[0].toString()
-                    + "\nPlanet 2: " + printMapArr[1].toString()
-                    + "\nPlanet 3: " + printMapArr[2].toString()
-                    + "\nPlanet 4: " + printMapArr[3].toString()
-                    + "\nPlanet 5: " + printMapArr[4].toString()
-                    + "\nPlanet 6: " + printMapArr[5].toString()
-                    + "\nPlanet 7: " + printMapArr[6].toString()
-                    + "\nPlanet 8: " + printMapArr[7].toString()
-                    + "\nPlanet 9: " + printMapArr[8].toString()
-                    + "\nPlanet 10: " + printMapArr[9].toString());
-            Toast.makeText(this, "Universe and Player Created", Toast.LENGTH_LONG).show();
-        } catch (IllegalArgumentException e) {
-            Log.d("Error", e.getMessage());
-            Toast.makeText(this, "Incorrect Inputs", Toast.LENGTH_LONG).show();
+        } catch (Throwable T) {
+            Toast.makeText(this,"Enter all required fields", Toast.LENGTH_LONG).show();
         }
-        Intent intent = new Intent(this, SecondActivity.class);
-        this.startActivity(intent);
+
+
     }
 
 

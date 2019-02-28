@@ -269,8 +269,9 @@ public class SolarSystem {
         this.id = id;
     }
 
+    @Override
     public String toString() {
-        return this.name + " at " + this.coordinates + " (" + this.resourceLevel.toString() + ", "
+        return this.name + " at " + this.coordinates.toString() + " (" + this.resourceLevel.toString() + ", "
                 + this.techLevel.toString() + ", " + this.politicalSystem.toString() + ")";
     }
 }
