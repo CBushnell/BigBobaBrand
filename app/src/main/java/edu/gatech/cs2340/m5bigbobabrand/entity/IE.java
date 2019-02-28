@@ -1,5 +1,9 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
+/** enum class to hold valid catastrophic events (IE) values
+ * @author Charlie Comeau
+ * @version 1.0
+ */
 public enum IE {
     DROUGHT("DROUGHT"),
     COLD("COLD"),
@@ -16,6 +20,14 @@ public enum IE {
 
     private IE(String IEname) {
         this.IEname = IEname;
+    }
+
+    /**
+     * getter method for IE name
+     * @return IE name
+     */
+    public String getIEName() {
+        return IEname;
     }
 
 }
