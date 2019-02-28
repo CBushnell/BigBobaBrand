@@ -5,6 +5,7 @@ package edu.gatech.cs2340.m5bigbobabrand.entity;
  * @version 1.0
  *
  * A SolarSystem class for holding planets (currently synonymous with planets)
+ * Have markets where players can trade goods
  */
 public class SolarSystem {
 
@@ -13,6 +14,7 @@ public class SolarSystem {
     private ResourceLevel resourceLevel;
     private Coordinates coordinates;
     private PoliticalSystem politicalSystem;
+    private Market market;
     private int id;
 
     private static final int HASH_SEED = 31;
