@@ -1,7 +1,10 @@
-package edu.gatech.cs2340.m5bigbobabrand.entity;
+package edu.gatech.cs2340.m5bigbobabrand.Model;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
+import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 
 public class Universe {
     private Map<Coordinates, SolarSystem> gameUniverse;
