@@ -129,4 +129,12 @@ public enum Item {
     public void setMTH(int MTH) {
         this.MTH = MTH;
     }
+
+    public int getOrds() {
+        return ords;
+    }
+
+    public void setOrds(int ords) {
+        this.ords = ords;
+    }
 }
