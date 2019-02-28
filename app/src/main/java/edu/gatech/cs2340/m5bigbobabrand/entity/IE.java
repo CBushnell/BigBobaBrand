@@ -18,7 +18,7 @@ public enum IE {
 
     private String IEname;
 
-    private IE(String IEname) {
+    IE(String IEname) {
         this.IEname = IEname;
     }
 
