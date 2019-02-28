@@ -5,21 +5,23 @@ package edu.gatech.cs2340.m5bigbobabrand.entity;
  * @version 1.0
  */
 public enum IE {
-    DROUGHT("DROUGHT"),
-    COLD("COLD"),
-    CROPFAIL("CROP-FAIL"),
-    WAR("WAR"),
-    BOREDOM("BOREDOM"),
-    PLAGUE("PLAGUE"),
-    LACKOFWORK("LACK-OF-WORK"),
-    RETIREMENT("RETIREMENT"),
-    SNOWINATLANTA("SNOW-IN-ATLANTA!"),
-    SADBOIHOURS("SAD-BOI-HOURS");
+    DROUGHT("DROUGHT", 0),
+    COLD("COLD", 1),
+    CROPFAIL("CROP-FAIL", 2),
+    WAR("WAR", 3),
+    BOREDOM("BOREDOM", 4),
+    PLAGUE("PLAGUE", 5),
+    LACKOFWORK("LACK-OF-WORK", 6),
+    RETIREMENT("RETIREMENT", 7),
+    SNOWINATLANTA("SNOW-IN-ATLANTA!", 8),
+    SADBOIHOURS("SAD-BOI-HOURS", 9);
 
     private String IEname;
+    private int IEnum;
 
-    IE(String IEname) {
+    IE(String IEname, int IEnum) {
         this.IEname = IEname;
+        this.IEnum = IEnum;
     }
 
     /**
@@ -28,6 +30,14 @@ public enum IE {
      */
     public String getIEName() {
         return IEname;
+    }
+
+    /**
+     * getter method for IE num
+     * @return IE num
+     */
+    public int getIEnum() {
+        return IEnum;
     }
 
 }
