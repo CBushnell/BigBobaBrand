@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                 this.startActivity(intent);
             } catch (IllegalArgumentException e) {
                 Log.d("Error", e.getMessage());
-                Toast.makeText(this, "Incorrect Inputs", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Skill points must be positive and sum to 16!", Toast.LENGTH_LONG).show();
             }
         } catch (Throwable T) {
             Toast.makeText(this,"Enter all required fields", Toast.LENGTH_LONG).show();
