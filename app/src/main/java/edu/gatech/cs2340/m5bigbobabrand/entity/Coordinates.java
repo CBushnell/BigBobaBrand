@@ -1,4 +1,10 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
+/**
+ * @author Chieng Chang
+ * @version 1.0
+ *
+ * A Coordinates class that randomly generates a 2D coordinate
+ */
 public class Coordinates {
     private int x;
     private int y;
