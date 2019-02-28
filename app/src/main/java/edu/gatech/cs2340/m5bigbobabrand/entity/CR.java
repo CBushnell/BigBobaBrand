@@ -13,7 +13,8 @@ public enum CR {
     MINERALRICH("MINERAL-RICH", 3),
     ARTISTIC("ARTISTIC", 4),
     WARLIKE("WARLIKE", 5),
-    LOTSOFHERBS("LOTS-OF-HERBS", 6);
+    LOTSOFHERBS("LOTS-OF-HERBS", 6),
+    WEIRDMUSHROOMS("WEIRD-MUSHROOMS", 7);
 
     private String CRname;
     private int CRnum;
