@@ -136,6 +136,140 @@ public class MarketActivity extends AppCompatActivity {
             credits_header.setText(Integer.toString(player.getCredits()));
         }
     }
+
+    public void onBuyFoodPressed(View view) {
+        Log.d("Press", "buy food pressed");
+        if(this.marketInteractor.buy(Item.FOOD)) {
+            food_ship_header.setText(Integer.toString(player.numberOf(Item.FOOD)));
+            food_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FOOD)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+    public void onSellFoodPressed(View view) {
+        Log.d("Press", "sell food pressed");
+        if(this.marketInteractor.sell(Item.FOOD)) {
+            food_ship_header.setText(Integer.toString(player.numberOf(Item.FOOD)));
+            food_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FOOD)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+    public void onBuyOrePressed(View view) {
+        Log.d("Press", "buy ore pressed");
+        if(this.marketInteractor.buy(Item.ORE)) {
+            ore_ship_header.setText(Integer.toString(player.numberOf(Item.ORE)));
+            ore_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ORE)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+    public void onSellOrePressed(View view) {
+        Log.d("Press", "sell ore pressed");
+        if(this.marketInteractor.sell(Item.ORE)) {
+            ore_ship_header.setText(Integer.toString(player.numberOf(Item.ORE)));
+            ore_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ORE)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+    public void onBuyGamesPressed(View view) {
+        Log.d("Press", "buy games pressed");
+        if(this.marketInteractor.buy(Item.GAMES)) {
+            games_ship_header.setText(Integer.toString(player.numberOf(Item.GAMES)));
+            games_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.GAMES)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+    public void onSellGamesPressed(View view) {
+        Log.d("Press", "sell games pressed");
+        if(this.marketInteractor.sell(Item.GAMES)) {
+            games_ship_header.setText(Integer.toString(player.numberOf(Item.GAMES)));
+            games_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.GAMES)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+    public void onBuyFirearmsPressed(View view) {
+        Log.d("Press", "buy firearms pressed");
+        if(this.marketInteractor.buy(Item.FIREARMS)) {
+            firearms_ship_header.setText(Integer.toString(player.numberOf(Item.FIREARMS)));
+            firearms_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FIREARMS)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+    public void onSellFirearmsPressed(View view) {
+        Log.d("Press", "sell firearms pressed");
+        if(this.marketInteractor.sell(Item.FIREARMS)) {
+            firearms_ship_header.setText(Integer.toString(player.numberOf(Item.FIREARMS)));
+            firearms_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FIREARMS)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+
+    public void onBuyMedicinePressed(View view) {
+        Log.d("Press", "buy medicine pressed");
+        if(this.marketInteractor.buy(Item.MEDICINE)) {
+            medicine_ship_header.setText(Integer.toString(player.numberOf(Item.MEDICINE)));
+            medicine_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MEDICINE)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+    public void onSellMedicinePressed(View view) {
+        Log.d("Press", "sell medicine pressed");
+        if(this.marketInteractor.sell(Item.MEDICINE)) {
+            medicine_ship_header.setText(Integer.toString(player.numberOf(Item.MEDICINE)));
+            medicine_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MEDICINE)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+
+    public void onBuyMachinesPressed(View view) {
+        Log.d("Press", "buy machines pressed");
+        if(this.marketInteractor.buy(Item.MACHINES)) {
+            machines_ship_header.setText(Integer.toString(player.numberOf(Item.MACHINES)));
+            machines_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MACHINES)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+    public void onSellMachinesPressed(View view) {
+        Log.d("Press", "sell machines pressed");
+        if(this.marketInteractor.sell(Item.MACHINES)) {
+            machines_ship_header.setText(Integer.toString(player.numberOf(Item.MACHINES)));
+            machines_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MACHINES)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+
+    public void onBuyNarcoticsPressed(View view) {
+        Log.d("Press", "buy narcotics pressed");
+        if(this.marketInteractor.buy(Item.NARCOTICS)) {
+            narcotics_ship_header.setText(Integer.toString(player.numberOf(Item.NARCOTICS)));
+            narcotics_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.NARCOTICS)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+    public void onSellNarcoticsPressed(View view) {
+        Log.d("Press", "sell narcotics pressed");
+        if(this.marketInteractor.sell(Item.NARCOTICS)) {
+            narcotics_ship_header.setText(Integer.toString(player.numberOf(Item.NARCOTICS)));
+            narcotics_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.NARCOTICS)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+
+    public void onBuyRobotsPressed(View view) {
+        Log.d("Press", "buy robots pressed");
+        if(this.marketInteractor.buy(Item.ROBOTS)) {
+            robots_ship_header.setText(Integer.toString(player.numberOf(Item.ROBOTS)));
+            robots_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ROBOTS)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+    public void onSellRobotsPressed(View view) {
+        Log.d("Press", "sell robots pressed");
+        if(this.marketInteractor.sell(Item.ROBOTS)) {
+            robots_ship_header.setText(Integer.toString(player.numberOf(Item.ROBOTS)));
+            robots_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ROBOTS)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+
     private void waterSetUp() {
         if (marketInteractor.getPrice(Item.WATER) == -1 ) {
             water_price_header.setText("X");
