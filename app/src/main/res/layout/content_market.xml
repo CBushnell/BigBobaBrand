@@ -11,13 +11,13 @@
     tools:context="edu.gatech.cs2340.m5bigbobabrand.views.MarketActivity"
     tools:showIn="@layout/activity_market">
     <TextView
-        android:id="@+id/water_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="200dp"
+    android:id="@+id/water_header"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:layout_marginTop="200dp"
 
-        android:text="Water Price : " />
+    android:text="Water Price : " />
     <TextView
         android:id="@+id/water_price_header"
         android:layout_width="wrap_content"
@@ -92,6 +92,171 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         android:text="113" />
+    <TextView
+        android:id="@+id/furs_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="260dp"
+
+        android:text="Furs Price : " />
+    <TextView
+        android:id="@+id/furs_price_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="260dp"
+        android:text="111" />
+    <TextView
+        android:id="@+id/furs_store_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="260dp"
+        android:text="112" />
+    <TextView
+        android:id="@+id/furs_ship_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="260dp"
+        android:text="113" />
+
+    <Button
+        android:id="@+id/buy_furs_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="250dp"
+        android:onClick="onBuyWaterPressed"
+        android:text="Buy" />
+
+    <Button
+        android:id="@+id/sell_furs_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="250dp"
+        android:onClick="onSellWaterPressed"
+        android:text="Sell" />
+
+    <TextView
+        android:id="@+id/food_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="230dp"
+
+        android:text="Food Price : " />
+    <TextView
+        android:id="@+id/food_price_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="230dp"
+        android:text="111" />
+    <TextView
+        android:id="@+id/food_store_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="230dp"
+        android:text="112" />
+    <TextView
+        android:id="@+id/food_ship_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="230dp"
+        android:text="113" />
+
+    <Button
+        android:id="@+id/buy_food_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="220dp"
+        android:onClick="onBuyWaterPressed"
+        android:text="Buy" />
+
+    <Button
+        android:id="@+id/sell_food_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="220dp"
+        android:onClick="onSellWaterPressed"
+        android:text="Sell" />`
+
+    <TextView
+        android:id="@+id/ore_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="290dp"
+
+        android:text="Ore Price : " />
+    <TextView
+        android:id="@+id/ore_price_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="290dp"
+        android:text="111" />
+    <TextView
+        android:id="@+id/ore_store_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="290dp"
+        android:text="112" />
+    <TextView
+        android:id="@+id/ore_ship_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="290dp"
+        android:text="113" />
+
+    <Button
+        android:id="@+id/buy_ore_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="280dp"
+        android:onClick="onBuyWaterPressed"
+        android:text="Buy" />
+
+    <Button
+        android:id="@+id/sell_ore_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="280dp"
+        android:onClick="onSellWaterPressed"
+        android:text="Sell" />`
+
 
 
 </RelativeLayout>
