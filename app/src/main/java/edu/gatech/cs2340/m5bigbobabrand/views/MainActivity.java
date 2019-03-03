@@ -149,14 +149,14 @@ public class MainActivity extends AppCompatActivity {
                 player.setSolarSystem(gameUniverse.getUniverse().values().toArray(new SolarSystem[0])[0]);
                 Intent intent = new Intent(MainActivity.this, MarketActivity.class);
                 //this line is currently causing an error
-                //intent.putExtra("PLAYER", player);
+                intent.putExtra("PLAYER", player);
                 this.startActivity(intent);
             } catch (IllegalArgumentException e) {
                 Log.d("Error", e.getMessage());
                 Toast.makeText(this, "Skill points must be positive and sum to 16!", Toast.LENGTH_LONG).show();
             }
         } catch (Throwable T) {
-            Log.d("Error", T.getMessage());
+            Log.d("Error", T.getMessage(), T);
             Toast.makeText(this,"Enter all required fields", Toast.LENGTH_LONG).show();
 
         }

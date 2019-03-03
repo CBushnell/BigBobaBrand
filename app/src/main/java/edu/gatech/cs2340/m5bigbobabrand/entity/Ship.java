@@ -2,10 +2,11 @@ package edu.gatech.cs2340.m5bigbobabrand.entity;
 
 import android.util.Log;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Ship {
+public class Ship implements Serializable {
     private ShipType t;
     private Map<Item, Integer> cargo;
     public Ship(ShipType t) {

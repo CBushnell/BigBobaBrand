@@ -1,11 +1,14 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
+
+import java.io.Serializable;
+
 /**
  * @author Chieng Chang
  * @version 1.0
  *
  * A Coordinates class that randomly generates a 2D coordinate
  */
-public class Coordinates {
+public class Coordinates implements Serializable {
     private int x;
     private int y;
 

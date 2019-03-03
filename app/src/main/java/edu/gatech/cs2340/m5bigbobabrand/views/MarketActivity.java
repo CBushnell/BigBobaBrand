@@ -31,14 +31,13 @@ public class MarketActivity extends AppCompatActivity {
         /*
         THIS WILL ALL HAVE TO BE MOVED TO THE VIEWMODEL BUT I DON'T KNOW HOW AND I'M VERY TIRED
          */
-        this.player = new Player();
-        player.setSolarSystem(new SolarSystem(new Coordinates()));
-        //this.player = (Player) getIntent().getSerializableExtra("PLAYER");
+        this.player = (Player) getIntent().getSerializableExtra("PLAYER");
+        Log.d("name", player.getName());
         this.marketInteractor = new MarketInteractor(this.player);
 
         //getPrice method returns -1 if you cannot buy from this planet
         if (marketInteractor.getPrice(Item.WATER) == -1 ) {
-            water_price_header.setText("CANNOT BUY");
+            water_price_header.setText("X");
         } else {
 
 

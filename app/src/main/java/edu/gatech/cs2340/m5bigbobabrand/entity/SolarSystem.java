@@ -1,5 +1,7 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
+import java.io.Serializable;
+
 /**
  * @author Connor Bushnell
  * @version 1.0
@@ -7,7 +9,7 @@ package edu.gatech.cs2340.m5bigbobabrand.entity;
  * A SolarSystem class for holding planets (currently synonymous with planets)
  * Have markets where players can trade goods
  */
-public class SolarSystem {
+public class SolarSystem implements Serializable {
 
     private String name;
     private TechLevel techLevel;
