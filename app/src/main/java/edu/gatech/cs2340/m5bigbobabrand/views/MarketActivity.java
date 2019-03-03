@@ -33,6 +33,19 @@ public class MarketActivity extends AppCompatActivity {
     TextView firearms_price_header;
     TextView firearms_store_header;
     TextView firearms_ship_header;
+    TextView medicine_price_header;
+    TextView medicine_store_header;
+    TextView medicine_ship_header;
+    TextView machines_price_header;
+    TextView machines_store_header;
+    TextView machines_ship_header;
+    TextView narcotics_price_header;
+    TextView narcotics_store_header;
+    TextView narcotics_ship_header;
+    TextView robots_price_header;
+    TextView robots_store_header;
+    TextView robots_ship_header;
+
 
 
     TextView credits_header;
@@ -70,6 +83,22 @@ public class MarketActivity extends AppCompatActivity {
         firearms_store_header = findViewById(R.id.firearms_store_header);
         firearms_ship_header = findViewById(R.id.firearms_ship_header);
         firearmsSetUp();
+        medicine_price_header = findViewById(R.id.medicine_price_header);
+        medicine_store_header = findViewById(R.id.medicine_store_header);
+        medicine_ship_header = findViewById(R.id.medicine_ship_header);
+        medicineSetUp();
+        machines_price_header = findViewById(R.id.machines_price_header);
+        machines_store_header = findViewById(R.id.machines_store_header);
+        machines_ship_header = findViewById(R.id.machines_ship_header);
+        machinesSetUp();
+        narcotics_price_header = findViewById(R.id.narcotics_price_header);
+        narcotics_store_header = findViewById(R.id.narcotics_store_header);
+        narcotics_ship_header = findViewById(R.id.narcotics_ship_header);
+        narcoticsSetUp();
+        robots_price_header = findViewById(R.id.robots_price_header);
+        robots_store_header = findViewById(R.id.robots_store_header);
+        robots_ship_header = findViewById(R.id.robots_ship_header);
+        robotsSetUp();
 
 
 
@@ -149,4 +178,45 @@ public class MarketActivity extends AppCompatActivity {
         firearms_ship_header.setText(Integer.toString(player.numberOf(Item.FIREARMS)));
         firearms_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FIREARMS)));
     }
+
+    private void medicineSetUp() {
+        if (marketInteractor.getPrice(Item.MEDICINE) == -1 ) {
+            medicine_price_header.setText("X");
+        } else {
+            medicine_price_header.setText(Integer.toString(marketInteractor.getPrice(Item.MEDICINE)));
+        }
+        medicine_ship_header.setText(Integer.toString(player.numberOf(Item.MEDICINE)));
+        medicine_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MEDICINE)));
+    }
+
+    private void machinesSetUp() {
+        if (marketInteractor.getPrice(Item.MACHINES) == -1 ) {
+            machines_price_header.setText("X");
+        } else {
+            machines_price_header.setText(Integer.toString(marketInteractor.getPrice(Item.MACHINES)));
+        }
+        machines_ship_header.setText(Integer.toString(player.numberOf(Item.MACHINES)));
+        machines_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MACHINES)));
+    }
+
+    private void narcoticsSetUp() {
+        if (marketInteractor.getPrice(Item.NARCOTICS) == -1 ) {
+            narcotics_price_header.setText("X");
+        } else {
+            narcotics_price_header.setText(Integer.toString(marketInteractor.getPrice(Item.NARCOTICS)));
+        }
+        narcotics_ship_header.setText(Integer.toString(player.numberOf(Item.NARCOTICS)));
+        narcotics_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.NARCOTICS)));
+    }
+
+    private void robotsSetUp() {
+        if (marketInteractor.getPrice(Item.ROBOTS) == -1 ) {
+            robots_price_header.setText("X");
+        } else {
+            robots_price_header.setText(Integer.toString(marketInteractor.getPrice(Item.ROBOTS)));
+        }
+        robots_ship_header.setText(Integer.toString(player.numberOf(Item.ROBOTS)));
+        robots_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ROBOTS)));
+    }
+
 }
