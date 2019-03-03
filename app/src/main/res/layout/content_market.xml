@@ -17,7 +17,7 @@
     android:layout_alignParentStart="true"
     android:layout_marginTop="200dp"
 
-    android:text="Water Price : " />
+    android:text="Water " />
     <TextView
         android:id="@+id/water_price_header"
         android:layout_width="wrap_content"
@@ -72,7 +72,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="280dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="170dp"
         android:text="Store" />
     <TextView
         android:id="@+id/ship_header"
@@ -81,8 +81,17 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="330dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="170dp"
         android:text="Ship" />
+    <TextView
+        android:id="@+id/price_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="170dp"
+        android:text="Price" />
 
     <TextView
         android:id="@+id/credits_header"
@@ -93,13 +102,20 @@
         android:layout_marginTop="50dp"
         android:text="113" />
     <TextView
+        android:id="@+id/credits_text_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:text="Credits " />
+    <TextView
         android:id="@+id/furs_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginTop="260dp"
 
-        android:text="Furs Price : " />
+        android:text="Furs" />
     <TextView
         android:id="@+id/furs_price_header"
         android:layout_width="wrap_content"
@@ -134,7 +150,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="120dp"
         android:layout_marginTop="250dp"
-        android:onClick="onBuyWaterPressed"
+        android:onClick="onBuyFursPressed"
         android:text="Buy" />
 
     <Button
@@ -145,7 +161,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="190dp"
         android:layout_marginTop="250dp"
-        android:onClick="onSellWaterPressed"
+        android:onClick="onSellFursPressed"
         android:text="Sell" />
 
     <TextView
@@ -155,7 +171,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="230dp"
 
-        android:text="Food Price : " />
+        android:text="Food" />
     <TextView
         android:id="@+id/food_price_header"
         android:layout_width="wrap_content"
@@ -189,7 +205,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="120dp"
         android:layout_marginTop="220dp"
-        android:onClick="onBuyWaterPressed"
+        android:onClick="onBuyFoodPressed"
         android:text="Buy" />
 
     <Button
@@ -200,7 +216,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="190dp"
         android:layout_marginTop="220dp"
-        android:onClick="onSellWaterPressed"
+        android:onClick="onSellFoodPressed"
         android:text="Sell" />`
 
     <TextView
@@ -210,7 +226,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="290dp"
 
-        android:text="Ore Price : " />
+        android:text="Ore" />
     <TextView
         android:id="@+id/ore_price_header"
         android:layout_width="wrap_content"
@@ -244,7 +260,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="120dp"
         android:layout_marginTop="280dp"
-        android:onClick="onBuyWaterPressed"
+        android:onClick="onBuyOrePressed"
         android:text="Buy" />
 
     <Button
@@ -255,7 +271,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="190dp"
         android:layout_marginTop="280dp"
-        android:onClick="onSellWaterPressed"
+        android:onClick="onSellOrePressed"
         android:text="Sell" />`
 
     <TextView
@@ -265,7 +281,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="320dp"
 
-        android:text="Games Price : " />
+        android:text="Games" />
     <TextView
         android:id="@+id/games_price_header"
         android:layout_width="wrap_content"
@@ -299,7 +315,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="120dp"
         android:layout_marginTop="310dp"
-        android:onClick="onBuyWaterPressed"
+        android:onClick="onBuyGamesPressed"
         android:text="Buy" />
 
     <Button
@@ -310,7 +326,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="190dp"
         android:layout_marginTop="310dp"
-        android:onClick="onSellWaterPressed"
+        android:onClick="onSellGamesPressed"
         android:text="Sell" />
     <TextView
         android:id="@+id/firearms_header"
@@ -319,7 +335,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="350dp"
 
-        android:text="Firearms Price : " />
+        android:text="Firearms" />
     <TextView
         android:id="@+id/firearms_price_header"
         android:layout_width="wrap_content"
@@ -353,7 +369,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="120dp"
         android:layout_marginTop="340dp"
-        android:onClick="onBuyWaterPressed"
+        android:onClick="onBuyFirearmsPressed"
         android:text="Buy" />
 
     <Button
@@ -364,7 +380,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="190dp"
         android:layout_marginTop="340dp"
-        android:onClick="onSellWaterPressed"
+        android:onClick="onSellFirearmsPressed"
         android:text="Sell" />
     <TextView
         android:id="@+id/medicine_header"
@@ -373,7 +389,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="380dp"
 
-        android:text="Medicine Price : " />
+        android:text="Medicine" />
     <TextView
         android:id="@+id/medicine_price_header"
         android:layout_width="wrap_content"
@@ -407,7 +423,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="120dp"
         android:layout_marginTop="370dp"
-        android:onClick="onBuyWaterPressed"
+        android:onClick="onBuyMedicinePressed"
         android:text="Buy" />
 
     <Button
@@ -418,7 +434,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="190dp"
         android:layout_marginTop="370dp"
-        android:onClick="onSellWaterPressed"
+        android:onClick="onSellMedicinePressed"
         android:text="Sell" />``
     <TextView
         android:id="@+id/machines_header"
@@ -427,7 +443,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="410dp"
 
-        android:text="Machines Price : " />
+        android:text="Machines" />
     <TextView
         android:id="@+id/machines_price_header"
         android:layout_width="wrap_content"
@@ -461,7 +477,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="120dp"
         android:layout_marginTop="400dp"
-        android:onClick="onBuyWaterPressed"
+        android:onClick="onBuyMachinesPressed"
         android:text="Buy" />
 
     <Button
@@ -472,7 +488,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="190dp"
         android:layout_marginTop="400dp"
-        android:onClick="onSellWaterPressed"
+        android:onClick="onSellMachinesPressed"
         android:text="Sell" />``
     <TextView
         android:id="@+id/narcotics_header"
@@ -481,7 +497,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="440dp"
 
-        android:text="Narcotics Price : " />
+        android:text="Narcotics" />
     <TextView
         android:id="@+id/narcotics_price_header"
         android:layout_width="wrap_content"
@@ -515,7 +531,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="120dp"
         android:layout_marginTop="430dp"
-        android:onClick="onBuyWaterPressed"
+        android:onClick="onBuyNarcoticsPressed"
         android:text="Buy" />
 
     <Button
@@ -526,7 +542,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="190dp"
         android:layout_marginTop="430dp"
-        android:onClick="onSellWaterPressed"
+        android:onClick="onSellNarcoticsPressed"
         android:text="Sell" />`
     <TextView
         android:id="@+id/robots_header"
@@ -535,7 +551,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="470dp"
 
-        android:text="Robots Price : " />
+        android:text="Robots" />
     <TextView
         android:id="@+id/robots_price_header"
         android:layout_width="wrap_content"
@@ -569,7 +585,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="120dp"
         android:layout_marginTop="460dp"
-        android:onClick="onBuyWaterPressed"
+        android:onClick="onBuyRobotsPressed"
         android:text="Buy" />
 
     <Button
@@ -580,7 +596,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="190dp"
         android:layout_marginTop="460dp"
-        android:onClick="onSellWaterPressed"
+        android:onClick="onSellRobotsPressed"
         android:text="Sell" />```
     `
 

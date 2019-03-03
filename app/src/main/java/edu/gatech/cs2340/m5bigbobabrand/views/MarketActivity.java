@@ -119,6 +119,23 @@ public class MarketActivity extends AppCompatActivity {
             credits_header.setText(Integer.toString(player.getCredits()));
         }
     }
+
+    public void onBuyFursPressed(View view) {
+        Log.d("Press", "buy furs pressed");
+        if(this.marketInteractor.buy(Item.FURS)) {
+            furs_ship_header.setText(Integer.toString(player.numberOf(Item.FURS)));
+            furs_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FURS)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
+    public void onSellFursPressed(View view) {
+        Log.d("Press", "sell furs pressed");
+        if(this.marketInteractor.sell(Item.FURS)) {
+            furs_ship_header.setText(Integer.toString(player.numberOf(Item.FURS)));
+            furs_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FURS)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+        }
+    }
     private void waterSetUp() {
         if (marketInteractor.getPrice(Item.WATER) == -1 ) {
             water_price_header.setText("X");
