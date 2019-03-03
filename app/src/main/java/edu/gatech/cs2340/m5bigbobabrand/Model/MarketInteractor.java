@@ -101,6 +101,9 @@ public class MarketInteractor {
 
     public int getPrice (Item item) {
         if (prices.get(item) == null) {
+            if(item == Item.FURS) {
+                Log.d("here", "furs" + prices.get(item));
+            }
             return -1;
         }
         return prices.get(item);
