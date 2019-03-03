@@ -113,6 +113,10 @@ public class MarketInteractor {
         return this.market.numberOf(item);
     }
 
+    public IE getIe() {
+        return this.ie;
+    }
+
 
 
 }

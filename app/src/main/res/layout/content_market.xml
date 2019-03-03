@@ -107,14 +107,94 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginTop="50dp"
-        android:text="Credits " />
+        android:text="Credits: " />
+    <TextView
+        android:id="@+id/planet_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:text="113" />
+    <TextView
+        android:id="@+id/planet_text_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:text="Planet: " />
+    <TextView
+        android:id="@+id/ie_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="30dp"
+        android:text="113" />
+    <TextView
+        android:id="@+id/ie_text_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="145dp"
+        android:text="Event: " />
+
+    <TextView
+        android:id="@+id/tech_level_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="50dp"
+        android:text="113" />
+    <TextView
+        android:id="@+id/tech_level_text_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="145dp"
+        android:text="Tech\nLevel: " />
+    <TextView
+        android:id="@+id/total_cargo_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="290dp"
+        android:layout_marginTop="25dp"
+        android:text="113" />
+    <TextView
+        android:id="@+id/total_cargo_text_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="250dp"
+        android:text="Curr\nCargo: " />
+    <TextView
+        android:id="@+id/max_cargo_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="290dp"
+        android:layout_marginTop="65dp"
+        android:text="113" />
+    <TextView
+        android:id="@+id/max_cargo_text_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="55dp"
+        android:layout_marginStart="250dp"
+        android:text="Max\nCargo: " />
+
     <TextView
         android:id="@+id/furs_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginTop="260dp"
-
         android:text="Furs" />
     <TextView
         android:id="@+id/furs_price_header"

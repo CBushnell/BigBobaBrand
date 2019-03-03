@@ -49,6 +49,11 @@ public class MarketActivity extends AppCompatActivity {
 
 
     TextView credits_header;
+    TextView ie_header;
+    TextView tech_level_header;
+    TextView planet_header;
+    TextView curr_cargo_header;
+    TextView max_cargo_header;
     MarketInteractor marketInteractor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +63,17 @@ public class MarketActivity extends AppCompatActivity {
         this.marketInteractor = new MarketInteractor(this.player);
         credits_header = findViewById(R.id.credits_header);
         credits_header.setText(Integer.toString(player.getCredits()));
+        ie_header = findViewById(R.id.ie_header);
+        ie_header.setText(marketInteractor.getIe().getIEName());
+        tech_level_header = findViewById(R.id.tech_level_header);
+        tech_level_header.setText(player.getSolarSystem().getTechLevel().getTechLevelName());
+        planet_header = findViewById(R.id.planet_header);
+        planet_header.setText(player.getSolarSystem().getName());
+        curr_cargo_header = findViewById(R.id.total_cargo_header);
+        curr_cargo_header.setText(Integer.toString(player.getCargo()));
+        max_cargo_header = findViewById(R.id.max_cargo_header);
+        curr_cargo_header.setText(Integer.toString(player.getMaxCargo()));
+
 
         water_price_header = findViewById(R.id.water_price_header);
         water_store_header = findViewById(R.id.water_store_header);
