@@ -84,7 +84,7 @@ public class MarketInteractor {
     }
 
     public boolean sell (Item item) {
-        if (item.getMTLU() < player.getSolarSystem().getTechLevel().getTechLevelNum()) {
+        if (item.getMTLU() > player.getSolarSystem().getTechLevel().getTechLevelNum()) {
             return false;
         }
         if (player.has(item)) {
@@ -92,6 +92,7 @@ public class MarketInteractor {
             int price = prices.get(item);
             player.loseGood(item);
             player.setCredits(currCredits + price);
+            market.sellGoodToMarket(item);
             return true;
         } else {
             return false;

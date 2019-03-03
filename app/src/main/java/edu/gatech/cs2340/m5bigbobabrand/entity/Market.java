@@ -25,9 +25,7 @@ public class Market {
         goods = new HashMap<Item, Integer>();
         Item[] itemArr = Item.values();
         for (Item item : itemArr) {
-            Log.d("here", "techLevel: " + solarSystem.getTechLevel().getTechLevelNum() + "mtlp: " + item.getMTLP());
                 if (solarSystem.getTechLevel().getTechLevelNum() >= item.getMTLP()) {
-                    Log.d("asdf", "adsf");
                     goods.put(item, (int)(Math.random() * 100));
                 } else {
                     goods.put(item, 0);
