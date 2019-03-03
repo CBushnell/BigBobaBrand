@@ -24,30 +24,23 @@ public class MarketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
+
+        this.player = (Player) getIntent().getSerializableExtra("PLAYER");
+        Log.d("name", player.getName());
+        this.marketInteractor = new MarketInteractor(this.player);
+        credits_header.setText(Integer.toString(player.getCredits()));
+
         water_price_header = findViewById(R.id.water_price_header);
         water_store_header = findViewById(R.id.water_store_header);
         water_ship_header = findViewById(R.id.water_ship_header);
         credits_header = findViewById(R.id.credits_header);
-        /*
-        THIS WILL ALL HAVE TO BE MOVED TO THE VIEWMODEL BUT I DON'T KNOW HOW AND I'M VERY TIRED
-         */
-        this.player = (Player) getIntent().getSerializableExtra("PLAYER");
-        Log.d("name", player.getName());
-        this.marketInteractor = new MarketInteractor(this.player);
-
-        //getPrice method returns -1 if you cannot buy from this planet
         if (marketInteractor.getPrice(Item.WATER) == -1 ) {
             water_price_header.setText("X");
         } else {
-
-
             water_price_header.setText(Integer.toString(marketInteractor.getPrice(Item.WATER)));
         }
-
         water_ship_header.setText(Integer.toString(player.numberOf(Item.WATER)));
         water_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.WATER)));
-        credits_header.setText(Integer.toString(player.getCredits()));
-
     }
     public void onBuyWaterPressed(View view) {
         Log.d("Press", "buy water pressed");
