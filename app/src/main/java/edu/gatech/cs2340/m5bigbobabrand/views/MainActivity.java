@@ -17,7 +17,7 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Difficulty;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Player;
 import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
-import edu.gatech.cs2340.m5bigbobabrand.Model.Universe;
+import edu.gatech.cs2340.m5bigbobabrand.entity.Universe;
 
 import android.widget.Toast;
 
@@ -100,7 +100,10 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             Log.d("Edit", "Create Player Pressed");
+            Toast.makeText(this, "asdfasdf", Toast.LENGTH_LONG).show();
+
             this.player = new Player();
+
             player.setName(nameField.getText().toString());
             player.setEngineerPts(Integer.parseInt(engineerField.getText().toString()));
             player.setFighterPts(Integer.parseInt(fighterField.getText().toString()));
@@ -143,14 +146,19 @@ public class MainActivity extends AppCompatActivity {
                         + "\nPlanet 9: " + printMapArr[8].toString()
                         + "\nPlanet 10: " + printMapArr[9].toString());
                 Toast.makeText(this, "Universe and Player Created", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(this, SecondActivity.class);
+                player.setSolarSystem(gameUniverse.getUniverse().values().toArray(new SolarSystem[0])[0]);
+                Intent intent = new Intent(MainActivity.this, MarketActivity.class);
+                //this line is currently causing an error
+                //intent.putExtra("PLAYER", player);
                 this.startActivity(intent);
             } catch (IllegalArgumentException e) {
                 Log.d("Error", e.getMessage());
                 Toast.makeText(this, "Skill points must be positive and sum to 16!", Toast.LENGTH_LONG).show();
             }
         } catch (Throwable T) {
+            Log.d("Error", T.getMessage());
             Toast.makeText(this,"Enter all required fields", Toast.LENGTH_LONG).show();
+
         }
 
 

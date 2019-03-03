@@ -1,6 +1,8 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
-public class Player {
+import java.io.Serializable;
+
+public class Player implements Serializable {
 
     /** Player's name */
     private String name;
@@ -26,15 +28,22 @@ public class Player {
     /** Player's amount of credit points */
     private int credits;
 
+    /** SolarSystem player is in */
+    private SolarSystem solarSystem;
+
+
+
     /** Default starting amount of credits for a player */
     private final int STARTINGCREDITS = 1000;
+
     public Player() {
-        this("placeholder", 0, 0 ,0, 0, Difficulty.EASY);
+        this("placeholder", 0, 0 ,0, 0, Difficulty.EASY, null);
     }
 
 
 
-    public Player(String name, int pilotPts, int traderPts, int engineerPts, int fighterPts, Difficulty difficulty) {
+    public Player(String name, int pilotPts, int traderPts, int engineerPts, int fighterPts,
+                  Difficulty difficulty, SolarSystem solarSystem) {
         this.name = name;
         this.pilotPts = pilotPts;
         this.traderPts = traderPts;
@@ -43,6 +52,7 @@ public class Player {
         credits = STARTINGCREDITS;
         this.ship = new Ship();
         this.difficulty = difficulty;
+        this.solarSystem = solarSystem;
     }
 
     public String getName() {
@@ -114,5 +124,38 @@ public class Player {
     public void setShip(Ship ship) {
         this.ship = ship;
     }
+
+    public void setSolarSystem(SolarSystem solarSystem) {
+        this.solarSystem = solarSystem;
+    }
+
+    public SolarSystem getSolarSystem() {
+        return this.solarSystem;
+    }
+
+    public int getCargo() {
+        return this.ship.getCargo();
+    }
+
+    public int getMaxCargo() {
+        return this.ship.getMaxCargo();
+    }
+
+    public void receiveGood(Item good) {
+        this.ship.receiveGood(good);
+    }
+
+    public void loseGood(Item good) {
+        this.ship.loseGood(good);
+    }
+
+    public boolean has(Item good) {
+        return ship.has(good);
+    }
+
+    public int numberOf(Item good) {
+        return ship.numberOf(good);
+    }
+
 
 }

@@ -1,4 +1,4 @@
-package edu.gatech.cs2340.m5bigbobabrand.Model;
+package edu.gatech.cs2340.m5bigbobabrand.entity;
 
 import java.util.HashMap;
 import java.util.Map;

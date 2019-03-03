@@ -14,7 +14,8 @@ public enum IE {
     LACKOFWORK("LACK-OF-WORK", 6),
     RETIREMENT("RETIREMENT", 7),
     SNOWINATLANTA("SNOW-IN-ATLANTA!", 8),
-    SADBOIHOURS("SAD-BOI-HOURS", 9);
+    SADBOIHOURS("SAD-BOI-HOURS", 9),
+    NONE("NONE", 10);
 
     private String IEname;
     private int IEnum;
