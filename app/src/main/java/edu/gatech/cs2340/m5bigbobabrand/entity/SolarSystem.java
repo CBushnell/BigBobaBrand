@@ -24,14 +24,14 @@ public class SolarSystem implements Serializable {
     private static final int NAME_MAX_LENGTH = 17;
 
     //TechLevel probabilities
-    private static final int PREAGRICULTURE_CHANCE = 50;
-    private static final int AGRICULTURE_CHANCE = 60;
-    private static final int MEDIEVAL_CHANCE = 70;
-    private static final int RENAISSANCE_CHANCE = 85;
-    private static final int EARLYINDUSTRIAL_CHANCE = 90;
-    private static final int INDUSTRIAL_CHANCE = 94;
-    private static final int POSTINDUSTRIAL_CHANCE = 97;
-    private static final int HITECH_CHANCE = 99;
+    private static final int PREAGRICULTURE_CHANCE = 30;
+    private static final int AGRICULTURE_CHANCE = 45;
+    private static final int MEDIEVAL_CHANCE = 55;
+    private static final int RENAISSANCE_CHANCE = 68;
+    private static final int EARLYINDUSTRIAL_CHANCE = 75;
+    private static final int INDUSTRIAL_CHANCE = 80;
+    private static final int POSTINDUSTRIAL_CHANCE = 88;
+    private static final int HITECH_CHANCE = 95;
 
     //Resource probabilities
     private static final int NOSPECIALRESOURCES = 40;
