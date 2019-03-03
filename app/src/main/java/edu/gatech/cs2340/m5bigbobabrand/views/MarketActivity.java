@@ -20,7 +20,7 @@ public class MarketActivity extends AppCompatActivity {
     TextView water_ship_header;
     TextView furs_price_header;
     TextView furs_store_header;
-    TextView furs_ship_header
+    TextView furs_ship_header;
     TextView food_price_header;
     TextView food_store_header;
     TextView food_ship_header;
