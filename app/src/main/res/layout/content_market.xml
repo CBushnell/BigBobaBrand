@@ -257,6 +257,332 @@
         android:onClick="onSellWaterPressed"
         android:text="Sell" />`
 
+    <TextView
+        android:id="@+id/games_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="320dp"
+
+        android:text="Games Price : " />
+    <TextView
+        android:id="@+id/games_price_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="320dp"
+        android:text="111" />
+    <TextView
+        android:id="@+id/games_store_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="320dp"
+        android:text="112" />
+    <TextView
+        android:id="@+id/games_ship_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="320dp"
+        android:text="113" />
+
+    <Button
+        android:id="@+id/buy_games_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="310dp"
+        android:onClick="onBuyWaterPressed"
+        android:text="Buy" />
+
+    <Button
+        android:id="@+id/sell_games_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="310dp"
+        android:onClick="onSellWaterPressed"
+        android:text="Sell" />
+    <TextView
+        android:id="@+id/firearms_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="350dp"
+
+        android:text="Firearms Price : " />
+    <TextView
+        android:id="@+id/firearms_price_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="350dp"
+        android:text="111" />
+    <TextView
+        android:id="@+id/firearms_store_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="350dp"
+        android:text="112" />
+    <TextView
+        android:id="@+id/firearms_ship_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="350dp"
+        android:text="113" />
+
+    <Button
+        android:id="@+id/buy_firearms_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="340dp"
+        android:onClick="onBuyWaterPressed"
+        android:text="Buy" />
+
+    <Button
+        android:id="@+id/sell_firearms_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="340dp"
+        android:onClick="onSellWaterPressed"
+        android:text="Sell" />
+    <TextView
+        android:id="@+id/medicine_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="380dp"
+
+        android:text="Medicine Price : " />
+    <TextView
+        android:id="@+id/medicine_price_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="380dp"
+        android:text="111" />
+    <TextView
+        android:id="@+id/medicine_store_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="380dp"
+        android:text="112" />
+    <TextView
+        android:id="@+id/medicine_ship_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="380dp"
+        android:text="113" />
+
+    <Button
+        android:id="@+id/buy_medicine_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="370dp"
+        android:onClick="onBuyWaterPressed"
+        android:text="Buy" />
+
+    <Button
+        android:id="@+id/sell_medicine_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="370dp"
+        android:onClick="onSellWaterPressed"
+        android:text="Sell" />``
+    <TextView
+        android:id="@+id/machines_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="410dp"
+
+        android:text="Machines Price : " />
+    <TextView
+        android:id="@+id/machines_price_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="410dp"
+        android:text="111" />
+    <TextView
+        android:id="@+id/machines_store_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="410dp"
+        android:text="112" />
+    <TextView
+        android:id="@+id/machines_ship_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="410dp"
+        android:text="113" />
+
+    <Button
+        android:id="@+id/buy_machines_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="400dp"
+        android:onClick="onBuyWaterPressed"
+        android:text="Buy" />
+
+    <Button
+        android:id="@+id/sell_machines_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="400dp"
+        android:onClick="onSellWaterPressed"
+        android:text="Sell" />``
+    <TextView
+        android:id="@+id/narcotics_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="440dp"
+
+        android:text="Narcotics Price : " />
+    <TextView
+        android:id="@+id/narcotics_price_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="440dp"
+        android:text="111" />
+    <TextView
+        android:id="@+id/narcotics_store_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="440dp"
+        android:text="112" />
+    <TextView
+        android:id="@+id/narcotics_ship_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="440dp"
+        android:text="113" />
+
+    <Button
+        android:id="@+id/buy_narcotics_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="430dp"
+        android:onClick="onBuyWaterPressed"
+        android:text="Buy" />
+
+    <Button
+        android:id="@+id/sell_narcotics_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="430dp"
+        android:onClick="onSellWaterPressed"
+        android:text="Sell" />`
+    <TextView
+        android:id="@+id/robots_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="470dp"
+
+        android:text="Robots Price : " />
+    <TextView
+        android:id="@+id/robots_price_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="470dp"
+        android:text="111" />
+    <TextView
+        android:id="@+id/robots_store_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="470dp"
+        android:text="112" />
+    <TextView
+        android:id="@+id/robots_ship_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="470dp"
+        android:text="113" />
+
+    <Button
+        android:id="@+id/buy_robots_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="460dp"
+        android:onClick="onBuyWaterPressed"
+        android:text="Buy" />
+
+    <Button
+        android:id="@+id/sell_robots_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="460dp"
+        android:onClick="onSellWaterPressed"
+        android:text="Sell" />```
+    `
+
 
 
 </RelativeLayout>
