@@ -24,6 +24,16 @@ public class MarketActivity extends AppCompatActivity {
     TextView food_price_header;
     TextView food_store_header;
     TextView food_ship_header;
+    TextView ore_price_header;
+    TextView ore_store_header;
+    TextView ore_ship_header;
+    TextView games_price_header;
+    TextView games_store_header;
+    TextView games_ship_header;
+    TextView firearms_price_header;
+    TextView firearms_store_header;
+    TextView firearms_ship_header;
+
 
     TextView credits_header;
     MarketInteractor marketInteractor;
@@ -48,6 +58,19 @@ public class MarketActivity extends AppCompatActivity {
         food_store_header = findViewById(R.id.food_store_header);
         food_ship_header = findViewById(R.id.food_ship_header);
         foodSetUp();
+        ore_price_header = findViewById(R.id.ore_price_header);
+        ore_store_header = findViewById(R.id.ore_store_header);
+        ore_ship_header = findViewById(R.id.ore_ship_header);
+        oreSetUp();
+        games_price_header = findViewById(R.id.games_price_header);
+        games_store_header = findViewById(R.id.games_store_header);
+        games_ship_header = findViewById(R.id.games_ship_header);
+        gamesSetUp();
+        firearms_price_header = findViewById(R.id.firearms_price_header);
+        firearms_store_header = findViewById(R.id.firearms_store_header);
+        firearms_ship_header = findViewById(R.id.firearms_ship_header);
+        firearmsSetUp();
+
 
 
     }
@@ -95,5 +118,35 @@ public class MarketActivity extends AppCompatActivity {
         }
         food_ship_header.setText(Integer.toString(player.numberOf(Item.FOOD)));
         food_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FOOD)));
+    }
+
+    private void oreSetUp() {
+        if (marketInteractor.getPrice(Item.ORE) == -1 ) {
+            ore_price_header.setText("X");
+        } else {
+            ore_price_header.setText(Integer.toString(marketInteractor.getPrice(Item.ORE)));
+        }
+        ore_ship_header.setText(Integer.toString(player.numberOf(Item.ORE)));
+        ore_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ORE)));
+    }
+
+    private void gamesSetUp() {
+        if (marketInteractor.getPrice(Item.GAMES) == -1 ) {
+            games_price_header.setText("X");
+        } else {
+            games_price_header.setText(Integer.toString(marketInteractor.getPrice(Item.GAMES)));
+        }
+        games_ship_header.setText(Integer.toString(player.numberOf(Item.GAMES)));
+        games_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.GAMES)));
+    }
+
+    private void firearmsSetUp() {
+        if (marketInteractor.getPrice(Item.FIREARMS) == -1 ) {
+            firearms_price_header.setText("X");
+        } else {
+            firearms_price_header.setText(Integer.toString(marketInteractor.getPrice(Item.FIREARMS)));
+        }
+        firearms_ship_header.setText(Integer.toString(player.numberOf(Item.FIREARMS)));
+        firearms_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FIREARMS)));
     }
 }
