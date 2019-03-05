@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import edu.gatech.cs2340.m5bigbobabrand.Model.MarketInteractor;
 import edu.gatech.cs2340.m5bigbobabrand.R;
@@ -109,6 +110,12 @@ public class MarketActivity extends AppCompatActivity {
             water_ship_header.setText(Integer.toString(player.numberOf(Item.WATER)));
             water_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.WATER)));
             credits_header.setText(Integer.toString(player.getCredits()));
+        } else if (player.getCargo() >= player.getMaxCargo()) {
+            Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
+        } else if (player.getCredits() < this.marketInteractor.getPrice(Item.WATER)) {
+            Toast.makeText(this, "You do not have enough credits!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         }
     }
     public void onSellWaterPressed(View view) {
@@ -126,6 +133,12 @@ public class MarketActivity extends AppCompatActivity {
             furs_ship_header.setText(Integer.toString(player.numberOf(Item.FURS)));
             furs_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FURS)));
             credits_header.setText(Integer.toString(player.getCredits()));
+        } else if (player.getCargo() >= player.getMaxCargo()) {
+            Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
+        } else if (player.getCredits() < this.marketInteractor.getPrice(Item.FURS)) {
+            Toast.makeText(this, "You do not have enough credits!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         }
     }
     public void onSellFursPressed(View view) {
@@ -143,6 +156,12 @@ public class MarketActivity extends AppCompatActivity {
             food_ship_header.setText(Integer.toString(player.numberOf(Item.FOOD)));
             food_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FOOD)));
             credits_header.setText(Integer.toString(player.getCredits()));
+        } else if (player.getCargo() >= player.getMaxCargo()) {
+            Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
+        } else if (player.getCredits() < this.marketInteractor.getPrice(Item.FOOD)) {
+            Toast.makeText(this, "You do not have enough credits!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         }
     }
     public void onSellFoodPressed(View view) {
@@ -159,6 +178,12 @@ public class MarketActivity extends AppCompatActivity {
             ore_ship_header.setText(Integer.toString(player.numberOf(Item.ORE)));
             ore_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ORE)));
             credits_header.setText(Integer.toString(player.getCredits()));
+        } else if (player.getCargo() >= player.getMaxCargo()) {
+            Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
+        } else if (player.getCredits() < this.marketInteractor.getPrice(Item.ORE)) {
+            Toast.makeText(this, "You do not have enough credits!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         }
     }
     public void onSellOrePressed(View view) {
@@ -175,6 +200,12 @@ public class MarketActivity extends AppCompatActivity {
             games_ship_header.setText(Integer.toString(player.numberOf(Item.GAMES)));
             games_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.GAMES)));
             credits_header.setText(Integer.toString(player.getCredits()));
+        } else if (player.getCargo() >= player.getMaxCargo()) {
+            Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
+        } else if (player.getCredits() < this.marketInteractor.getPrice(Item.GAMES)) {
+            Toast.makeText(this, "You do not have enough credits!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         }
     }
     public void onSellGamesPressed(View view) {
@@ -191,6 +222,12 @@ public class MarketActivity extends AppCompatActivity {
             firearms_ship_header.setText(Integer.toString(player.numberOf(Item.FIREARMS)));
             firearms_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FIREARMS)));
             credits_header.setText(Integer.toString(player.getCredits()));
+        } else if (player.getCargo() >= player.getMaxCargo()) {
+            Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
+        } else if (player.getCredits() < this.marketInteractor.getPrice(Item.FIREARMS)) {
+            Toast.makeText(this, "You do not have enough credits!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         }
     }
     public void onSellFirearmsPressed(View view) {
@@ -208,6 +245,12 @@ public class MarketActivity extends AppCompatActivity {
             medicine_ship_header.setText(Integer.toString(player.numberOf(Item.MEDICINE)));
             medicine_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MEDICINE)));
             credits_header.setText(Integer.toString(player.getCredits()));
+        } else if (player.getCargo() >= player.getMaxCargo()) {
+            Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
+        } else if (player.getCredits() < this.marketInteractor.getPrice(Item.MEDICINE)) {
+            Toast.makeText(this, "You do not have enough credits!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         }
     }
     public void onSellMedicinePressed(View view) {
@@ -225,6 +268,12 @@ public class MarketActivity extends AppCompatActivity {
             machines_ship_header.setText(Integer.toString(player.numberOf(Item.MACHINES)));
             machines_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MACHINES)));
             credits_header.setText(Integer.toString(player.getCredits()));
+        } else if (player.getCargo() >= player.getMaxCargo()) {
+            Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
+        } else if (player.getCredits() < this.marketInteractor.getPrice(Item.MACHINES)) {
+            Toast.makeText(this, "You do not have enough credits!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         }
     }
     public void onSellMachinesPressed(View view) {
@@ -242,6 +291,12 @@ public class MarketActivity extends AppCompatActivity {
             narcotics_ship_header.setText(Integer.toString(player.numberOf(Item.NARCOTICS)));
             narcotics_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.NARCOTICS)));
             credits_header.setText(Integer.toString(player.getCredits()));
+        } else if (player.getCargo() >= player.getMaxCargo()) {
+            Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
+        } else if (player.getCredits() < this.marketInteractor.getPrice(Item.NARCOTICS)) {
+            Toast.makeText(this, "You do not have enough credits!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         }
     }
     public void onSellNarcoticsPressed(View view) {
@@ -259,6 +314,12 @@ public class MarketActivity extends AppCompatActivity {
             robots_ship_header.setText(Integer.toString(player.numberOf(Item.ROBOTS)));
             robots_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ROBOTS)));
             credits_header.setText(Integer.toString(player.getCredits()));
+        } else if (player.getCargo() >= player.getMaxCargo()) {
+            Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
+        } else if (player.getCredits() < this.marketInteractor.getPrice(Item.ROBOTS)) {
+            Toast.makeText(this, "You do not have enough credits!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         }
     }
     public void onSellRobotsPressed(View view) {
