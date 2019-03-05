@@ -10,19 +10,21 @@ public enum Item {
     MEDICINE(4,1,6,650,-20,10, IE.PLAGUE, ResourceLevel.LOTSOFHERBS, ResourceLevel.NEVER, 400, 700,6),
     MACHINES(4,3,5,900,-30,5, IE.LACKOFWORK,ResourceLevel.NEVER, ResourceLevel.NEVER, 600, 800,7),
     NARCOTICS(5,0,5,3500,-125,150, IE.BOREDOM,ResourceLevel.WEIRDMUSHROOMS, ResourceLevel.NEVER, 2000, 3000,8),
-    ROBOTS(6,4,7,5000,-150,100, IE.LACKOFWORK, ResourceLevel.NEVER, ResourceLevel.NEVER, 3500, 5000,9);
+    ROBOTS(6,4,7,5000,-150,100, IE.LACKOFWORK, ResourceLevel.NEVER, ResourceLevel.NEVER, 3500, 5000,9),
+    FUEL(0,0,5,6,-1,0,IE.SNOWINATLANTA,ResourceLevel.DESERT,ResourceLevel.MINERALPOOR,1,6,10);
 
-    private int MTLP;
-    private int MTLU;
-    private int TTP;
+
+    private int MTLP; //Min tech level to produce
+    private int MTLU; //Min tech level to use
+    private int TTP; //Tech level which produces the most
     private int basePrice;
-    private int IPL;
-    private int var;
-    private IE cat;
-    private ResourceLevel hap;
-    private ResourceLevel plan;
-    private int MTL;
-    private int MTH;
+    private int IPL; //Price increase per tech level
+    private int var; //Max price variance
+    private IE cat; //Radical price increase event
+    private ResourceLevel hap; //Increased stock conditions
+    private ResourceLevel plan; //Decreased stock conditions
+    private int MTL; //Min price offered in space trade
+    private int MTH; //Max price offered in space trade
     private int ords;
 
 
