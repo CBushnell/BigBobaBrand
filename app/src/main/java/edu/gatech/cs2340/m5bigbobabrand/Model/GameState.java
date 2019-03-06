@@ -6,12 +6,19 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.Universe;
 public class GameState {
     private Universe universe;
     private Player player;
-    public GameState() {
-        this.universe = null;
-        this.player = null;
-    }
+    public static GameState myGame;
     public void startGame(Universe universe, Player player) {
-        this.universe = universe;
+        myGame.universe = universe;
+        myGame.player = player;
+    }
+    public Universe getUniverse() {
+        return this.universe;
+    }
+    public Player getPlayer() {
+        return this.player;
+    }
+    public void setPlayer(Player player) {
         this.player = player;
     }
+
 }
