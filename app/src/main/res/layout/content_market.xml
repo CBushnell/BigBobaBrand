@@ -146,14 +146,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginStart="190dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="75dp"
         android:text="113" />
     <TextView
         android:id="@+id/tech_level_text_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="75dp"
         android:layout_marginStart="145dp"
         android:text="Tech\nLevel: " />
     <TextView
@@ -161,7 +161,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="290dp"
+        android:layout_marginStart="320dp"
         android:layout_marginTop="25dp"
         android:text="113" />
     <TextView
@@ -170,14 +170,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="250dp"
+        android:layout_marginStart="280dp"
         android:text="Curr\nCargo: " />
     <TextView
         android:id="@+id/max_cargo_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="290dp"
+        android:layout_marginStart="320dp"
         android:layout_marginTop="65dp"
         android:text="113" />
     <TextView
@@ -186,7 +186,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginTop="55dp"
-        android:layout_marginStart="250dp"
+        android:layout_marginStart="280dp"
         android:text="Max\nCargo: " />
 
     <TextView

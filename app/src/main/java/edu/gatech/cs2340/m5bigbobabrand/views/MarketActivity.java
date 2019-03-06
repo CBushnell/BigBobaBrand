@@ -70,10 +70,8 @@ public class MarketActivity extends AppCompatActivity {
         planet_header = findViewById(R.id.planet_header);
         planet_header.setText(player.getSolarSystem().getName());
         curr_cargo_header = findViewById(R.id.total_cargo_header);
-        curr_cargo_header.setText(Integer.toString(player.getCargo()));
         max_cargo_header = findViewById(R.id.max_cargo_header);
-        curr_cargo_header.setText(Integer.toString(player.getMaxCargo()));
-
+        updateCargo();
 
         water_price_header = findViewById(R.id.water_price_header);
         water_store_header = findViewById(R.id.water_store_header);
@@ -119,12 +117,18 @@ public class MarketActivity extends AppCompatActivity {
 
 
     }
+
+    private void updateCargo() {
+        curr_cargo_header.setText(Integer.toString(player.getCargo()));
+        max_cargo_header.setText(Integer.toString(player.getMaxCargo()));
+    }
     public void onBuyWaterPressed(View view) {
         Log.d("Press", "buy water pressed");
         if(this.marketInteractor.buy(Item.WATER)) {
             water_ship_header.setText(Integer.toString(player.numberOf(Item.WATER)));
             water_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.WATER)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
     public void onSellWaterPressed(View view) {
@@ -133,6 +137,7 @@ public class MarketActivity extends AppCompatActivity {
             water_ship_header.setText(Integer.toString(player.numberOf(Item.WATER)));
             water_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.WATER)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
 
@@ -142,6 +147,7 @@ public class MarketActivity extends AppCompatActivity {
             furs_ship_header.setText(Integer.toString(player.numberOf(Item.FURS)));
             furs_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FURS)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
     public void onSellFursPressed(View view) {
@@ -150,6 +156,7 @@ public class MarketActivity extends AppCompatActivity {
             furs_ship_header.setText(Integer.toString(player.numberOf(Item.FURS)));
             furs_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FURS)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
 
@@ -159,6 +166,7 @@ public class MarketActivity extends AppCompatActivity {
             food_ship_header.setText(Integer.toString(player.numberOf(Item.FOOD)));
             food_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FOOD)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
     public void onSellFoodPressed(View view) {
@@ -167,6 +175,7 @@ public class MarketActivity extends AppCompatActivity {
             food_ship_header.setText(Integer.toString(player.numberOf(Item.FOOD)));
             food_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FOOD)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
     public void onBuyOrePressed(View view) {
@@ -175,6 +184,7 @@ public class MarketActivity extends AppCompatActivity {
             ore_ship_header.setText(Integer.toString(player.numberOf(Item.ORE)));
             ore_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ORE)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
     public void onSellOrePressed(View view) {
@@ -183,6 +193,7 @@ public class MarketActivity extends AppCompatActivity {
             ore_ship_header.setText(Integer.toString(player.numberOf(Item.ORE)));
             ore_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ORE)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
     public void onBuyGamesPressed(View view) {
@@ -191,6 +202,7 @@ public class MarketActivity extends AppCompatActivity {
             games_ship_header.setText(Integer.toString(player.numberOf(Item.GAMES)));
             games_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.GAMES)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
     public void onSellGamesPressed(View view) {
@@ -199,6 +211,7 @@ public class MarketActivity extends AppCompatActivity {
             games_ship_header.setText(Integer.toString(player.numberOf(Item.GAMES)));
             games_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.GAMES)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
     public void onBuyFirearmsPressed(View view) {
@@ -207,6 +220,7 @@ public class MarketActivity extends AppCompatActivity {
             firearms_ship_header.setText(Integer.toString(player.numberOf(Item.FIREARMS)));
             firearms_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FIREARMS)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
     public void onSellFirearmsPressed(View view) {
@@ -215,6 +229,7 @@ public class MarketActivity extends AppCompatActivity {
             firearms_ship_header.setText(Integer.toString(player.numberOf(Item.FIREARMS)));
             firearms_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FIREARMS)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
 
@@ -224,6 +239,7 @@ public class MarketActivity extends AppCompatActivity {
             medicine_ship_header.setText(Integer.toString(player.numberOf(Item.MEDICINE)));
             medicine_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MEDICINE)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
     public void onSellMedicinePressed(View view) {
@@ -232,6 +248,7 @@ public class MarketActivity extends AppCompatActivity {
             medicine_ship_header.setText(Integer.toString(player.numberOf(Item.MEDICINE)));
             medicine_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MEDICINE)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
 
@@ -241,6 +258,7 @@ public class MarketActivity extends AppCompatActivity {
             machines_ship_header.setText(Integer.toString(player.numberOf(Item.MACHINES)));
             machines_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MACHINES)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
     public void onSellMachinesPressed(View view) {
@@ -249,6 +267,7 @@ public class MarketActivity extends AppCompatActivity {
             machines_ship_header.setText(Integer.toString(player.numberOf(Item.MACHINES)));
             machines_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MACHINES)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
 
@@ -258,6 +277,7 @@ public class MarketActivity extends AppCompatActivity {
             narcotics_ship_header.setText(Integer.toString(player.numberOf(Item.NARCOTICS)));
             narcotics_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.NARCOTICS)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
     public void onSellNarcoticsPressed(View view) {
@@ -266,6 +286,7 @@ public class MarketActivity extends AppCompatActivity {
             narcotics_ship_header.setText(Integer.toString(player.numberOf(Item.NARCOTICS)));
             narcotics_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.NARCOTICS)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
 
@@ -275,6 +296,7 @@ public class MarketActivity extends AppCompatActivity {
             robots_ship_header.setText(Integer.toString(player.numberOf(Item.ROBOTS)));
             robots_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ROBOTS)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
     public void onSellRobotsPressed(View view) {
@@ -283,6 +305,7 @@ public class MarketActivity extends AppCompatActivity {
             robots_ship_header.setText(Integer.toString(player.numberOf(Item.ROBOTS)));
             robots_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ROBOTS)));
             credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
         }
     }
 

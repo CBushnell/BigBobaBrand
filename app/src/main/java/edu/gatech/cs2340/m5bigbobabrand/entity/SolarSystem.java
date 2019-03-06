@@ -16,12 +16,11 @@ public class SolarSystem implements Serializable {
     private ResourceLevel resourceLevel;
     private Coordinates coordinates;
     private PoliticalSystem politicalSystem;
-    private Market market;
     private int id;
 
     private static final int HASH_SEED = 31;
     private static final int NAME_MIN_LENGTH = 3;
-    private static final int NAME_MAX_LENGTH = 17;
+    private static final int NAME_MAX_LENGTH = 8;
 
     //TechLevel probabilities
     private static final int PREAGRICULTURE_CHANCE = 30;
@@ -278,4 +277,5 @@ public class SolarSystem implements Serializable {
         return this.name + " at " + this.coordinates.toString() + " (" + this.resourceLevel.toString() + ", "
                 + this.techLevel.toString() + ", " + this.politicalSystem.toString() + ")";
     }
+
 }
