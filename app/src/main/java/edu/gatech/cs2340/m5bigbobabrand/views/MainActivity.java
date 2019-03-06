@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import edu.gatech.cs2340.m5bigbobabrand.Model.GameState;
 import edu.gatech.cs2340.m5bigbobabrand.R;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Difficulty;
@@ -147,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
                         + "\nPlanet 10: " + printMapArr[9].toString());
                 Toast.makeText(this, "Universe and Player Created", Toast.LENGTH_LONG).show();
                 player.setSolarSystem(gameUniverse.getUniverse().values().toArray(new SolarSystem[0])[0]);
+                GameState.myGame.setPlayer(player);
                 Intent intent = new Intent(MainActivity.this, MarketActivity.class);
                 //this line is currently causing an error
                 intent.putExtra("PLAYER", player);

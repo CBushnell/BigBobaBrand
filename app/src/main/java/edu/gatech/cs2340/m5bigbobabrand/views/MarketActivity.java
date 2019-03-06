@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import edu.gatech.cs2340.m5bigbobabrand.Model.GameState;
 import edu.gatech.cs2340.m5bigbobabrand.Model.MarketInteractor;
 import edu.gatech.cs2340.m5bigbobabrand.R;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
@@ -59,6 +60,7 @@ public class MarketActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("test", GameState.myGame.getPlayer().getName() + "4");
         setContentView(R.layout.activity_market);
         this.player = (Player) getIntent().getSerializableExtra("PLAYER");
         this.marketInteractor = new MarketInteractor(this.player);
