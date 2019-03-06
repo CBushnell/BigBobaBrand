@@ -60,7 +60,6 @@ public class MarketActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("test", GameState.myGame.getPlayer().getName() + "4");
         setContentView(R.layout.activity_market);
         this.player = (Player) getIntent().getSerializableExtra("PLAYER");
         this.marketInteractor = new MarketInteractor(this.player);
