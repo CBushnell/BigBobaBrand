@@ -359,7 +359,7 @@ public class MarketActivity extends AppCompatActivity {
             updateCargo();
         } else if (player.getCargo() >= player.getMaxCargo()) {
             Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
-        } else if (player.getCredits() < this.marketInteractor.getPrice(Item.MACHINES)) {
+        } else if (player.getCredits() < this.marketInteractor.getPrice(Item.NARCOTICS)) {
             Toast.makeText(this, "You do not have enough credits!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.NARCOTICS) <= 0 || this.marketInteractor.marketNumberOf(Item.NARCOTICS) <= 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
