@@ -61,7 +61,7 @@ public class MarketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
-        this.player = (Player) getIntent().getSerializableExtra("PLAYER");
+        this.player = GameState.myGame.getPlayer();
         this.marketInteractor = new MarketInteractor(this.player);
         credits_header = findViewById(R.id.credits_header);
         credits_header.setText(Integer.toString(player.getCredits()));
@@ -115,9 +115,6 @@ public class MarketActivity extends AppCompatActivity {
         robots_store_header = findViewById(R.id.robots_store_header);
         robots_ship_header = findViewById(R.id.robots_ship_header);
         robotsSetUp();
-
-
-
     }
 
     private void updateCargo() {
