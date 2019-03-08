@@ -128,7 +128,7 @@ public class MarketActivity extends AppCompatActivity {
             water_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.WATER)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
-        } else if (this.marketInteractor.getPrice(Item.WATER) < 0) {
+        } else if (this.marketInteractor.getPrice(Item.WATER) <= 0 || this.marketInteractor.marketNumberOf(Item.WATER) <= 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         } else if (player.getCargo() >= player.getMaxCargo()) {
             Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
@@ -143,10 +143,10 @@ public class MarketActivity extends AppCompatActivity {
             water_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.WATER)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
+        } else if (!player.getShip().has(Item.WATER)) {
+            Toast.makeText(this, "You don't have any narcotics to sell!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.WATER) < 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "You don't have any water to sell!", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -157,7 +157,7 @@ public class MarketActivity extends AppCompatActivity {
             furs_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FURS)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
-        } else if (this.marketInteractor.getPrice(Item.FURS) < 0) {
+        } else if (this.marketInteractor.getPrice(Item.FURS) <= 0  || this.marketInteractor.marketNumberOf(Item.FURS) <= 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         } else if (player.getCargo() >= player.getMaxCargo()) {
             Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
@@ -172,10 +172,10 @@ public class MarketActivity extends AppCompatActivity {
             furs_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FURS)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
+        } else if (!player.getShip().has(Item.FURS)) {
+            Toast.makeText(this, "You don't have any narcotics to sell!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.FURS) < 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "You don't have any fur to sell!", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -186,7 +186,7 @@ public class MarketActivity extends AppCompatActivity {
             food_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FOOD)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
-        } else if (this.marketInteractor.getPrice(Item.FOOD) < 0) {
+        } else if (this.marketInteractor.getPrice(Item.FOOD) <= 0 || this.marketInteractor.marketNumberOf(Item.FOOD) <= 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         } else if (player.getCargo() >= player.getMaxCargo()) {
             Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
@@ -201,10 +201,10 @@ public class MarketActivity extends AppCompatActivity {
             food_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FOOD)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
+        } else if (!player.getShip().has(Item.FOOD)) {
+            Toast.makeText(this, "You don't have any narcotics to sell!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.FOOD) < 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "You don't have any food to sell!", Toast.LENGTH_LONG).show();
         }
     }
     public void onBuyOrePressed(View view) {
@@ -214,7 +214,7 @@ public class MarketActivity extends AppCompatActivity {
             ore_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ORE)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
-        } else if (this.marketInteractor.getPrice(Item.ORE) < 0) {
+        } else if (this.marketInteractor.getPrice(Item.ORE) <= 0  || this.marketInteractor.marketNumberOf(Item.ORE) <= 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         } else if (player.getCargo() >= player.getMaxCargo()) {
             Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
@@ -229,10 +229,10 @@ public class MarketActivity extends AppCompatActivity {
             ore_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ORE)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
+        } else if (!player.getShip().has(Item.ORE)) {
+            Toast.makeText(this, "You don't have any narcotics to sell!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.ORE) < 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "You don't have any ore to sell!", Toast.LENGTH_LONG).show();
         }
     }
     public void onBuyGamesPressed(View view) {
@@ -242,7 +242,7 @@ public class MarketActivity extends AppCompatActivity {
             games_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.GAMES)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
-        } else if (this.marketInteractor.getPrice(Item.GAMES) < 0) {
+        } else if (this.marketInteractor.getPrice(Item.GAMES) <= 0  || this.marketInteractor.marketNumberOf(Item.GAMES) <= 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         } else if (player.getCargo() >= player.getMaxCargo()) {
             Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
@@ -257,10 +257,10 @@ public class MarketActivity extends AppCompatActivity {
             games_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.GAMES)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
+        } else if (!player.getShip().has(Item.GAMES)) {
+            Toast.makeText(this, "You don't have any narcotics to sell!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.GAMES) < 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "You don't have any games to sell!", Toast.LENGTH_LONG).show();
         }
     }
     public void onBuyFirearmsPressed(View view) {
@@ -270,7 +270,7 @@ public class MarketActivity extends AppCompatActivity {
             firearms_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FIREARMS)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
-        } else if (this.marketInteractor.getPrice(Item.FIREARMS) < 0) {
+        } else if (this.marketInteractor.getPrice(Item.FIREARMS) <= 0 || this.marketInteractor.marketNumberOf(Item.FIREARMS) <= 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         } else if (player.getCargo() >= player.getMaxCargo()) {
             Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
@@ -285,10 +285,10 @@ public class MarketActivity extends AppCompatActivity {
             firearms_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FIREARMS)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
+        } else if (!player.getShip().has(Item.FIREARMS)) {
+            Toast.makeText(this, "You don't have any narcotics to sell!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.FIREARMS) < 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "You don't have any firearms to sell!", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -299,7 +299,7 @@ public class MarketActivity extends AppCompatActivity {
             medicine_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MEDICINE)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
-        } else if (this.marketInteractor.getPrice(Item.MEDICINE) < 0) {
+        } else if (this.marketInteractor.getPrice(Item.MEDICINE) <= 0 || this.marketInteractor.marketNumberOf(Item.MEDICINE) <= 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         } else if (player.getCargo() >= player.getMaxCargo()) {
             Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
@@ -314,10 +314,10 @@ public class MarketActivity extends AppCompatActivity {
             medicine_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MEDICINE)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
+        } else if (!player.getShip().has(Item.MEDICINE)) {
+            Toast.makeText(this, "You don't have any narcotics to sell!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.MEDICINE) < 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "You don't have any medicine to sell!", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -328,7 +328,7 @@ public class MarketActivity extends AppCompatActivity {
             machines_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MACHINES)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
-        } else if (this.marketInteractor.getPrice(Item.MACHINES) < 0) {
+        } else if (this.marketInteractor.getPrice(Item.MACHINES) <= 0 || this.marketInteractor.marketNumberOf(Item.MACHINES) <= 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         } else if (player.getCargo() >= player.getMaxCargo()) {
             Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
@@ -343,10 +343,10 @@ public class MarketActivity extends AppCompatActivity {
             machines_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.MACHINES)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
+        } else if (!player.getShip().has(Item.MACHINES)) {
+            Toast.makeText(this, "You don't have any narcotics to sell!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.MACHINES) < 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "You don't have any machines to sell!", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -357,7 +357,7 @@ public class MarketActivity extends AppCompatActivity {
             narcotics_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.NARCOTICS)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
-        } else if (this.marketInteractor.getPrice(Item.NARCOTICS) < 0) {
+        } else if (this.marketInteractor.getPrice(Item.NARCOTICS) <= 0 || this.marketInteractor.marketNumberOf(Item.NARCOTICS) <= 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         } else if (player.getCargo() >= player.getMaxCargo()) {
             Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
@@ -372,10 +372,10 @@ public class MarketActivity extends AppCompatActivity {
             narcotics_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.NARCOTICS)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
+        } else if (!player.getShip().has(Item.NARCOTICS)) {
+            Toast.makeText(this, "You don't have any narcotics to sell!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.NARCOTICS) < 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "You don't have any narcotics to sell!", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -386,7 +386,7 @@ public class MarketActivity extends AppCompatActivity {
             robots_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ROBOTS)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
-        } else if (this.marketInteractor.getPrice(Item.ROBOTS) < 0) {
+        } else if (this.marketInteractor.getPrice(Item.ROBOTS) <= 0 || this.marketInteractor.marketNumberOf(Item.ROBOTS) <= 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         } else if (player.getCargo() >= player.getMaxCargo()) {
             Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
@@ -401,10 +401,10 @@ public class MarketActivity extends AppCompatActivity {
             robots_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ROBOTS)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
+        } else if (!player.getShip().has(Item.ROBOTS)) {
+            Toast.makeText(this, "You don't have any narcotics to sell!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.ROBOTS) < 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "You don't have any robots to sell!", Toast.LENGTH_LONG).show();
         }
     }
 
