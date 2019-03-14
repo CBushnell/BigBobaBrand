@@ -46,7 +46,7 @@ public class MarketInteractor {
             price = price * 2;
         }
 
-        return price;
+        return Math.abs(price);
     }
 
     private IE calcIE() {

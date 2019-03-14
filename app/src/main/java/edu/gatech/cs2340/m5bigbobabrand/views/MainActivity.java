@@ -150,8 +150,6 @@ public class MainActivity extends AppCompatActivity {
                 player.setSolarSystem(gameUniverse.getUniverse().values().toArray(new SolarSystem[0])[0]);
                 GameState.myGame.setPlayer(player);
                 Intent intent = new Intent(MainActivity.this, MarketActivity.class);
-                //this line is currently causing an error
-                intent.putExtra("PLAYER", player);
                 this.startActivity(intent);
             } catch (IllegalArgumentException e) {
                 Log.d("Error", e.getMessage());
