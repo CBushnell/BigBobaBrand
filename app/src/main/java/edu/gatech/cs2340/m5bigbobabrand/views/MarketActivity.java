@@ -1,5 +1,6 @@
 package edu.gatech.cs2340.m5bigbobabrand.views;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import edu.gatech.cs2340.m5bigbobabrand.Model.GameState;
 import edu.gatech.cs2340.m5bigbobabrand.Model.MarketInteractor;
 import edu.gatech.cs2340.m5bigbobabrand.R;
+import edu.gatech.cs2340.m5bigbobabrand.TravelActivity;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Item;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Player;
@@ -506,6 +508,11 @@ public class MarketActivity extends AppCompatActivity {
         }
         robots_ship_header.setText(Integer.toString(player.numberOf(Item.ROBOTS)));
         robots_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ROBOTS)));
+    }
+
+    public void onTravelPressed(View view) {
+        Intent intent = new Intent(MarketActivity.this, TravelActivity.class);
+        this.startActivity(intent);
     }
 
 }
