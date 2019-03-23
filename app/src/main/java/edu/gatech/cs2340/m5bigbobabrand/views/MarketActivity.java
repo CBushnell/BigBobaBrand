@@ -11,11 +11,8 @@ import android.widget.Toast;
 import edu.gatech.cs2340.m5bigbobabrand.Model.GameState;
 import edu.gatech.cs2340.m5bigbobabrand.Model.MarketInteractor;
 import edu.gatech.cs2340.m5bigbobabrand.R;
-import edu.gatech.cs2340.m5bigbobabrand.TravelActivity;
-import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Item;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Player;
-import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 
 public class MarketActivity extends AppCompatActivity {
     private Player player;

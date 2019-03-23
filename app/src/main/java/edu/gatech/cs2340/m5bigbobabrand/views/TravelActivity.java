@@ -1,4 +1,4 @@
-package edu.gatech.cs2340.m5bigbobabrand;
+package edu.gatech.cs2340.m5bigbobabrand.views;
 
 import android.content.DialogInterface;
 import android.graphics.Color;
@@ -11,7 +11,7 @@ import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 import com.hitomi.cmlibrary.OnMenuStatusChangeListener;
 
-import edu.gatech.cs2340.m5bigbobabrand.views.MainActivity;
+import edu.gatech.cs2340.m5bigbobabrand.R;
 
 
 public class TravelActivity extends AppCompatActivity {
