@@ -11,7 +11,7 @@ public class GameState {
         this.player = null;
         this.universe = null;
     }
-    public void startGame(Universe universe, Player player) {
+    public static void startGame(Universe universe, Player player) {
         myGame.universe = universe;
         myGame.player = player;
     }

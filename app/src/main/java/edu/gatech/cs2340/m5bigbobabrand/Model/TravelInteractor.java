@@ -22,4 +22,5 @@ public class TravelInteractor {
         }
         return fuelCost;
     }
+
 }

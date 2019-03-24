@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_travel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:padding="0dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="edu.gatech.cs2340.m5bigbobabrand.views.TravelActivity"
+    tools:showIn="@layout/activity_travel">
+
+    <Button
+        android:id="@+id/planetbutton1"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/planetbutton2"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/planetbutton3"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/planetbutton4"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/planetbutton5"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/planetbutton6"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/planetbutton7"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="0dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/planetbutton8"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="0dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/planetbutton9"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="0dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/planetbutton10"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:text="Button" />
+</RelativeLayout>

@@ -148,7 +148,8 @@ public class MainActivity extends AppCompatActivity {
                         + "\nPlanet 10: " + printMapArr[9].toString());
                 Toast.makeText(this, "Universe and Player Created", Toast.LENGTH_LONG).show();
                 player.setSolarSystem(gameUniverse.getUniverse().values().toArray(new SolarSystem[0])[0]);
-                GameState.myGame.setPlayer(player);
+                GameState.startGame(gameUniverse, player);
+
                 Intent intent = new Intent(MainActivity.this, MarketActivity.class);
                 this.startActivity(intent);
             } catch (IllegalArgumentException e) {
