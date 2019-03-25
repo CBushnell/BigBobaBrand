@@ -44,8 +44,6 @@ public class TravelActivity extends AppCompatActivity {
 
     private Player player;
     private Universe universe;
-    static boolean clicked = false;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,6 +128,13 @@ public class TravelActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * creates an alert dialog displaying fuel cost and asking if user wishes to travel
+     * if yes selected, the travel is attempted. Cannot be in attempt method due to asynchronous
+     * nature of dialogs
+     *
+     * @param planetNum index + 1 in the array of the planet the player is attempting to travel to
+     */
     private void askForTravel(int planetNum) {
         final int num = planetNum;
         SolarSystem[] solarSystems = this.universe.getUniverse()
