@@ -1,8 +1,8 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
 public enum ShipType {
-    GNAT("Gnat", 10),
-    FLEA("Flea", 15),
+    GNAT("Gnat", 15),
+    FLEA("Flea", 18),
     FIREFlY("Firefly", 20),
     MOSQUITO("Mosquito", 30),
     BUMBLEBEE("Bumblebee", 40),

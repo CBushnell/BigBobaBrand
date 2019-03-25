@@ -143,17 +143,18 @@
     <TextView
         android:id="@+id/tech_level_header"
         android:layout_width="wrap_content"
+        android:maxWidth="80dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginStart="190dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="55dp"
         android:text="113" />
     <TextView
         android:id="@+id/tech_level_text_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="55dp"
         android:layout_marginStart="145dp"
         android:text="Tech\nLevel: " />
     <TextView
@@ -632,6 +633,16 @@
         android:layout_marginTop="470dp"
 
         android:text="Robots" />
+
+    <TextView
+        android:id="@+id/fuel_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="500dp"
+
+        android:text="Fuel" />
+
     <TextView
         android:id="@+id/robots_price_header"
         android:layout_width="wrap_content"
@@ -640,6 +651,16 @@
         android:layout_marginStart="85dp"
         android:layout_marginTop="470dp"
         android:text="111" />
+
+    <TextView
+        android:id="@+id/fuel_price_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="500dp"
+        android:text="111" />
+
     <TextView
         android:id="@+id/robots_store_header"
         android:layout_width="wrap_content"
@@ -648,6 +669,7 @@
         android:layout_marginStart="280dp"
         android:layout_marginTop="470dp"
         android:text="112" />
+
     <TextView
         android:id="@+id/robots_ship_header"
         android:layout_width="wrap_content"
@@ -657,6 +679,23 @@
         android:layout_marginTop="470dp"
         android:text="113" />
 
+    <TextView
+        android:id="@+id/fuel_store_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="500dp"
+        android:text="112" />
+
+    <TextView
+        android:id="@+id/fuel_ship_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="500dp"
+        android:text="113" />
     <Button
         android:id="@+id/buy_robots_button"
         android:layout_width="73dp"
@@ -680,12 +719,34 @@
         android:text="Sell" />
 
     <Button
+        android:id="@+id/buy_fuel_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="490dp"
+        android:onClick="onBuyFuelPressed"
+        android:text="Buy" />
+
+    <Button
+        android:id="@+id/sell_fuel_button"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="490dp"
+        android:onClick="onSellFuelPressed"
+        android:text="Sell" />
+
+    <Button
         android:id="@+id/travel_button"
         android:layout_width="80dp"
         android:layout_height="38dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="499dp"
+        android:layout_marginTop="524dp"
         android:onClick="onTravelPressed"
         android:text="Travel" />
     `

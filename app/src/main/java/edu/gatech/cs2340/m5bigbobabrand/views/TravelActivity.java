@@ -1,12 +1,15 @@
 package edu.gatech.cs2340.m5bigbobabrand.views;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hitomi.cmlibrary.CircleMenu;
@@ -14,7 +17,9 @@ import com.hitomi.cmlibrary.OnMenuSelectedListener;
 import com.hitomi.cmlibrary.OnMenuStatusChangeListener;
 
 import edu.gatech.cs2340.m5bigbobabrand.Model.GameState;
+import edu.gatech.cs2340.m5bigbobabrand.Model.TravelInteractor;
 import edu.gatech.cs2340.m5bigbobabrand.R;
+import edu.gatech.cs2340.m5bigbobabrand.entity.Item;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Player;
 import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Universe;
@@ -35,8 +40,10 @@ public class TravelActivity extends AppCompatActivity {
     Button planetbutton9;
     Button planetbutton10;
 
+
     private Player player;
     private Universe universe;
+    static boolean clicked = false;
 
 
     @Override
@@ -53,6 +60,7 @@ public class TravelActivity extends AppCompatActivity {
         planetbutton8 = findViewById(R.id.planetbutton8);
         planetbutton9 = findViewById(R.id.planetbutton9);
         planetbutton10 = findViewById(R.id.planetbutton10);
+
         this.player = GameState.myGame.getPlayer();
         this.universe = GameState.myGame.getUniverse();
         Log.d("debug", "onCreate: asdfasdf");
@@ -63,6 +71,11 @@ public class TravelActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * sets locations of buttons on the screen based on solar system coordinates
+     *
+     * @param solarSystems solarSystem of the game
+     */
     private void setButtonLocations(SolarSystem[] solarSystems) {
         SolarSystem solarSystem1 = solarSystems[0];
         planetbutton1.setTranslationX(140 + solarSystem1.getCoordinates().getX() * 8);
@@ -115,6 +128,140 @@ public class TravelActivity extends AppCompatActivity {
         planetbutton10.setText(solarSystem10.getName());
 
     }
+
+    /**
+     * Attempts to travel the player to the specified planet
+     *
+     * @param planetNum index + 1 in the array of the planet the player is attempting to travel to
+     */
+    private void travelAttempted(int planetNum) {
+        SolarSystem[] solarSystems = this.universe.getUniverse().values().toArray(new SolarSystem[0]);
+
+        //if player's current solarsystem is the button clicked, nothing happens
+        if (player.getSolarSystem().equals(solarSystems[planetNum - 1])) {
+            Toast.makeText(this, "Currently on this planet", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+
+        //calculates fuel costs
+        TravelInteractor travelCostCalculator = new TravelInteractor(player.getSolarSystem(),
+                solarSystems[planetNum - 1]);
+
+        int fuelCost = travelCostCalculator.calculateFuelCosts();
+        String fuelMessage = "Traveling to planet " + solarSystems[planetNum - 1].getName()
+                + " will cost " + fuelCost + " fuel";
+
+        int subtracted = 0;
+
+        //subtracts fuel cost from player's fuel, breaks loop if out of fuel
+        while (subtracted < fuelCost) {
+            if (player.has(Item.FUEL)) {
+                player.loseGood(Item.FUEL);
+                subtracted++;
+            } else {
+                break;
+            }
+        }
+
+        //if player had enough fuel, travel is performed,
+        // otherwise player remains on planet and receives his fuel back
+        if (subtracted == fuelCost) {
+            player.setSolarSystem(solarSystems[planetNum - 1]);
+            Intent intent = new Intent(TravelActivity.this, MarketActivity.class);
+            this.startActivity(intent);
+        } else {
+            while (subtracted > 0) {
+                player.receiveGood(Item.FUEL);
+                subtracted--;
+            }
+            Toast.makeText(this, "Not Enough fuel to travel to "
+                    + solarSystems[planetNum - 1].getName(), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    /**
+     * On button press, calls a travel attempt between current planet and planet 1
+     *
+     * @param view the button clicked
+     */
+    public void onPlanetButton1Pressed(View view) {
+        travelAttempted(1);
+    }
+    /**
+     * On button press, calls a travel attempt between current planet and planet 2
+     *
+     * @param view the button clicked
+     */
+    public void onPlanetButton2Pressed(View view) {
+        travelAttempted(2);
+    }
+    /**
+     * On button press, calls a travel attempt between current planet and planet 3
+     *
+     * @param view the button clicked
+     */
+    public void onPlanetButton3Pressed(View view) {
+        travelAttempted(3);
+    }
+    /**
+     * On button press, calls a travel attempt between current planet and planet 4
+     *
+     * @param view the button clicked
+     */
+    public void onPlanetButton4Pressed(View view) {
+        travelAttempted(4);
+    }
+    /**
+     * On button press, calls a travel attempt between current planet and planet 5
+     *
+     * @param view the button clicked
+     */
+    public void onPlanetButton5Pressed(View view) {
+        travelAttempted(5);
+    }
+    /**
+     * On button press, calls a travel attempt between current planet and planet 6
+     *
+     * @param view the button clicked
+     */
+    public void onPlanetButton6Pressed(View view) {
+        travelAttempted(6);
+    }
+    /**
+     * On button press, calls a travel attempt between current planet and planet 7
+     *
+     * @param view the button clicked
+     */
+    public void onPlanetButton7Pressed(View view) {
+        travelAttempted(7);
+    }
+    /**
+     * On button press, calls a travel attempt between current planet and planet 8
+     *
+     * @param view the button clicked
+     */
+    public void onPlanetButton8Pressed(View view) {
+        travelAttempted(8);
+    }
+    /**
+     * On button press, calls a travel attempt between current planet and planet 9
+     *
+     * @param view the button clicked
+     */
+    public void onPlanetButton9Pressed(View view) {
+        travelAttempted(9);
+    }
+    /**
+     * On button press, calls a travel attempt between current planet and planet 10
+     *
+     * @param view the button clicked
+     */
+    public void onPlanetButton10Pressed(View view) {
+        travelAttempted(10);
+    }
+
 
 
 }

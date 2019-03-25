@@ -46,6 +46,9 @@ public class MarketActivity extends AppCompatActivity {
     TextView robots_price_header;
     TextView robots_store_header;
     TextView robots_ship_header;
+    TextView fuel_price_header;
+    TextView fuel_store_header;
+    TextView fuel_ship_header;
 
 
 
@@ -114,6 +117,10 @@ public class MarketActivity extends AppCompatActivity {
         robots_store_header = findViewById(R.id.robots_store_header);
         robots_ship_header = findViewById(R.id.robots_ship_header);
         robotsSetUp();
+        fuel_price_header = findViewById(R.id.fuel_price_header);
+        fuel_store_header = findViewById(R.id.fuel_store_header);
+        fuel_ship_header = findViewById(R.id.fuel_ship_header);
+        fuelSetUp();
     }
 
     private void updateCargo() {
@@ -406,6 +413,34 @@ public class MarketActivity extends AppCompatActivity {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
         }
     }
+    public void onBuyFuelPressed(View view) {
+        Log.d("Press", "buy fuel pressed");
+        if(this.marketInteractor.buy(Item.FUEL)) {
+            fuel_ship_header.setText(Integer.toString(player.numberOf(Item.FUEL)));
+            fuel_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FUEL)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
+        } else if (player.getCargo() >= player.getMaxCargo()) {
+            Toast.makeText(this, "Ship cargo is already full!", Toast.LENGTH_LONG).show();
+        } else if (this.marketInteractor.getPrice(Item.FUEL) <= 0 || this.marketInteractor.marketNumberOf(Item.FUEL) <= 0) {
+            Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
+        } else if (player.getCredits() < this.marketInteractor.getPrice(Item.FUEL)) {
+            Toast.makeText(this, "You do not have enough credits!", Toast.LENGTH_LONG).show();
+        }
+    }
+    public void onSellFuelPressed(View view) {
+        Log.d("Press", "sell fuel pressed");
+        if(this.marketInteractor.sell(Item.FUEL)) {
+            fuel_ship_header.setText(Integer.toString(player.numberOf(Item.FUEL)));
+            fuel_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FUEL)));
+            credits_header.setText(Integer.toString(player.getCredits()));
+            updateCargo();
+        } else if (!player.getShip().has(Item.FUEL)) {
+            Toast.makeText(this, "You don't have any fuel to sell!", Toast.LENGTH_LONG).show();
+        } else if (this.marketInteractor.getPrice(Item.FUEL) < 0) {
+            Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
+        }
+    }
 
     private void waterSetUp() {
         if (marketInteractor.getPrice(Item.WATER) == -1 ) {
@@ -495,6 +530,16 @@ public class MarketActivity extends AppCompatActivity {
         }
         narcotics_ship_header.setText(Integer.toString(player.numberOf(Item.NARCOTICS)));
         narcotics_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.NARCOTICS)));
+    }
+
+    private void fuelSetUp() {
+        if (marketInteractor.getPrice(Item.FUEL) == -1 ) {
+            fuel_price_header.setText("X");
+        } else {
+            fuel_price_header.setText(Integer.toString(marketInteractor.getPrice(Item.FUEL)));
+        }
+        fuel_ship_header.setText(Integer.toString(player.numberOf(Item.FUEL)));
+        fuel_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FUEL)));
     }
 
     private void robotsSetUp() {
