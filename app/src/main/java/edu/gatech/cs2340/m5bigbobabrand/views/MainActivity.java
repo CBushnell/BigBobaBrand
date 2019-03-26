@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 while (gameUniverse.size() < 10) {
                     Coordinates coord = new Coordinates();
                     int counter = 0;
-                    int differenceThreshold = 3;
+                    int differenceThreshold = 7;
                     while (counter < coordinatesArrayList.size()) {
                         Coordinates coordinate = coordinatesArrayList.get(counter);
                         if (Math.abs(coordinate.getX() - coord.getX()) <= differenceThreshold
