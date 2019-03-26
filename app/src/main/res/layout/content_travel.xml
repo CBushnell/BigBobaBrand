@@ -12,6 +12,31 @@
     tools:showIn="@layout/activity_travel"
     android:background="@drawable/space">
 
+
+    <TextView
+        android:id="@+id/current_fuel_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="93dp"
+        android:text="Current fuel: "
+        android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textColorHighlight="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/current_fuel_text_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="92dp"
+        android:text="111 "
+        android:textColor="@color/colorAccent"
+        android:textColorLink="@color/colorAccent" />
+
     <Button
         android:id="@+id/planetbutton1"
         android:layout_width="90dp"
