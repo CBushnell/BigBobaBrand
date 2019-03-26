@@ -81,6 +81,7 @@ public class TravelActivity extends AppCompatActivity {
         planetbutton1.setTranslationY(560 + solarSystem1.getCoordinates().getY() * 8);
         planetbutton1.setText(solarSystem1.getName());
 
+
         SolarSystem solarSystem2 = solarSystems[1];
         planetbutton2.setTranslationX(140 + solarSystem2.getCoordinates().getX() * 8);
         planetbutton2.setTranslationY(560 + solarSystem2.getCoordinates().getY() * 8);
@@ -125,6 +126,28 @@ public class TravelActivity extends AppCompatActivity {
         planetbutton10.setTranslationX(140 + solarSystem10.getCoordinates().getX() * 10);
         planetbutton10.setTranslationY(560 + solarSystem10.getCoordinates().getY() * 10);
         planetbutton10.setText(solarSystem10.getName());
+
+        if (solarSystem1.equals(player.getSolarSystem())) {
+            planetbutton1.setTextColor(Color.rgb(218,165,32));
+        } else if (solarSystem2.equals(player.getSolarSystem())) {
+            planetbutton2.setTextColor(Color.rgb(218,165,32));
+        } else if (solarSystem3.equals(player.getSolarSystem())) {
+            planetbutton3.setTextColor(Color.rgb(218,165,32));
+        } else if (solarSystem4.equals(player.getSolarSystem())) {
+            planetbutton4.setTextColor(Color.rgb(218,165,32));
+        } else if (solarSystem5.equals(player.getSolarSystem())) {
+            planetbutton5.setTextColor(Color.rgb(218,165,32));
+        } else if (solarSystem6.equals(player.getSolarSystem())) {
+            planetbutton6.setTextColor(Color.rgb(218,165,32));
+        } else if (solarSystem7.equals(player.getSolarSystem())) {
+            planetbutton7.setTextColor(Color.rgb(218,165,32));
+        } else if (solarSystem8.equals(player.getSolarSystem())) {
+            planetbutton8.setTextColor(Color.rgb(218,165,32));
+        } else if (solarSystem9.equals(player.getSolarSystem())) {
+            planetbutton9.setTextColor(Color.rgb(218,165,32));
+        } else if (solarSystem10.equals(player.getSolarSystem())) {
+            planetbutton10.setTextColor(Color.rgb(218,165,32));
+        }
 
     }
 
