@@ -22,6 +22,8 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.Universe;
 
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -130,8 +132,22 @@ public class MainActivity extends AppCompatActivity {
                         + "\nCredits: " + player.getCredits()
                         + "\nShip Type: " + player.getShip().toString());
                 Universe gameUniverse = new Universe();
+                ArrayList<Coordinates> coordinatesArrayList = new ArrayList<>();
                 while (gameUniverse.size() < 10) {
-                    gameUniverse.addSolarSystem(new SolarSystem(new Coordinates()));
+                    Coordinates coord = new Coordinates();
+                    int counter = 0;
+                    int differenceThreshold = 3;
+                    while (counter < coordinatesArrayList.size()) {
+                        Coordinates coordinate = coordinatesArrayList.get(counter);
+                        if (Math.abs(coordinate.getX() - coord.getX()) <= differenceThreshold
+                                || Math.abs(coordinate.getY() - coord.getY()) <= differenceThreshold) {
+                            coord = new Coordinates();
+                            counter = -1;
+                        }
+                        counter++;
+                    }
+                    coordinatesArrayList.add(coord);
+                    gameUniverse.addSolarSystem(new SolarSystem(coord));
                 }
 
                 Object[] printMapArr = gameUniverse.getUniverse().values().toArray();
