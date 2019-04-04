@@ -20,6 +20,11 @@ public enum IE {
     private String IEname;
     private int IEnum;
 
+    /**
+     * catastrophic event constructor
+     * @param IEname name of event
+     * @param IEnum id of event
+     */
     IE(String IEname, int IEnum) {
         this.IEname = IEname;
         this.IEnum = IEnum;
