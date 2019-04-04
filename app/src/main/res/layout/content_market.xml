@@ -749,6 +749,24 @@
         android:layout_marginTop="524dp"
         android:onClick="onTravelPressed"
         android:text="Travel" />
+
+    <TextView
+        android:id="@+id/current_fuel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/credits_text_header"
+        android:layout_marginTop="0dp"
+        android:text="Current fuel: " />
+
+    <TextView
+        android:id="@+id/current_fuel_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tech_level_text_header"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="14dp"
+        android:layout_toEndOf="@+id/current_fuel"
+        android:text="113" />
     `
 
 

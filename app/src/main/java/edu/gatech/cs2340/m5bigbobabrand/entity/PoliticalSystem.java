@@ -1,5 +1,8 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
+/**
+ * enum class that holds valid political systems
+ */
 public enum PoliticalSystem {
     ANARCHY, CAPITALIST_STATE, COMMUNIST_STATE, CONFEDERACY, CORPORATE_STATE, CYBERNETIC_STATE,
     DEMOCRACY, DICTATORSHIP, FASCIST_STATE, FEUDAL_STATE, MILITARY_STATE, MONARCHY, PACIFIC_STATE,

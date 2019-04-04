@@ -58,6 +58,8 @@ public class MarketActivity extends AppCompatActivity {
     TextView planet_header;
     TextView curr_cargo_header;
     TextView max_cargo_header;
+    TextView current_fuel_header;
+    TextView current_fuel_number;
     MarketInteractor marketInteractor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +77,9 @@ public class MarketActivity extends AppCompatActivity {
         planet_header.setText(player.getSolarSystem().getName());
         curr_cargo_header = findViewById(R.id.total_cargo_header);
         max_cargo_header = findViewById(R.id.max_cargo_header);
+        current_fuel_header = findViewById(R.id.current_fuel);
+        current_fuel_number = findViewById(R.id.current_fuel_number);
+        current_fuel_number.setText(Integer.toString(player.numberOf(Item.FUEL)));
         updateCargo();
 
         water_price_header = findViewById(R.id.water_price_header);
@@ -126,6 +131,7 @@ public class MarketActivity extends AppCompatActivity {
     private void updateCargo() {
         curr_cargo_header.setText(Integer.toString(player.getCargo()));
         max_cargo_header.setText(Integer.toString(player.getMaxCargo()));
+        current_fuel_number.setText(Integer.toString(player.numberOf(Item.FUEL)));
     }
     public void onBuyWaterPressed(View view) {
         Log.d("Press", "buy water pressed");

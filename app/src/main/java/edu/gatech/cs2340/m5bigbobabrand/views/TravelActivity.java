@@ -40,6 +40,8 @@ public class TravelActivity extends AppCompatActivity {
     Button planetbutton8;
     Button planetbutton9;
     Button planetbutton10;
+    TextView current_fuel_header;
+    TextView current_fuel_text_header;
 
 
     private Player player;
@@ -59,12 +61,16 @@ public class TravelActivity extends AppCompatActivity {
         planetbutton8 = findViewById(R.id.planetbutton8);
         planetbutton9 = findViewById(R.id.planetbutton9);
         planetbutton10 = findViewById(R.id.planetbutton10);
+        current_fuel_header = findViewById(R.id.current_fuel_header);
+        current_fuel_text_header = findViewById(R.id.current_fuel_text_header);
 
         this.player = GameState.myGame.getPlayer();
         this.universe = GameState.myGame.getUniverse();
         Log.d("debug", "onCreate: asdfasdf");
         SolarSystem[] solarSystems = this.universe.getUniverse().values().toArray(new SolarSystem[0]);
         setButtonLocations(solarSystems);
+
+        current_fuel_text_header.setText(Integer.toString(player.numberOf(Item.FUEL)));
 
 
 
