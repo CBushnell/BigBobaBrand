@@ -207,7 +207,7 @@ public class MarketActivity extends AppCompatActivity {
             food_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FOOD)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
-        } else if (!player.getShip().has(Item.FOOD)) {
+        } else if (!player.has(Item.FOOD)) {
             Toast.makeText(this, "You don't have any food to sell!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.FOOD) < 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
@@ -235,7 +235,7 @@ public class MarketActivity extends AppCompatActivity {
             ore_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.ORE)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
-        } else if (!player.getShip().has(Item.ORE)) {
+        } else if (!player.has(Item.ORE)) {
             Toast.makeText(this, "You don't have any ore to sell!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.ORE) < 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
@@ -263,7 +263,7 @@ public class MarketActivity extends AppCompatActivity {
             games_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.GAMES)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
-        } else if (!player.getShip().has(Item.GAMES)) {
+        } else if (!player.has(Item.GAMES)) {
             Toast.makeText(this, "You don't have any games to sell!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.GAMES) < 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
@@ -291,7 +291,7 @@ public class MarketActivity extends AppCompatActivity {
             firearms_store_header.setText(Integer.toString(marketInteractor.marketNumberOf(Item.FIREARMS)));
             credits_header.setText(Integer.toString(player.getCredits()));
             updateCargo();
-        } else if (!player.getShip().has(Item.FIREARMS)) {
+        } else if (!player.has(Item.FIREARMS)) {
             Toast.makeText(this, "You don't have any firearms to sell!", Toast.LENGTH_LONG).show();
         } else if (this.marketInteractor.getPrice(Item.FIREARMS) < 0) {
             Toast.makeText(this, "Item unavailable in this market!", Toast.LENGTH_LONG).show();
