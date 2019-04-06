@@ -106,7 +106,8 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             Log.d("Edit", "Create Player Pressed");
-            Toast.makeText(this, "asdfasdf", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "" +
+                    "player created", Toast.LENGTH_LONG).show();
 
             this.player = new Player();
 
