@@ -47,6 +47,8 @@ public class TravelActivity extends AppCompatActivity {
     private Player player;
     private Universe universe;
 
+    private final int CHANCE_RAND = 30;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
