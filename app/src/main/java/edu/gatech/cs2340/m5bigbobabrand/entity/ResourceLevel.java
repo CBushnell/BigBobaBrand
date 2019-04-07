@@ -1,5 +1,8 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
+/**
+ * enum class for Resource Level data
+ */
 public enum ResourceLevel {
 
     NOSPECIALRESOURCES(0), MINERALRICH(1), MINERALPOOR(2), DESERT(3),
@@ -8,10 +11,14 @@ public enum ResourceLevel {
 
     private final int resourceInt;
 
-    private ResourceLevel(int resourceInt) {
+    ResourceLevel(int resourceInt) {
         this.resourceInt = resourceInt;
     }
 
+    /**
+     * getter method for resource int
+     * @return Resource Level's int
+     */
     public int getResourceInt() {
         return this.resourceInt;
     }

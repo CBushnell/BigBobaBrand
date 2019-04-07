@@ -66,6 +66,14 @@ public class MarketActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
         this.player = GameState.myGame.getPlayer();
+        Bundle extras = this.getIntent().getExtras();
+        if (extras != null) {
+            boolean randomEventHappened = extras.getBoolean("RANDOM");
+            if (randomEventHappened) {
+                Toast.makeText(this, "Your ship "
+                        + "was yeeted and you lost credits", Toast.LENGTH_LONG).show();
+            }
+        }
         this.marketInteractor = new MarketInteractor(this.player);
         credits_header = findViewById(R.id.credits_header);
         credits_header.setText(Integer.toString(player.getCredits()));
