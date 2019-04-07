@@ -1,6 +1,8 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
-public enum ShipType {
+import java.io.Serializable;
+
+public enum ShipType implements Serializable {
     GNAT("Gnat", 15),
     FLEA("Flea", 18),
     FIREFlY("Firefly", 20),
