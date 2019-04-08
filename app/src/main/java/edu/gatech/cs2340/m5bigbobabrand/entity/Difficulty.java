@@ -1,12 +1,14 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
+import java.io.Serializable;
+
 /**
  * enum for valid difficulties
  */
-public enum Difficulty {
+public enum Difficulty implements Serializable {
     BEGINNER("Beginner"), EASY("Easy"), NORMAL("Normal"), HARD("Hard"), IMPOSSIBLE("Impossible");
     private final String difficultyString;
-    Difficulty(String diffString) {
+    private Difficulty(String diffString) {
         this.difficultyString = diffString;
     }
 
