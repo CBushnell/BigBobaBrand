@@ -40,7 +40,7 @@ public class Coordinates implements Serializable {
      * @param x x-coordinate of planet
      */
     public void setX(int x) {
-        if (x >= 0 && x <= X_OFFSET) {
+        if ((x >= 0) && (x <= X_OFFSET)) {
             this.x = x;
         }
     }
@@ -50,7 +50,7 @@ public class Coordinates implements Serializable {
      * @param y y-coordinate of planet
      */
     public void setY(int y) {
-        if (y >= 0 && y <= Y_OFFSET) {
+        if ((y >= 0) && (y <= Y_OFFSET)) {
             this.y = y;
         }
     }
@@ -79,7 +79,7 @@ public class Coordinates implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = (31 * hash + x + y);
+        hash = (((31 * hash) + x) + y);
         return hash;
     }
 

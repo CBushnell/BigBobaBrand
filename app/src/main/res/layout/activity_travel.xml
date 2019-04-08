@@ -7,4 +7,5 @@
     tools:context=".views.TravelActivity">
     <include layout="@layout/content_travel" />
 
+
 </android.support.constraint.ConstraintLayout>
