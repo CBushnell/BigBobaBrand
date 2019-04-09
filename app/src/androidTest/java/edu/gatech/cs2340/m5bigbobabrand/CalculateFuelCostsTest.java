@@ -23,11 +23,11 @@ public class CalculateFuelCostsTest {
 
     @Before
     public void setUp() {
-        travel = new TravelInteractor(initialSystem, finalSystem);
         coordInit = new Coordinates(0 ,0);
         coordFinal = new Coordinates(0 ,0);
         initialSystem = new SolarSystem(coordInit);
         finalSystem = new SolarSystem(coordFinal);
+        travel = new TravelInteractor(initialSystem, finalSystem);
     }
 
     @Test(timeout = TIMEOUT)
@@ -38,23 +38,28 @@ public class CalculateFuelCostsTest {
         coordFinal.setY(10);
         initialSystem.setCoordinates(coordInit);
         finalSystem.setCoordinates(coordFinal);
+        travel = new TravelInteractor(initialSystem, finalSystem);
         int same = travel.calculateFuelCosts();
         assertEquals("fuel cost is wrong when coordinates are the same", 0, same);
     }
 
     @Test(timeout = TIMEOUT)
     public void testGenericCoordinates() {
-        coordInit.setX(283);
-        coordInit.setY(70);
-        coordFinal.setX(88);
-        coordFinal.setY(9);
+        coordInit.setX(110);
+        coordInit.setY(100);
+        coordFinal.setX(90);
+        coordFinal.setY(13);
         initialSystem.setCoordinates(coordInit);
         finalSystem.setCoordinates(coordFinal);
+        travel = new TravelInteractor(initialSystem, finalSystem);
         int actualCost = travel.calculateFuelCosts();
-        int x = Math.abs(283 - 88);
-        int y = Math.abs(70 - 9);
-        int distance = (int) Math.hypot(x, y);
-        int expectedCost = distance / 10;
+        int x = Math.abs(20);
+        int y = Math.abs(87);
+        int dis = (int) (Math.hypot(x, y) + .5);
+        int expectedCost = dis / 10;
+        if (expectedCost == 0) {
+            expectedCost++;
+        }
         assertEquals("fuel cost is wrong with generic coordinates", expectedCost, actualCost);
     }
 }
