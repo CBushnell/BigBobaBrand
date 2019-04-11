@@ -17,7 +17,9 @@ public class TravelInteractor {
         if (a.equals(b)) {
             return 0;
         }
-        int distance = (int) (Math.sqrt(Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2)) + .5);
+        final double ROUNDOFF = .5;
+        int distance = (int) (Math.sqrt(Math.pow(a.getX() - b.getX(), 2)
+                + Math.pow(a.getY() - b.getY(), 2)) + ROUNDOFF);
         int fuelCost = (distance / 10); //will add fuel efficiency per ship;
         if (fuelCost == 0) {
             fuelCost += 1;

@@ -141,27 +141,29 @@ public class TravelActivity extends AppCompatActivity {
         planetbutton10.setTranslationX((offsetX + solarSystem10.getX()) * createSpread);
         planetbutton10.setTranslationY((offsetY + solarSystem10.getY()) * createSpread);
         planetbutton10.setText(solarSystem10.getName());
-
+        final int BUTTONR = 218;
+        final int BUTTONG = 165;
+        final int BUTTONB = 32;
         if (solarSystem1.equals(player.getSolarSystem())) {
-            planetbutton1.setTextColor(Color.rgb(218,165,32));
+            planetbutton1.setTextColor(Color.rgb(BUTTONR, BUTTONG, BUTTONB));
         } else if (solarSystem2.equals(player.getSolarSystem())) {
-            planetbutton2.setTextColor(Color.rgb(218,165,32));
+            planetbutton2.setTextColor(Color.rgb(BUTTONR, BUTTONG, BUTTONB));
         } else if (solarSystem3.equals(player.getSolarSystem())) {
-            planetbutton3.setTextColor(Color.rgb(218,165,32));
+            planetbutton3.setTextColor(Color.rgb(BUTTONR, BUTTONG, BUTTONB));
         } else if (solarSystem4.equals(player.getSolarSystem())) {
-            planetbutton4.setTextColor(Color.rgb(218,165,32));
+            planetbutton4.setTextColor(Color.rgb(BUTTONR, BUTTONG, BUTTONB));
         } else if (solarSystem5.equals(player.getSolarSystem())) {
-            planetbutton5.setTextColor(Color.rgb(218,165,32));
+            planetbutton5.setTextColor(Color.rgb(BUTTONR, BUTTONG, BUTTONB));
         } else if (solarSystem6.equals(player.getSolarSystem())) {
-            planetbutton6.setTextColor(Color.rgb(218,165,32));
+            planetbutton6.setTextColor(Color.rgb(BUTTONR, BUTTONG, BUTTONB));
         } else if (solarSystem7.equals(player.getSolarSystem())) {
-            planetbutton7.setTextColor(Color.rgb(218,165,32));
+            planetbutton7.setTextColor(Color.rgb(BUTTONR, BUTTONG, BUTTONB));
         } else if (solarSystem8.equals(player.getSolarSystem())) {
-            planetbutton8.setTextColor(Color.rgb(218,165,32));
+            planetbutton8.setTextColor(Color.rgb(BUTTONR, BUTTONG, BUTTONB));
         } else if (solarSystem9.equals(player.getSolarSystem())) {
-            planetbutton9.setTextColor(Color.rgb(218,165,32));
+            planetbutton9.setTextColor(Color.rgb(BUTTONR, BUTTONG, BUTTONB));
         } else if (solarSystem10.equals(player.getSolarSystem())) {
-            planetbutton10.setTextColor(Color.rgb(218,165,32));
+            planetbutton10.setTextColor(Color.rgb(BUTTONR, BUTTONG, BUTTONB));
         }
 
     }
