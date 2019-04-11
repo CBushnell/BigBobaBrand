@@ -17,7 +17,7 @@ public class Universe implements Serializable {
      * constructor for universe.
      */
     public Universe() {
-        this.gameUniverse = new HashMap<Coordinates, SolarSystem>();
+        this.gameUniverse = new HashMap<>();
     }
 
     /**

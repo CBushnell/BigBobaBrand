@@ -1,6 +1,5 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 

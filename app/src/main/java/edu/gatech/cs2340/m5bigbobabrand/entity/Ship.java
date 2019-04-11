@@ -19,7 +19,7 @@ public class Ship implements Serializable {
     public Ship(ShipType t) {
         this.t = t;
         Item[] itemArr = Item.values();
-        cargo = new HashMap<Item, Integer>();
+        cargo = new HashMap<>();
         for (Item item : itemArr) {
             cargo.put(item, 0);
         }

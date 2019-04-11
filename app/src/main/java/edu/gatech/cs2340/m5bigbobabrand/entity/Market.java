@@ -18,9 +18,10 @@ public class Market {
 
     /**
      * Constructor that creates market
+     * @param solarSystem is current solarSystem.
      */
     public Market(SolarSystem solarSystem) {
-        goods = new HashMap<Item, Integer>();
+        goods = new HashMap<>();
         Item[] itemArr = Item.values();
         for (Item item : itemArr) {
                 if (solarSystem.getTechLevel().getTechLevelNum() >= item.getMTLP()) {
@@ -32,6 +33,11 @@ public class Market {
         this.solarSystem = solarSystem;
     }
 
+    /**
+     *
+     * @param good is good being checked
+     * @return if it is in stock
+     */
     public boolean inStock (Item good) {
         if (goods.get(good) > 0) {
             return true;
@@ -39,6 +45,10 @@ public class Market {
         return false;
     }
 
+    /**
+     * buy good
+     * @param good is good being bought
+     */
     public void buyGoodFromMarket(Item good) {
         int currAmount = goods.get(good);
         if (currAmount <= 0) {
@@ -47,15 +57,28 @@ public class Market {
         goods.put(good, currAmount - 1);
     }
 
+    /**
+     * check if you can sell good
+     * @param good is good being bought
+     */
     public void sellGoodToMarket(Item good) {
         int currAmount = goods.get(good);
         goods.put(good, currAmount + 1);
     }
 
+    /**
+     *
+     * @param good being checked
+     * @return stock of good
+     */
     public int numberOf(Item good) {
         return goods.get(good);
     }
 
+    /**
+     *
+     * @return map of goods
+     */
     public Map<Item, Integer> getGoods() {
         return goods;
     }
