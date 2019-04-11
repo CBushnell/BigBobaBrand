@@ -4,7 +4,7 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
 import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 
 /**
- *
+ * Traveling between solar systems (an initial and final location)
  */
 public class TravelInteractor {
     private final SolarSystem initialSystem;
@@ -14,6 +14,10 @@ public class TravelInteractor {
         this.finalSystem = finalSystem;
     }
 
+    /**
+     * Calculates fuel costs needed to travel from one coordinates to another
+     * @return fuel costs
+     */
     public int calculateFuelCosts() {
         Coordinates a = initialSystem.getCoordinates();
         Coordinates b = finalSystem.getCoordinates();
