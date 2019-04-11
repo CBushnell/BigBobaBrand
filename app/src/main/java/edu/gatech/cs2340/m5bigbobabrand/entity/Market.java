@@ -57,6 +57,10 @@ public class Market {
     public int numberOf(Item good) {
         return goods.get(good);
     }
+
+    public Map<Item, Integer> getGoods() {
+        return goods;
+    }
     /*
     private boolean canSell(Item good) {
         if (solarSystem.getTechLevel().getTechLevelNum() < good.getMTLU()) {

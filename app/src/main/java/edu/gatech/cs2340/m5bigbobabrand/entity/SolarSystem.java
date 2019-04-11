@@ -55,8 +55,8 @@ public class SolarSystem implements Serializable {
      * @param politicalSystem The Political System of the SolarSystem
      * @param coordinates The coordinates of the SolarSystem within the universe
      */
-    private SolarSystem(String name, TechLevel techLevel, ResourceLevel resourceLevel,
-                       PoliticalSystem politicalSystem, Coordinates coordinates) {
+    SolarSystem(String name, TechLevel techLevel, ResourceLevel resourceLevel,
+                          PoliticalSystem politicalSystem, Coordinates coordinates) {
         this.name = name;
         this.techLevel = techLevel;
         this.resourceLevel = resourceLevel;
