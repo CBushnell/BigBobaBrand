@@ -37,7 +37,7 @@ public class Market {
      * @return if it is in stock
      */
     public boolean inStock (Item good) {
-        return (goods.get(good) > 0);
+        return goods.get(good) > 0;
     }
 
     /**
