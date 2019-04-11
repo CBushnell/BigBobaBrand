@@ -1,14 +1,11 @@
 package edu.gatech.cs2340.m5bigbobabrand.Model;
 
-import android.util.Log;
-
 import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
-import edu.gatech.cs2340.m5bigbobabrand.entity.Player;
 import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 
 public class TravelInteractor {
-    SolarSystem initialSystem;
-    SolarSystem finalSystem;
+    private final SolarSystem initialSystem;
+    private final SolarSystem finalSystem;
     public TravelInteractor(SolarSystem initialSystem, SolarSystem finalSystem) {
         this.initialSystem = initialSystem;
         this.finalSystem = finalSystem;
