@@ -298,7 +298,7 @@
         android:layout_marginStart="190dp"
         android:layout_marginTop="220dp"
         android:onClick="onSellFoodPressed"
-        android:text="Sell" />`
+        android:text="Sell" />
 
     <TextView
         android:id="@+id/ore_header"
