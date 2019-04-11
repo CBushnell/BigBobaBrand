@@ -11,7 +11,7 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.Universe;
 public final class GameState implements Serializable {
     private Universe universe;
     private Player player;
-    public static GameState myGame = new GameState();
+    public static final GameState myGame = new GameState();
 
     /**
      * Constructor for game state.
