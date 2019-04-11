@@ -47,6 +47,8 @@ public class TravelActivity extends AppCompatActivity {
     private Player player;
     private Universe universe;
 
+    private final int CHANCE_RAND = 30;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -228,8 +230,21 @@ public class TravelActivity extends AppCompatActivity {
         //if player had enough fuel, travel is performed,
         // otherwise player remains on planet and receives his fuel back
         if (subtracted == fuelCost) {
-            player.setSolarSystem(solarSystems[planetNum - 1]);
             Intent intent = new Intent(TravelActivity.this, MarketActivity.class);
+            player.setSolarSystem(solarSystems[planetNum - 1]);
+            int randomChance = (int)(Math.random() * 100) + 1;
+            if (randomChance < CHANCE_RAND) {
+                int credits = player.getCredits();
+                intent.putExtra("RANDOM", true);
+                if (credits > 100) {
+                    credits = credits - 100;
+                } else {
+                    credits = 0;
+                }
+                player.setCredits(credits);
+            } else {
+                intent.putExtra("RANDOM", false);
+            }
             this.startActivity(intent);
         } else {
             while (subtracted > 0) {
