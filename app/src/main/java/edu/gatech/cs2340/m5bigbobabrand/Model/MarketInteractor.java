@@ -9,21 +9,31 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.IE;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Item;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Market;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Player;
+import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 
+/**
+ * Interfaces between a market and a player
+ */
 public class MarketInteractor {
-    Market market;
-    Player player;
-    IE ie;
-    Map<Item, Integer> prices;
+    private final Market market;
+    private final Player player;
+    private final IE ie;
+    private final Map<Item, Integer> prices;
 
+    /**
+     * creates a MarketInteractor between player
+     * and current planet the player is on
+     * @param player to create market interactor for
+     */
     public MarketInteractor(Player player) {
         this.market = new Market(player.getSolarSystem());
         this.player = player;
         this.ie = calcIE();
-        prices = new HashMap<Item, Integer>();
+        prices = new HashMap<>();
         Item[] itemArr = Item.values();
         for (Item item : itemArr) {
-            if(player.getSolarSystem().getTechLevel().getTechLevelNum() >= item.getMTLP()) {
+            SolarSystem solarSystem = player.getSolarSystem();
+            if(solarSystem.getTechLevelNum() >= item.getMTLP()) {
                 prices.put(item, calcPrice(item));
             } else {
                 prices.put(item, null);
@@ -31,6 +41,11 @@ public class MarketInteractor {
         }
     }
 
+    /**
+     *
+     * @param item to calc price of
+     * @return price calculated
+     */
     private int calcPrice(Item item) {
         // 0 if heads, 1 if tails
         int coinFlip = (int) ((Math.random() * 2));
@@ -38,9 +53,11 @@ public class MarketInteractor {
             coinFlip = -1;
         }
         int multiplierValue = (int) (Math.random() * (item.getVar() + 1));
-        double multiplierEquationValue = multiplierValue/100.0;
+        final double DIV = 100.0;
+        double multiplierEquationValue = multiplierValue/DIV;
+        SolarSystem solarSystem = player.getSolarSystem();
         int price = item.getBasePrice()
-                + (item.getIPL() * (player.getSolarSystem().getTechLevel().getTechLevelNum() - item.getMTLP()))
+                + (item.getIPL() * (solarSystem.getTechLevelNum() - item.getMTLP()))
                 + ((int)(coinFlip * item.getBasePrice() * multiplierEquationValue));
         if (item.getCat() == this.ie) {
             price = price * 2;
@@ -60,6 +77,11 @@ public class MarketInteractor {
         return IE.NONE;
     }
 
+    /**
+     * buys item from market
+     * @param item item to buy
+     * @return whether buy was successful
+     */
     public boolean buy(Item item) {
         if (prices.get(item) == null) {
             return false;
@@ -81,10 +103,17 @@ public class MarketInteractor {
             Log.d("Error", e.getMessage());
             return false;
         }
+
     }
 
+    /**
+     * sells item to market and gives player credit
+     * @param item to sell
+     * @return whether selling was successful
+     */
     public boolean sell (Item item) {
-        if (item.getMTLU() > player.getSolarSystem().getTechLevel().getTechLevelNum()) {
+        SolarSystem solarSystem = player.getSolarSystem();
+        if (item.getMTLU() > solarSystem.getTechLevelNum()) {
             return false;
         }
         if (player.has(item)) {
@@ -99,6 +128,11 @@ public class MarketInteractor {
         }
     }
 
+    /**
+     *
+     * @param item to calc the price of
+     * @return the price of given item
+     */
     public int getPrice (Item item) {
         if (prices.get(item) == null) {
             return -1;
@@ -106,10 +140,19 @@ public class MarketInteractor {
         return prices.get(item);
     }
 
+    /**
+     *
+     * @param item to find stock in market
+     * @return number of given item market has
+     */
     public int marketNumberOf (Item item) {
         return this.market.numberOf(item);
     }
 
+    /**
+     *
+     * @return the IE for the current planet
+     */
     public IE getIe() {
         return this.ie;
     }

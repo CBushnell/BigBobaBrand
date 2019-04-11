@@ -214,6 +214,13 @@ public class SolarSystem implements Serializable {
     }
 
     /**
+     * @return Tech level num of the solarSystem
+     */
+    public int getTechLevelNum() {
+        return techLevel.getTechLevelNum();
+    }
+
+    /**
      * @param techLevel Sets Tech Level of the SolarSystem
      */
     public void setTechLevel(TechLevel techLevel) {
