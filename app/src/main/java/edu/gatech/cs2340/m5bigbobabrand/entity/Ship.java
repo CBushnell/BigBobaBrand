@@ -85,10 +85,7 @@ public class Ship implements Serializable {
      * @return if ship has item or not.
      */
     public boolean has(Item item) {
-        if (cargo.get(item) > 0) {
-            return true;
-        }
-        return false;
+        return cargo.get(item) > 0;
     }
 
     /**
