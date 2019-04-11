@@ -27,6 +27,9 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Universe;
 
 
+/**
+ * Map that displays all planets and allows to travel to location.
+ */
 public class TravelActivity extends AppCompatActivity {
     private Button planetbutton1;
     private Button planetbutton2;
@@ -86,54 +89,57 @@ public class TravelActivity extends AppCompatActivity {
      */
     private void setButtonLocations(SolarSystem[] solarSystems) {
         SolarSystem solarSystem1 = solarSystems[0];
-        planetbutton1.setTranslationX(140 + solarSystem1.getCoordinates().getX() * 8);
-        planetbutton1.setTranslationY(560 + solarSystem1.getCoordinates().getY() * 8);
+        final int offsetX = 140;
+        final int offsetY = 560;
+        final int createSpread = 8;
+        planetbutton1.setTranslationX((offsetX + solarSystem1.getX()) * createSpread);
+        planetbutton1.setTranslationY((offsetY + solarSystem1.getY()) * createSpread);
         planetbutton1.setText(solarSystem1.getName());
 
 
         SolarSystem solarSystem2 = solarSystems[1];
-        planetbutton2.setTranslationX(140 + solarSystem2.getCoordinates().getX() * 8);
-        planetbutton2.setTranslationY(560 + solarSystem2.getCoordinates().getY() * 8);
+        planetbutton2.setTranslationX((offsetX + solarSystem2.getX()) * createSpread);
+        planetbutton2.setTranslationY((offsetY + solarSystem2.getY()) * createSpread);
         planetbutton2.setText(solarSystem2.getName());
 
         SolarSystem solarSystem3 = solarSystems[2];
-        planetbutton3.setTranslationX(140 + solarSystem3.getCoordinates().getX() * 8);
-        planetbutton3.setTranslationY(560 + solarSystem3.getCoordinates().getY() * 8);
+        planetbutton3.setTranslationX((offsetX + solarSystem3.getX()) * createSpread);
+        planetbutton3.setTranslationY((offsetY + solarSystem3.getY()) * createSpread);
         planetbutton3.setText(solarSystem3.getName());
 
         SolarSystem solarSystem4 = solarSystems[3];
-        planetbutton4.setTranslationX(140 + solarSystem4.getCoordinates().getX() * 8);
-        planetbutton4.setTranslationY(560 + solarSystem4.getCoordinates().getY() * 8);
+        planetbutton4.setTranslationX((offsetX + solarSystem4.getX()) * createSpread);
+        planetbutton4.setTranslationY((offsetY + solarSystem4.getY()) * createSpread);
         planetbutton4.setText(solarSystem4.getName());
 
         SolarSystem solarSystem5 = solarSystems[4];
-        planetbutton5.setTranslationX(140 + solarSystem5.getCoordinates().getX() * 8);
-        planetbutton5.setTranslationY(560 + solarSystem5.getCoordinates().getY() * 8);
+        planetbutton5.setTranslationX((offsetX + solarSystem5.getX()) * createSpread);
+        planetbutton5.setTranslationY((offsetY + solarSystem5.getY()) * createSpread);
         planetbutton5.setText(solarSystem5.getName());
 
         SolarSystem solarSystem6 = solarSystems[5];
-        planetbutton6.setTranslationX(140 + solarSystem6.getCoordinates().getX() * 8);
-        planetbutton6.setTranslationY(560 + solarSystem6.getCoordinates().getY() * 8);
+        planetbutton6.setTranslationX((offsetX + solarSystem6.getX()) * createSpread);
+        planetbutton6.setTranslationY((offsetY + solarSystem6.getY()) * createSpread);
         planetbutton6.setText(solarSystem6.getName());
 
         SolarSystem solarSystem7 = solarSystems[6];
-        planetbutton7.setTranslationX(140 + solarSystem7.getCoordinates().getX() * 8);
-        planetbutton7.setTranslationY(560 + solarSystem7.getCoordinates().getY() * 8);
+        planetbutton7.setTranslationX((offsetX + solarSystem7.getX()) * createSpread);
+        planetbutton7.setTranslationY((offsetY + solarSystem7.getY()) * createSpread);
         planetbutton7.setText(solarSystem7.getName());
 
         SolarSystem solarSystem8 = solarSystems[7];
-        planetbutton8.setTranslationX(140 + solarSystem8.getCoordinates().getX() * 8);
-        planetbutton8.setTranslationY(560 + solarSystem8.getCoordinates().getY() * 8);
+        planetbutton8.setTranslationX((offsetX + solarSystem8.getX()) * createSpread);
+        planetbutton8.setTranslationY((offsetY + solarSystem8.getY()) * createSpread);
         planetbutton8.setText(solarSystem8.getName());
 
         SolarSystem solarSystem9 = solarSystems[8];
-        planetbutton9.setTranslationX(140 + solarSystem9.getCoordinates().getX() * 9);
-        planetbutton9.setTranslationY(560 + solarSystem9.getCoordinates().getY() * 9);
+        planetbutton9.setTranslationX((offsetX + solarSystem9.getX()) * createSpread);
+        planetbutton9.setTranslationY((offsetY + solarSystem9.getY()) * createSpread);
         planetbutton9.setText(solarSystem9.getName());
 
         SolarSystem solarSystem10 = solarSystems[9];
-        planetbutton10.setTranslationX(140 + solarSystem10.getCoordinates().getX() * 10);
-        planetbutton10.setTranslationY(560 + solarSystem10.getCoordinates().getY() * 10);
+        planetbutton10.setTranslationX((offsetX + solarSystem10.getX()) * createSpread);
+        planetbutton10.setTranslationY((offsetY + solarSystem10.getY()) * createSpread);
         planetbutton10.setText(solarSystem10.getName());
 
         if (solarSystem1.equals(player.getSolarSystem())) {
@@ -358,6 +364,10 @@ public class TravelActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * When load button is pressed.
+     * @param view is the button pressed.
+     */
     public void onLoadPressed(View view){
         try{
             FileInputStream fis = getApplicationContext().openFileInput("player1.data");

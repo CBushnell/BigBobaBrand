@@ -242,6 +242,22 @@ public class SolarSystem implements Serializable {
     }
 
     /**
+     * return X coordinate of solar system.
+     * @return integer
+     */
+    public int getX() {
+        return coordinates.getX();
+    }
+
+    /**
+     * return Y coordinate of solar system
+     * @return integer
+     */
+    public int getY() {
+        return coordinates.getY();
+    }
+
+    /**
      * @param coordinates Sets coordinates of the SolarSystem within the universe;
      */
     public void setCoordinates(Coordinates coordinates) {
