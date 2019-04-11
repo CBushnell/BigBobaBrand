@@ -18,6 +18,9 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.ResourceLevel;
 import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 import edu.gatech.cs2340.m5bigbobabrand.entity.TechLevel;
 
+/*
+Charlie Junits
+ */
 public class M10Junit {
     private Player player;
     private Market market;
