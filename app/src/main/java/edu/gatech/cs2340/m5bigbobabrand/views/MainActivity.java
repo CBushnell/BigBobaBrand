@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
 import android.util.Log;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
@@ -16,14 +18,20 @@ import edu.gatech.cs2340.m5bigbobabrand.R;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Difficulty;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Player;
+import edu.gatech.cs2340.m5bigbobabrand.entity.Ship;
 import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Universe;
 
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Map;
 
 
+/**
+ * Takes care of the view of the main activities in the game
+ */
 public class MainActivity extends AppCompatActivity {
 
 
@@ -55,8 +63,10 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < difficultyStrings.length; i++) {
             difficultyStrings[i] = difficultyList[i].getString();
         }
-        ArrayAdapter<String> difficultyArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, difficultyStrings);
-        difficultyArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> difficultyArrayAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, difficultyStrings);
+        difficultyArrayAdapter.setDropDownViewResource(
+                android.R.layout.simple_spinner_dropdown_item);
         difficultySpinner.setAdapter(difficultyArrayAdapter);
         /* Check for student being passed in */
 
@@ -66,7 +76,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -96,20 +107,25 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             Log.d("Edit", "Create Player Pressed");
-            Toast.makeText(this, "" +
-                    "player created", Toast.LENGTH_LONG).show();
+            Toast toast = Toast.makeText(this, "" +
+                    "player created", Toast.LENGTH_LONG);
+            toast.show();
 
-            /**
-             *Data for player being edited
-             *
+            /*
+             Data for player being edited
              */
             Player player = new Player();
+            Editable name = nameField.getText();
+            Editable engineer = engineerField.getText();
+            Editable fighter = fighterField.getText();
+            Editable pilot = pilotField.getText();
+            Editable trader = traderField.getText();
 
-            player.setName(nameField.getText().toString());
-            player.setEngineerPts(Integer.parseInt(engineerField.getText().toString()));
-            player.setFighterPts(Integer.parseInt(fighterField.getText().toString()));
-            player.setPilotPts(Integer.parseInt(pilotField.getText().toString()));
-            player.setTraderPts(Integer.parseInt(traderField.getText().toString()));
+            player.setName(name.toString());
+            player.setEngineerPts(Integer.parseInt(engineer.toString()));
+            player.setFighterPts(Integer.parseInt(fighter.toString()));
+            player.setPilotPts(Integer.parseInt(pilot.toString()));
+            player.setTraderPts(Integer.parseInt(trader.toString()));
             String chosenDiffString = (String) difficultySpinner.getSelectedItem();
             Difficulty[] difficultyList = Difficulty.values();
             for (Difficulty d: difficultyList) {
@@ -122,13 +138,15 @@ public class MainActivity extends AppCompatActivity {
                 if (!player.verifySum()) {
                     throw new IllegalArgumentException("Stats must be positive and sum to 16");
                 }
+                Difficulty playerDifficulty = player.getDifficulty();
+                Ship playerShip = player.getShip();
                 Log.d("Edit", "\nName: " + player.getName() + "\nPilot Points: "
                         + player.getPilotPts() + "\nFighter Points: " + player.getFighterPts()
                         +  "\nTrader Points: " + player.getTraderPts() +
                         "\nEngineer Points: " + player.getEngineerPts()
-                        + "\nDifficulty: " + player.getDifficulty().getString()
+                        + "\nDifficulty: " + playerDifficulty.getString()
                         + "\nCredits: " + player.getCredits()
-                        + "\nShip Type: " + player.getShip().toString());
+                        + "\nShip Type: " + playerShip.toString());
                 Universe gameUniverse = new Universe();
                 ArrayList<Coordinates> coordinatesArrayList = new ArrayList<>();
                 while (gameUniverse.size() < 10) {
@@ -137,8 +155,10 @@ public class MainActivity extends AppCompatActivity {
                     int differenceThreshold = 5;
                     while (counter < coordinatesArrayList.size()) {
                         Coordinates coordinate = coordinatesArrayList.get(counter);
-                        if (Math.abs(coordinate.getX() - coordinates.getX()) <= differenceThreshold
-                                || Math.abs(coordinate.getY() - coordinates.getY()) <= differenceThreshold) {
+                        if ((Math.abs(coordinate.getX() - coordinates.getX())
+                                <= differenceThreshold)
+                                || (Math.abs(coordinate.getY() - coordinates.getY())
+                                <= differenceThreshold)) {
                             coordinates = new Coordinates();
                             counter = -1;
                         }
@@ -148,7 +168,9 @@ public class MainActivity extends AppCompatActivity {
                     gameUniverse.addSolarSystem(new SolarSystem(coordinates));
                 }
 
-                Object[] printMapArr = gameUniverse.getUniverse().values().toArray();
+                Map<Coordinates, SolarSystem> gameUniverseMap = gameUniverse.getUniverse();
+                Collection<SolarSystem> gameUniverseMapValues = gameUniverseMap.values();
+                Object[] printMapArr = gameUniverseMapValues.toArray();
 
                 Log.d("Edit", "Solar Systems:\nPlanet 1: " + printMapArr[0].toString()
                         + "\nPlanet 2: " + printMapArr[1].toString()
@@ -160,19 +182,25 @@ public class MainActivity extends AppCompatActivity {
                         + "\nPlanet 8: " + printMapArr[7].toString()
                         + "\nPlanet 9: " + printMapArr[8].toString()
                         + "\nPlanet 10: " + printMapArr[9].toString());
-                Toast.makeText(this, "Universe and Player Created", Toast.LENGTH_LONG).show();
-                player.setSolarSystem(gameUniverse.getUniverse().values().toArray(new SolarSystem[0])[0]);
+                Toast toast2 = Toast.makeText(this,
+                        "Universe and Player Created", Toast.LENGTH_LONG);
+                toast2.show();
+                player.setSolarSystem(
+                        gameUniverseMapValues.toArray(new SolarSystem[0])[0]);
                 GameState.startGame(gameUniverse, player);
                 Log.d("hello", "hello");
                 Intent intent = new Intent(MainActivity.this, MarketActivity.class);
                 this.startActivity(intent);
             } catch (IllegalArgumentException e) {
                 Log.d("Error", e.getMessage());
-                Toast.makeText(this, "Skill points must be positive and sum to 16!", Toast.LENGTH_LONG).show();
+                Toast toast3 = Toast.makeText(this, "Skill points must be positive and sum to 16!",
+                        Toast.LENGTH_LONG);
+                toast3.show();
             }
         } catch (Throwable T) {
             Log.d("Error", T.getMessage(), T);
-            Toast.makeText(this,"Enter all required fields", Toast.LENGTH_LONG).show();
+            Toast toast4 = Toast.makeText(this,"Enter all required fields", Toast.LENGTH_LONG);
+            toast4.show();
 
         }
 
