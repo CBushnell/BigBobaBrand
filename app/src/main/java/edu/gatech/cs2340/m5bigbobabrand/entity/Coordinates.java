@@ -71,8 +71,7 @@ public class Coordinates implements Serializable {
     public int getY() {
         return y;
     }
-
-    @NotNull
+    
     @Override
     public String toString() {
         return "(" + this.x + "," + this.y + ")";
