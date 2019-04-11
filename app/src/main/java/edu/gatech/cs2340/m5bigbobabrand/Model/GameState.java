@@ -8,7 +8,7 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.Universe;
 /**
  * Stores games state in between activities.
  */
-public class GameState implements Serializable {
+public final class GameState implements Serializable {
     private Universe universe;
     private Player player;
     public static final GameState myGame = new GameState();
