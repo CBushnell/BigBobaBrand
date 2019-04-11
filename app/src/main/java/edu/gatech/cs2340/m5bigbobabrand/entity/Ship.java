@@ -1,6 +1,5 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
-import android.util.Log;
 
 import java.io.Serializable;
 import java.util.HashMap;

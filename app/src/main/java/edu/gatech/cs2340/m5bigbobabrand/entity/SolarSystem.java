@@ -55,7 +55,7 @@ public class SolarSystem implements Serializable {
      * @param politicalSystem The Political System of the SolarSystem
      * @param coordinates The coordinates of the SolarSystem within the universe
      */
-    SolarSystem(String name, TechLevel techLevel, ResourceLevel resourceLevel,
+    public SolarSystem(String name, TechLevel techLevel, ResourceLevel resourceLevel,
                           PoliticalSystem politicalSystem, Coordinates coordinates) {
         this.name = name;
         this.techLevel = techLevel;
@@ -214,6 +214,13 @@ public class SolarSystem implements Serializable {
     }
 
     /**
+     * @return Tech level num of the solarSystem
+     */
+    public int getTechLevelNum() {
+        return techLevel.getTechLevelNum();
+    }
+
+    /**
      * @param techLevel Sets Tech Level of the SolarSystem
      */
     public void setTechLevel(TechLevel techLevel) {
@@ -239,6 +246,22 @@ public class SolarSystem implements Serializable {
      */
     public Coordinates getCoordinates() {
         return coordinates;
+    }
+
+    /**
+     * return X coordinate of solar system.
+     * @return integer
+     */
+    public int getX() {
+        return coordinates.getX();
+    }
+
+    /**
+     * return Y coordinate of solar system
+     * @return integer
+     */
+    public int getY() {
+        return coordinates.getY();
     }
 
     /**
