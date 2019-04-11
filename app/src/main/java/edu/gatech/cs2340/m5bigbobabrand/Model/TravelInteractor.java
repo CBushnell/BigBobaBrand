@@ -9,6 +9,12 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 public class TravelInteractor {
     private final SolarSystem initialSystem;
     private final SolarSystem finalSystem;
+
+    /**
+     * Constructor for TravelInteractor
+     * @param initialSystem the solar system that the player is initially at
+     * @param finalSystem the solar system that the player want to travel to
+     */
     public TravelInteractor(SolarSystem initialSystem, SolarSystem finalSystem) {
         this.initialSystem = initialSystem;
         this.finalSystem = finalSystem;
