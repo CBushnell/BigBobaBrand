@@ -20,7 +20,7 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.TechLevel;
 
 public class M10Junit {
     private Player player;
-    //private Market market;
+    private Market market;
     private MarketInteractor marketInteractor;
     private SolarSystem solarSystem;
     private Coordinates coordinates;
@@ -36,7 +36,7 @@ public class M10Junit {
         coordinates = new Coordinates();
         solarSystem = new SolarSystem("name", TechLevel.PREAGRICULTURE, ResourceLevel.NOSPECIALRESOURCES, PoliticalSystem.ANARCHY, coordinates);
         player = new Player("name", 16, 0, 0, 0, Difficulty.EASY, solarSystem);
-        //market = new Market(solarSystem);
+        market = new Market(solarSystem);
         marketInteractor = new MarketInteractor(player);
         fuelPrice = marketInteractor.getPrice(Item.FUEL);
         numFuel = marketInteractor.marketNumberOf(Item.FUEL);
