@@ -1,5 +1,6 @@
 package edu.gatech.cs2340.m5bigbobabrand.views;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,6 +17,12 @@ import android.widget.Toast;
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 import com.hitomi.cmlibrary.OnMenuStatusChangeListener;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 import edu.gatech.cs2340.m5bigbobabrand.Model.GameState;
 import edu.gatech.cs2340.m5bigbobabrand.Model.TravelInteractor;
@@ -337,6 +344,42 @@ public class TravelActivity extends AppCompatActivity {
     public void onPlanetButton10Pressed(View view) {
         askForTravel(10);
     }
+
+    /**
+     * On save press, saves game
+     *
+     * @param view the button clicked
+     */
+    public void onSavePressed(View view) {
+        try{
+            FileOutputStream fos = getApplicationContext().openFileOutput("player1.data", Context.MODE_PRIVATE);
+            ObjectOutputStream os = new ObjectOutputStream(fos);
+            os.writeObject(player);
+            os.writeObject(universe);
+            Log.d("save", "save complete");
+            os.close();
+            fos.close();
+        }catch (Exception e){
+            Log.d("Save", "Failed to save - \n" + e.toString());
+        }
+    }
+
+    public void onLoadPressed(View view){
+        try{
+            FileInputStream fis = getApplicationContext().openFileInput("player1.data");
+            ObjectInputStream is = new ObjectInputStream(fis);
+            Player currPlayer = (Player) is.readObject();
+            Universe currUniverse = (Universe) is.readObject();
+            is.close();
+            fis.close();
+            GameState.startGame(currUniverse, currPlayer);
+            Intent intent = new Intent(TravelActivity.this, MarketActivity.class);
+            this.startActivity(intent);
+        }catch (Exception e){
+            Log.e("broke", "broke");
+        }
+    }
+
 
 
 

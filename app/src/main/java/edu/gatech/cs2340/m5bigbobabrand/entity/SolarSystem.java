@@ -11,12 +11,12 @@ import java.io.Serializable;
  */
 public class SolarSystem implements Serializable {
 
-    private final String name;
-    private final TechLevel techLevel;
-    private final ResourceLevel resourceLevel;
-    private final Coordinates coordinates;
-    private final PoliticalSystem politicalSystem;
-    private final int id;
+    private String name;
+    private TechLevel techLevel;
+    private ResourceLevel resourceLevel;
+    private Coordinates coordinates;
+    private PoliticalSystem politicalSystem;
+    private int id;
 
     private static final int HASH_SEED = 31;
     private static final int NAME_MIN_LENGTH = 3;
@@ -44,7 +44,7 @@ public class SolarSystem implements Serializable {
     private static final int WEIRDMUSHROOMS = 87;
     private static final int LOTSOFHERBS = 92;
     private static final int ARTISTIC = 96;
-//    private static final int WARLIKE = 100;
+    private static final int WARLIKE = 100;
 
     /**
      * Constructor for fully customizing SolarSystems.
@@ -199,14 +199,12 @@ public class SolarSystem implements Serializable {
         return name;
     }
 
-// --Commented out by Inspection START (2019/4/4, 12:13 PM):
-//    /**
-//     * @param name Sets name of the SolarSystem
-//     */
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-// --Commented out by Inspection STOP (2019/4/4, 12:13 PM)
+    /**
+     * @param name Sets name of the SolarSystem
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
     /**
      * @return Tech Level of the SolarSystem
@@ -215,32 +213,26 @@ public class SolarSystem implements Serializable {
         return techLevel;
     }
 
-// --Commented out by Inspection START (2019/4/4, 12:15 PM):
-//    /**
-//     * @param techLevel Sets Tech Level of the SolarSystem
-//     */
-//    public void setTechLevel(TechLevel techLevel) {
-//        this.techLevel = techLevel;
-//    }
-// --Commented out by Inspection STOP (2019/4/4, 12:15 PM)
+    /**
+     * @param techLevel Sets Tech Level of the SolarSystem
+     */
+    public void setTechLevel(TechLevel techLevel) {
+        this.techLevel = techLevel;
+    }
 
-// --Commented out by Inspection START (2019/4/4, 12:12 PM):
-//    /**
-//     * @return SolarSystem's name
-//     */
-//    public ResourceLevel getResourceLevel() {
-//        return resourceLevel;
-//    }
-// --Commented out by Inspection STOP (2019/4/4, 12:12 PM)
+    /**
+     * @return SolarSystem's name
+     */
+    public ResourceLevel getResourceLevel() {
+        return resourceLevel;
+    }
 
-// --Commented out by Inspection START (2019/4/4, 12:14 PM):
-//    /**
-//     * @param resourceLevel Sets Resource Level of the SolarSystem
-//     */
-//    public void setResourceLevel(ResourceLevel resourceLevel) {
-//        this.resourceLevel = resourceLevel;
-//    }
-// --Commented out by Inspection STOP (2019/4/4, 12:14 PM)
+    /**
+     * @param resourceLevel Sets Resource Level of the SolarSystem
+     */
+    public void setResourceLevel(ResourceLevel resourceLevel) {
+        this.resourceLevel = resourceLevel;
+    }
 
     /**
      * @return SolarSystem's coordinates;
@@ -249,34 +241,28 @@ public class SolarSystem implements Serializable {
         return coordinates;
     }
 
-// --Commented out by Inspection START (2019/4/4, 12:12 PM):
-//    /**
-//     * @param coordinates Sets coordinates of the SolarSystem within the universe;
-//     */
-//    public void setCoordinates(Coordinates coordinates) {
-//        this.coordinates = coordinates;
-//    }
-// --Commented out by Inspection STOP (2019/4/4, 12:12 PM)
+    /**
+     * @param coordinates Sets coordinates of the SolarSystem within the universe;
+     */
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
+    }
 
-// --Commented out by Inspection START (2019/4/4, 12:13 PM):
-//    /**
-//     *
-//     * @param politicalSystem the political system to give the solar system
-//     */
-//    public void setPoliticalSystem(PoliticalSystem politicalSystem) {
-//        this.politicalSystem = politicalSystem;
-//    }
-// --Commented out by Inspection STOP (2019/4/4, 12:13 PM)
+    /**
+     *
+     * @param politicalSystem the political system to give the solar system
+     */
+    public void setPoliticalSystem(PoliticalSystem politicalSystem) {
+        this.politicalSystem = politicalSystem;
+    }
 
-// --Commented out by Inspection START (2019/4/4, 12:12 PM):
-//    /**
-//     *
-//     * @return the political system of the solar system
-//     */
-//    public PoliticalSystem getPoliticalSystem() {
-//        return this.politicalSystem;
-//    }
-// --Commented out by Inspection STOP (2019/4/4, 12:12 PM)
+    /**
+     *
+     * @return the political system of the solar system
+     */
+    public PoliticalSystem getPoliticalSystem() {
+        return this.politicalSystem;
+    }
 
 
     /**
@@ -286,14 +272,12 @@ public class SolarSystem implements Serializable {
         return id;
     }
 
-// --Commented out by Inspection START (2019/4/4, 12:13 PM):
-//    /**
-//     * @param id Sets of the id of the SolarSystem
-//     */
-//    public void setId(int id) {
-//        this.id = id;
-//    }
-// --Commented out by Inspection STOP (2019/4/4, 12:13 PM)
+    /**
+     * @param id Sets of the id of the SolarSystem
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
 
     @Override
     public String toString() {

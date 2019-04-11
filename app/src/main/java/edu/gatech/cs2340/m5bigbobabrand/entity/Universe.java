@@ -1,12 +1,13 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
 import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 
-public class Universe {
+public class Universe implements Serializable {
     private Map<Coordinates, SolarSystem> gameUniverse;
     public Universe() {
         this.gameUniverse = new HashMap<Coordinates, SolarSystem>();

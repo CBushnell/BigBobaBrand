@@ -106,8 +106,6 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             Log.d("Edit", "Create Player Pressed");
-            Toast.makeText(this, "asdfasdf", Toast.LENGTH_LONG).show();
-
             this.player = new Player();
 
             player.setName(nameField.getText().toString());
@@ -139,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                 while (gameUniverse.size() < 10) {
                     Coordinates coord = new Coordinates();
                     int counter = 0;
-                    int differenceThreshold = 7;
+                    int differenceThreshold = 5;
                     while (counter < coordinatesArrayList.size()) {
                         Coordinates coordinate = coordinatesArrayList.get(counter);
                         if (Math.abs(coordinate.getX() - coord.getX()) <= differenceThreshold
@@ -168,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Universe and Player Created", Toast.LENGTH_LONG).show();
                 player.setSolarSystem(gameUniverse.getUniverse().values().toArray(new SolarSystem[0])[0]);
                 GameState.startGame(gameUniverse, player);
-
+                Log.d("hello", "hello");
                 Intent intent = new Intent(MainActivity.this, MarketActivity.class);
                 this.startActivity(intent);
             } catch (IllegalArgumentException e) {

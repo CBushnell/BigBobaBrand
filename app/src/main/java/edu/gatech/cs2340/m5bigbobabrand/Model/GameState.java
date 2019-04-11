@@ -1,9 +1,16 @@
 package edu.gatech.cs2340.m5bigbobabrand.Model;
 
+import android.content.Context;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
 import edu.gatech.cs2340.m5bigbobabrand.entity.Player;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Universe;
 
-public class GameState {
+public class GameState implements Serializable {
     private Universe universe;
     private Player player;
     public static GameState myGame = new GameState();
@@ -24,5 +31,9 @@ public class GameState {
     public void setPlayer(Player player) {
         this.player = player;
     }
+    public void setUniverse(Universe universe) {
+        this.universe = universe;
+    }
+
 
 }

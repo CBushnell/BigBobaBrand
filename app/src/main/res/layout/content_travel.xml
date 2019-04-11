@@ -12,7 +12,6 @@
     tools:showIn="@layout/activity_travel"
     android:background="@drawable/space">
 
-
     <TextView
         android:id="@+id/current_fuel_header"
         android:layout_width="wrap_content"
@@ -151,5 +150,32 @@
         android:onClick="onPlanetButton10Pressed"
         android:text="Button"/>
 
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginBottom="45dp"
+        android:text="SAVE"
+        android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textColorHighlight="@color/colorAccent"
+        android:onClick="onSavePressed" />
+
+    <Button
+        android:id="@+id/load_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="45dp"
+        android:onClick="onLoadPressed"
+        android:text="Load"
+        android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textColorHighlight="@color/colorAccent" />
 
 </RelativeLayout>

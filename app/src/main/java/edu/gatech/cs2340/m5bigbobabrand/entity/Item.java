@@ -1,9 +1,11 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
+import java.io.Serializable;
+
 /**
  * enum class for an Item and all of its instance data
  */
-public enum Item {
+public enum Item implements Serializable {
     WATER(0,0,2,30,3,4, IE.DROUGHT, ResourceLevel.LOTSOFWATER, ResourceLevel.DESERT, 30, 50,0),
     FURS(0,0,0,250,10,10, IE.COLD,ResourceLevel.RICHFAUNA, ResourceLevel.LIFELESS, 230, 280,1),
     FOOD(1,0,1,100,5,5, IE.CROPFAIL, ResourceLevel.RICHSOIL, ResourceLevel.POORSOIL, 90, 160,2),
