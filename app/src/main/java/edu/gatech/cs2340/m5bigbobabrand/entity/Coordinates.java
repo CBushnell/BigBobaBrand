@@ -1,5 +1,7 @@
 package edu.gatech.cs2340.m5bigbobabrand.entity;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.Serializable;
 
 /**
@@ -71,6 +73,7 @@ public class Coordinates implements Serializable {
         return y;
     }
 
+    @NotNull
     @Override
     public String toString() {
         return "(" + this.x + "," + this.y + ")";
