@@ -7,8 +7,15 @@ import java.util.Map;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
 import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 
+/**
+ * Essentially a wrapper class for market and solar system.
+ */
 public class Universe implements Serializable {
     private Map<Coordinates, SolarSystem> gameUniverse;
+
+    /**
+     * constructor for universe.
+     */
     public Universe() {
         this.gameUniverse = new HashMap<Coordinates, SolarSystem>();
     }
@@ -34,6 +41,11 @@ public class Universe implements Serializable {
     public Map<Coordinates, SolarSystem> getUniverse() {
         return this.gameUniverse;
     }
+
+    /**
+     *
+     * @return size of universe.
+     */
     public int size() {
         return this.gameUniverse.size();
     }

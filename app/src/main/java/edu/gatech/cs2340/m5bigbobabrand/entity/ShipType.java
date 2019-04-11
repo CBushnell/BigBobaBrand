@@ -2,6 +2,9 @@ package edu.gatech.cs2340.m5bigbobabrand.entity;
 
 import java.io.Serializable;
 
+/**
+ * all possible ship types in game.
+ */
 public enum ShipType implements Serializable {
     GNAT("Gnat", 15),
     FLEA("Flea", 18),
@@ -22,9 +25,15 @@ public enum ShipType implements Serializable {
         this.cargoCapacity = cargoCapacity;
     }
 
+    @Override
     public String toString() {
         return this.rep;
     }
+
+    /**
+     *
+     * @return capacity of cargo.
+     */
     public int getCargoCapacity() {
         return this.cargoCapacity;
     }

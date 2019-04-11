@@ -3,6 +3,9 @@ package edu.gatech.cs2340.m5bigbobabrand.Model;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
 import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 
+/**
+ *
+ */
 public class TravelInteractor {
     private final SolarSystem initialSystem;
     private final SolarSystem finalSystem;
