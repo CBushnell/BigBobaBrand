@@ -16,6 +16,7 @@ import android.widget.Toast;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 
 import edu.gatech.cs2340.m5bigbobabrand.Model.GameState;
@@ -92,6 +93,9 @@ public class TravelActivity extends AppCompatActivity {
         final int offsetX = 140;
         final int offsetY = 560;
         final int createSpread = 8;
+
+        Log.d("here", "a;lsdkjfa;lsdkjfk;lckvnzxkjlcvzo;");
+
         planetbutton1.setTranslationX((offsetX + solarSystem1.getX()) * createSpread);
         planetbutton1.setTranslationY((offsetY + solarSystem1.getY()) * createSpread);
         planetbutton1.setText(solarSystem1.getName());
@@ -355,7 +359,7 @@ public class TravelActivity extends AppCompatActivity {
     public void onSavePressed(View view) {
         try{
             FileOutputStream fos = getApplicationContext().openFileOutput("player1.data", Context.MODE_PRIVATE);
-            ObjectOutputStream os = new ObjectOutputStream(fos);
+            ObjectOutput os = new ObjectOutputStream(fos);
             os.writeObject(player);
             os.writeObject(universe);
             Log.d("save", "save complete");
