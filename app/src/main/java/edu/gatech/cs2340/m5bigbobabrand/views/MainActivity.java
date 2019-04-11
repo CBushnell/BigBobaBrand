@@ -137,8 +137,10 @@ public class MainActivity extends AppCompatActivity {
                     int differenceThreshold = 5;
                     while (counter < coordinatesArrayList.size()) {
                         Coordinates coordinate = coordinatesArrayList.get(counter);
-                        if (Math.abs(coordinate.getX() - coordinates.getX()) <= differenceThreshold
-                                || Math.abs(coordinate.getY() - coordinates.getY()) <= differenceThreshold) {
+                        if ((Math.abs(coordinate.getX() - coordinates.getX())
+                                <= differenceThreshold)
+                                || (Math.abs(coordinate.getY() - coordinates.getY())
+                                <= differenceThreshold)) {
                             coordinates = new Coordinates();
                             counter = -1;
                         }
