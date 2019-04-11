@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,11 +13,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hitomi.cmlibrary.CircleMenu;
-import com.hitomi.cmlibrary.OnMenuSelectedListener;
-import com.hitomi.cmlibrary.OnMenuStatusChangeListener;
-
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -34,26 +28,26 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.Universe;
 
 
 public class TravelActivity extends AppCompatActivity {
-    private CircleMenu circleMenu;
-    private CircleMenu demoMenu;
-    AlertDialog.Builder builder;
-    Button planetbutton1;
-    Button planetbutton2;
-    Button planetbutton3;
-    Button planetbutton4;
-    Button planetbutton5;
-    Button planetbutton6;
-    Button planetbutton7;
-    Button planetbutton8;
-    Button planetbutton9;
-    Button planetbutton10;
-    TextView current_fuel_header;
-    TextView current_fuel_text_header;
+    private Button planetbutton1;
+    private Button planetbutton2;
+    private Button planetbutton3;
+    private Button planetbutton4;
+    private Button planetbutton5;
+    private Button planetbutton6;
+    private Button planetbutton7;
+    private Button planetbutton8;
+    private Button planetbutton9;
+    private Button planetbutton10;
+    @SuppressWarnings("FieldCanBeLocal")
+    private TextView current_fuel_header;
+    @SuppressWarnings("FieldCanBeLocal")
+    private TextView current_fuel_text_header;
 
 
     private Player player;
     private Universe universe;
 
+    @SuppressWarnings("FieldCanBeLocal")
     private final int CHANCE_RAND = 30;
 
     @Override
