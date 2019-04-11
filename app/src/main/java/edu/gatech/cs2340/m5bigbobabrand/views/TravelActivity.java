@@ -70,7 +70,8 @@ public class TravelActivity extends AppCompatActivity {
         this.player = GameState.myGame.getPlayer();
         this.universe = GameState.myGame.getUniverse();
         Log.d("debug", "onCreate: asdfasdf");
-        SolarSystem[] solarSystems = this.universe.getUniverse().values().toArray(new SolarSystem[0]);
+        SolarSystem[] solarSystems = this.universe.getUniverse()
+                .values().toArray(new SolarSystem[0]);
         setButtonLocations(solarSystems);
 
         current_fuel_text_header.setText(Integer.toString(player.numberOf(Item.FUEL)));
@@ -351,7 +352,8 @@ public class TravelActivity extends AppCompatActivity {
      */
     public void onSavePressed(View view) {
         try{
-            FileOutputStream fos = getApplicationContext().openFileOutput("player1.data", Context.MODE_PRIVATE);
+            FileOutputStream fos = getApplicationContext()
+                    .openFileOutput("player1.data", Context.MODE_PRIVATE);
             ObjectOutputStream os = new ObjectOutputStream(fos);
             os.writeObject(player);
             os.writeObject(universe);
