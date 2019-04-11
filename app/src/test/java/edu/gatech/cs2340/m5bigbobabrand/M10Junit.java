@@ -19,7 +19,7 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 import edu.gatech.cs2340.m5bigbobabrand.entity.TechLevel;
 
 /*
-Charlie Junits
+Charlie Junits for the buy method
  */
 public class M10Junit {
     private Player player;

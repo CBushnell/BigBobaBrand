@@ -7,7 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -37,15 +36,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText fighterField;
     private EditText traderField;
     private EditText engineerField;
-
-
-
-    /**
-     *Data for player being edited
-     *
-     */
-    private Player player;
-
 
 
     @Override
@@ -109,7 +99,11 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "" +
                     "player created", Toast.LENGTH_LONG).show();
 
-            this.player = new Player();
+            /**
+             *Data for player being edited
+             *
+             */
+            Player player = new Player();
 
             player.setName(nameField.getText().toString());
             player.setEngineerPts(Integer.parseInt(engineerField.getText().toString()));
@@ -138,20 +132,20 @@ public class MainActivity extends AppCompatActivity {
                 Universe gameUniverse = new Universe();
                 ArrayList<Coordinates> coordinatesArrayList = new ArrayList<>();
                 while (gameUniverse.size() < 10) {
-                    Coordinates coord = new Coordinates();
+                    Coordinates coordinates = new Coordinates();
                     int counter = 0;
                     int differenceThreshold = 5;
                     while (counter < coordinatesArrayList.size()) {
                         Coordinates coordinate = coordinatesArrayList.get(counter);
-                        if (Math.abs(coordinate.getX() - coord.getX()) <= differenceThreshold
-                                || Math.abs(coordinate.getY() - coord.getY()) <= differenceThreshold) {
-                            coord = new Coordinates();
+                        if (Math.abs(coordinate.getX() - coordinates.getX()) <= differenceThreshold
+                                || Math.abs(coordinate.getY() - coordinates.getY()) <= differenceThreshold) {
+                            coordinates = new Coordinates();
                             counter = -1;
                         }
                         counter++;
                     }
-                    coordinatesArrayList.add(coord);
-                    gameUniverse.addSolarSystem(new SolarSystem(coord));
+                    coordinatesArrayList.add(coordinates);
+                    gameUniverse.addSolarSystem(new SolarSystem(coordinates));
                 }
 
                 Object[] printMapArr = gameUniverse.getUniverse().values().toArray();
