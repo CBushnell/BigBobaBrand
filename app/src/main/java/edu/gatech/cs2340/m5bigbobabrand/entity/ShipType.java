@@ -17,8 +17,8 @@ public enum ShipType implements Serializable {
     TERMITE("Termite", 40),
     WASP("Wasp", 30);
 
-    private String rep;
-    private int cargoCapacity;
+    private final String rep;
+    private final int cargoCapacity;
 
     ShipType(String rep, int cargoCapacity) {
         this.rep = rep;

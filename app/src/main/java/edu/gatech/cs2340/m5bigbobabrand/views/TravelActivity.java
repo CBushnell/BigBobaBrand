@@ -41,16 +41,13 @@ public class TravelActivity extends AppCompatActivity {
     private Button planetbutton8;
     private Button planetbutton9;
     private Button planetbutton10;
-    @SuppressWarnings("FieldCanBeLocal")
     private TextView current_fuel_header;
-    @SuppressWarnings("FieldCanBeLocal")
     private TextView current_fuel_text_header;
 
 
     private Player player;
     private Universe universe;
 
-    @SuppressWarnings("FieldCanBeLocal")
     private final int CHANCE_RAND = 30;
 
     @Override

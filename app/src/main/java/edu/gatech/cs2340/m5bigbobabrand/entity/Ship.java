@@ -9,8 +9,8 @@ import java.util.Map;
  * Ship class that stores info about ship.
  */
 public class Ship implements Serializable {
-    private ShipType t;
-    private Map<Item, Integer> cargo;
+    private final ShipType t;
+    private final Map<Item, Integer> cargo;
 
     /**
      * Constructor ship
@@ -85,10 +85,7 @@ public class Ship implements Serializable {
      * @return if ship has item or not.
      */
     public boolean has(Item item) {
-        if (cargo.get(item) > 0) {
-            return true;
-        }
-        return false;
+        return (cargo.get(item) > 0);
     }
 
     /**

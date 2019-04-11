@@ -24,7 +24,6 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
  */
 public class MarketActivity extends AppCompatActivity {
     private Player player;
-    private SolarSystem solarSystem;
     private TextView water_price_header;
     private TextView water_store_header;
     private TextView water_ship_header;
@@ -72,7 +71,7 @@ public class MarketActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
         this.player = GameState.myGame.getPlayer();
-        this.solarSystem = player.getSolarSystem();
+        SolarSystem solarSystem = player.getSolarSystem();
         Bundle extras = this.getIntent().getExtras();
         if (extras != null) {
             boolean randomEventHappened = extras.getBoolean("RANDOM");

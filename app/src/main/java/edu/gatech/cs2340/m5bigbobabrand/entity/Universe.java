@@ -11,7 +11,7 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
  * Essentially a wrapper class for market and solar system.
  */
 public class Universe implements Serializable {
-    private Map<Coordinates, SolarSystem> gameUniverse;
+    private final Map<Coordinates, SolarSystem> gameUniverse;
 
     /**
      * constructor for universe.

@@ -13,8 +13,7 @@ import java.util.Map;
  */
 public class Market {
     public static final int NUM_OF_GOODS = 10;
-    private Map<Item, Integer> goods;
-    private SolarSystem solarSystem;
+    private final Map<Item, Integer> goods;
 
     /**
      * Constructor that creates market
@@ -30,7 +29,6 @@ public class Market {
                     goods.put(item, 0);
                 }
         }
-        this.solarSystem = solarSystem;
     }
 
     /**
@@ -39,10 +37,7 @@ public class Market {
      * @return if it is in stock
      */
     public boolean inStock (Item good) {
-        if (goods.get(good) > 0) {
-            return true;
-        }
-        return false;
+        return (goods.get(good) > 0);
     }
 
     /**

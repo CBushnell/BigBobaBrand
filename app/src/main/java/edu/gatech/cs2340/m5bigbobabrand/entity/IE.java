@@ -17,8 +17,8 @@ public enum IE {
     SADBOIHOURS("SAD-BOI-HOURS", 9),
     NONE("NONE", 10);
 
-    private String IEname;
-    private int IEnum;
+    private final String IEname;
+    private final int IEnum;
 
     /**
      * catastrophic event constructor
