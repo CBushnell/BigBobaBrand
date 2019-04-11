@@ -94,7 +94,7 @@ public class Coordinates implements Serializable {
         if (this.getClass() != o.getClass()) {
             return false;
         }
-        Coordinates coor = (Coordinates) o;
-        return (x == coor.x) && (y == coor.y);
+        Coordinates coordinates = (Coordinates) o;
+        return (x == coordinates.x) && (y == coordinates.y);
     }
 }
