@@ -16,7 +16,7 @@ public class GameState implements Serializable {
     /**
      * Constructor for game state.
      */
-    public GameState() {
+    private GameState() {
         this.player = null;
         this.universe = null;
     }
