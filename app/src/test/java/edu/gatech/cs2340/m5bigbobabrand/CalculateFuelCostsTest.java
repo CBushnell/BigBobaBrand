@@ -1,18 +1,14 @@
 package edu.gatech.cs2340.m5bigbobabrand;
 
-import android.support.test.runner.AndroidJUnit4;
-
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import edu.gatech.cs2340.m5bigbobabrand.Model.TravelInteractor;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Coordinates;
 import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-@RunWith(AndroidJUnit4.class)
 public class CalculateFuelCostsTest {
     public static final int TIMEOUT = 200;
     private SolarSystem initialSystem;
