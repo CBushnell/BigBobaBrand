@@ -70,7 +70,7 @@ public class M10Junit {
             assertFalse(marketInteractor.buy(Item.FUEL)); // cargo maxed
         } else {
             System.out.println("market maxed out!");
-            assertTrue(marketInteractor.marketNumberOf(Item.FUEL) == 0); // market ran out
+            assertEquals(marketInteractor.marketNumberOf(Item.FUEL), 0); // market ran out
         }
     }
 
