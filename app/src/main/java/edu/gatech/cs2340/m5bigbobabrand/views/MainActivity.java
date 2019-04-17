@@ -1,6 +1,7 @@
 package edu.gatech.cs2340.m5bigbobabrand.views;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -44,12 +45,16 @@ public class MainActivity extends AppCompatActivity {
     private EditText fighterField;
     private EditText traderField;
     private EditText engineerField;
+    private MediaPlayer mediaPlayer;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.twigs);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         nameField = findViewById(R.id.player_name_input);
@@ -189,6 +194,8 @@ public class MainActivity extends AppCompatActivity {
                         gameUniverseMapValues.toArray(new SolarSystem[0])[0]);
                 GameState.startGame(gameUniverse, player);
                 Log.d("hello", "hello");
+                mediaPlayer.release();
+                mediaPlayer = null;
                 Intent intent = new Intent(MainActivity.this, MarketActivity.class);
                 this.startActivity(intent);
             } catch (IllegalArgumentException e) {

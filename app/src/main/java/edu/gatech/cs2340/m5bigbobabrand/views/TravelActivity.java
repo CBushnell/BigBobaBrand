@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,6 +44,7 @@ public class TravelActivity extends AppCompatActivity {
     private Button planetbutton10;
     private TextView current_fuel_header;
     private TextView current_fuel_text_header;
+    private MediaPlayer mediaPlayer;
 
 
     private Player player;
@@ -54,6 +56,9 @@ public class TravelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travel);
+        mediaPlayer = MediaPlayer.create(TravelActivity.this, R.raw.partymonster);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
         planetbutton1 = findViewById(R.id.planetbutton1);
         planetbutton2 = findViewById(R.id.planetbutton2);
         planetbutton3 = findViewById(R.id.planetbutton3);
@@ -251,6 +256,8 @@ public class TravelActivity extends AppCompatActivity {
             } else {
                 intent.putExtra("RANDOM", false);
             }
+            mediaPlayer.release();
+            mediaPlayer = null;
             this.startActivity(intent);
         } else {
             while (subtracted > 0) {

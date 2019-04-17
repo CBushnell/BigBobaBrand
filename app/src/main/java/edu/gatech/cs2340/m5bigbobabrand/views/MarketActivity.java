@@ -2,6 +2,7 @@ package edu.gatech.cs2340.m5bigbobabrand.views;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -57,6 +58,7 @@ public class MarketActivity extends AppCompatActivity {
     private TextView fuel_price_header;
     private TextView fuel_store_header;
     private TextView fuel_ship_header;
+    private MediaPlayer mediaPlayer;
 
 
 
@@ -70,6 +72,9 @@ public class MarketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
+        mediaPlayer = MediaPlayer.create(MarketActivity.this, R.raw.will);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
         this.player = GameState.myGame.getPlayer();
         SolarSystem solarSystem = player.getSolarSystem();
         Bundle extras = this.getIntent().getExtras();
@@ -808,6 +813,8 @@ public class MarketActivity extends AppCompatActivity {
      * @param view the current view
      */
     public void onTravelPressed(View view) {
+        mediaPlayer.release();
+        mediaPlayer = null;
         Intent intent = new Intent(MarketActivity.this, TravelActivity.class);
         this.startActivity(intent);
     }
