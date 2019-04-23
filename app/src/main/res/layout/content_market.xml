@@ -101,6 +101,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         android:text="113" />
+
     <TextView
         android:id="@+id/credits_text_header"
         android:layout_width="wrap_content"
@@ -750,6 +751,16 @@
         android:onClick="onTravelPressed"
         android:text="Travel" />
 
+    <Button
+        android:id="@+id/weapons_button"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="524dp"
+        android:onClick="onWeaponsPressed"
+        android:text="Weapons - 100 Credits" />
+
     <TextView
         android:id="@+id/current_fuel"
         android:layout_width="wrap_content"
@@ -757,6 +768,14 @@
         android:layout_below="@+id/credits_text_header"
         android:layout_marginTop="0dp"
         android:text="Current fuel: " />
+
+    <TextView
+        android:id="@+id/government"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/current_fuel"
+        android:layout_marginTop="0dp"
+        android:text="Government: " />
 
     <TextView
         android:id="@+id/current_fuel_number"
@@ -767,8 +786,16 @@
         android:layout_marginTop="14dp"
         android:layout_toEndOf="@+id/current_fuel"
         android:text="113" />
-    `
 
+    <TextView
+        android:id="@+id/gov_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/government"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="14dp"
+        android:layout_toEndOf="@+id/government"
+        android:text="113" />
 
 
 </RelativeLayout>

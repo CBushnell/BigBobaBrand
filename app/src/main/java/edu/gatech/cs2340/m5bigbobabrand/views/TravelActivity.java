@@ -50,7 +50,8 @@ public class TravelActivity extends AppCompatActivity {
     private Player player;
     private Universe universe;
 
-    private final int CHANCE_RAND = 30;
+    private final int CHANCE_RAND = 3;
+    private final int CHANCE_PIRATE = 99;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -238,28 +239,46 @@ public class TravelActivity extends AppCompatActivity {
                 break;
             }
         }
-
         //if player had enough fuel, travel is performed,
         // otherwise player remains on planet and receives his fuel back
         if (subtracted == fuelCost) {
-            Intent intent = new Intent(TravelActivity.this, MarketActivity.class);
             player.setSolarSystem(solarSystems[planetNum - 1]);
             int randomChance = (int)(Math.random() * 100) + 1;
+            Log.d("random",Integer.toString(randomChance));
             if (randomChance < CHANCE_RAND) {
+                Intent intent = new Intent(TravelActivity.this, MarketActivity.class);
                 int credits = player.getCredits();
-                intent.putExtra("RANDOM", true);
+                intent.putExtra("RANDOM", 0);
                 if (credits > 100) {
                     credits = credits - 100;
                 } else {
                     credits = 0;
                 }
                 player.setCredits(credits);
-            } else {
-                intent.putExtra("RANDOM", false);
+                mediaPlayer.release();
+                mediaPlayer = null;
+                this.startActivity(intent);
+            } else if (randomChance < CHANCE_PIRATE && randomChance > CHANCE_RAND) {
+                if (!player.getShip().hasWeapon()) {
+                    Intent intent = new Intent(TravelActivity.this, MarketActivity.class);
+                    int credits = player.getCredits();
+                    intent.putExtra("RANDOM", 1);
+                    if (credits > 100) {
+                        credits = credits - 100;
+                    } else {
+                        credits = 0;
+                    }
+                    player.setCredits(credits);
+                    mediaPlayer.release();
+                    mediaPlayer = null;
+                    this.startActivity(intent);
+                } else {
+                    mediaPlayer.release();
+                    mediaPlayer = null;
+                    Intent intent = new Intent(TravelActivity.this, PirateActivity.class);
+                    this.startActivity(intent);
+                }
             }
-            mediaPlayer.release();
-            mediaPlayer = null;
-            this.startActivity(intent);
         } else {
             while (subtracted > 0) {
                 player.receiveGood(Item.FUEL);

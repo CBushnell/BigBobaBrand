@@ -79,13 +79,27 @@ public class MarketActivity extends AppCompatActivity {
         SolarSystem solarSystem = player.getSolarSystem();
         Bundle extras = this.getIntent().getExtras();
         if (extras != null) {
-            boolean randomEventHappened = extras.getBoolean("RANDOM");
-            if (randomEventHappened) {
+            int randomEventHappened = extras.getInt("RANDOM");
+            if (randomEventHappened == 0) {
                 Toast.makeText(this, "Your ship "
                         + "was yeeted and you lost credits", Toast.LENGTH_LONG).show();
+            } else if (randomEventHappened == 1) {
+                Toast.makeText(this, "Your ship "
+                        + "was pirate yeeted and you lost credits", Toast.LENGTH_LONG).show();
+            } else if (randomEventHappened == 2) {
+                Toast.makeText(this, "You have yote the pirate and taken the booty", Toast.LENGTH_LONG).show();
+            } else if (randomEventHappened == 3) {
+                Toast.makeText(this, "Neither party was subject to a yeeting", Toast.LENGTH_LONG).show();
+
             }
         }
         this.marketInteractor = new MarketInteractor(this.player);
+        if (this.marketInteractor.getPolice()) {
+            Log.d("Police", "Police Present");
+        } else {
+            Log.d("Police", "No Police");
+        }
+
         credits_header = findViewById(R.id.credits_header);
         credits_header.setText(Integer.toString(player.getCredits()));
         TextView ie_header = findViewById(R.id.ie_header);
@@ -99,7 +113,8 @@ public class MarketActivity extends AppCompatActivity {
         TextView current_fuel_header = findViewById(R.id.current_fuel);
         current_fuel_number = findViewById(R.id.current_fuel_number);
         current_fuel_number.setText(Integer.toString(player.numberOf(Item.FUEL)));
-        updateCargo();
+        TextView govType = findViewById(R.id.gov_header);
+        govType.setText(solarSystem.getPoliticalSystem().toString());
 
         water_price_header = findViewById(R.id.water_price_header);
         water_store_header = findViewById(R.id.water_store_header);
@@ -817,6 +832,22 @@ public class MarketActivity extends AppCompatActivity {
         mediaPlayer = null;
         Intent intent = new Intent(MarketActivity.this, TravelActivity.class);
         this.startActivity(intent);
+    }
+
+    public void onWeaponsPressed(View view) {
+        if (player.getShip().hasWeapon()) {
+            Toast.makeText(this, "You already have weapons",
+                    Toast.LENGTH_LONG).show();
+        } else {
+            if (player.getCredits() >= 100) {
+                player.setCredits(player.getCredits() - 100);
+                player.getShip().setWeapon(true);
+                credits_header.setText(Integer.toString(player.getCredits()));
+            } else {
+                Toast.makeText(this, "You don't have the credits to get weapons",
+                        Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
 }

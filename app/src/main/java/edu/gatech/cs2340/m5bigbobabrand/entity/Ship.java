@@ -11,6 +11,7 @@ import java.util.Map;
 public class Ship implements Serializable {
     private final ShipType t;
     private final Map<Item, Integer> cargo;
+    private boolean hasWeapon;
 
     /**
      * Constructor ship
@@ -23,6 +24,7 @@ public class Ship implements Serializable {
         for (Item item : itemArr) {
             cargo.put(item, 0);
         }
+        this.hasWeapon = false;
     }
 
     /**
@@ -30,6 +32,22 @@ public class Ship implements Serializable {
      */
     public Ship() {
         this(ShipType.GNAT);
+    }
+
+    /**
+     *
+     * @return whether or not ship has weapon
+     */
+    public boolean hasWeapon() {
+        return this.hasWeapon;
+    }
+
+    /**
+     *
+     * @param status whether to give or remove the weapon from the ship
+     */
+    public void setWeapon(Boolean status) {
+        this.hasWeapon = status;
     }
 
     /**

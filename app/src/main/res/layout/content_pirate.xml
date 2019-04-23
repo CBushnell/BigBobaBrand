@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_pirate"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:padding="0dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="edu.gatech.cs2340.m5bigbobabrand.views.PirateActivity"
+    tools:showIn="@layout/activity_pirate"
+    android:background="@drawable/space">
+
+    <Button
+        android:id="@+id/rock_button"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:onClick="onRockPressed"
+        android:layout_above="@+id/paper_button"
+        android:text="ROCK"
+        android:textSize="20pt" />
+    <Button
+        android:id="@+id/paper_button"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="onPaperPressed"
+        android:text="PAPER"
+        android:textSize="20pt" />
+    <Button
+        android:id="@+id/scissors_button"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/paper_button"
+        android:onClick="onScissorsPressed"
+        android:text="SCISSORS"
+        android:textSize="20pt" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="87dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHighlight="@color/colorAccent"
+        android:textSize="22dp"
+        android:text="SPACE PIRATE FIGHT" />
+</RelativeLayout>

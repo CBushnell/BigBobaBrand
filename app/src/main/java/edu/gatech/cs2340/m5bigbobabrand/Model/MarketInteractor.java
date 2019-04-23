@@ -9,6 +9,7 @@ import edu.gatech.cs2340.m5bigbobabrand.entity.IE;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Item;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Market;
 import edu.gatech.cs2340.m5bigbobabrand.entity.Player;
+import edu.gatech.cs2340.m5bigbobabrand.entity.PoliticalSystem;
 import edu.gatech.cs2340.m5bigbobabrand.entity.SolarSystem;
 
 /**
@@ -19,6 +20,9 @@ public class MarketInteractor {
     private final Player player;
     private final IE ie;
     private final Map<Item, Integer> prices;
+    private boolean police;
+
+    private final int POLICE_CHANCE = 99;
 
     /**
      * creates a MarketInteractor between player
@@ -26,19 +30,21 @@ public class MarketInteractor {
      * @param player to create market interactor for
      */
     public MarketInteractor(Player player) {
-        this.market = new Market(player.getSolarSystem());
+        SolarSystem playerSolarsystem = player.getSolarSystem();
+        this.market = new Market(playerSolarsystem);
         this.player = player;
         this.ie = calcIE();
         prices = new HashMap<>();
         Item[] itemArr = Item.values();
         for (Item item : itemArr) {
-            SolarSystem solarSystem = player.getSolarSystem();
+            SolarSystem solarSystem = playerSolarsystem;
             if(solarSystem.getTechLevelNum() >= item.getMTLP()) {
                 prices.put(item, calcPrice(item));
             } else {
                 prices.put(item, null);
             }
         }
+        this.police = calcPolice();
     }
 
     /**
@@ -64,6 +70,22 @@ public class MarketInteractor {
         }
 
         return Math.abs(price);
+    }
+
+    private boolean calcPolice() {
+        SolarSystem playerSolarsystem = player.getSolarSystem();
+        if (playerSolarsystem.getPoliticalSystem().equals(PoliticalSystem.DICTATORSHIP)
+                || playerSolarsystem.getPoliticalSystem().equals(PoliticalSystem.FASCIST_STATE)
+                || playerSolarsystem.getPoliticalSystem().equals(PoliticalSystem.MILITARY_STATE)
+                || playerSolarsystem.getPoliticalSystem().equals(PoliticalSystem.COMMUNIST_STATE)) {
+            if ((Math.random() * 100) + 1 < POLICE_CHANCE) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     private IE calcIE() {
@@ -119,6 +141,10 @@ public class MarketInteractor {
         if (player.has(item)) {
             int currCredits = player.getCredits();
             int price = prices.get(item);
+            if (item.equals(Item.NARCOTICS) && this.police == true) {
+                player.loseGood(Item.NARCOTICS);
+                return false;
+            }
             player.loseGood(item);
             player.setCredits(currCredits + price);
             market.sellGoodToMarket(item);
@@ -155,6 +181,14 @@ public class MarketInteractor {
      */
     public IE getIe() {
         return this.ie;
+    }
+
+    /**
+     *
+     * @return if this has police
+     */
+    public boolean getPolice() {
+        return this.police;
     }
 
 

@@ -16,7 +16,7 @@ public enum Item implements Serializable {
     MEDICINE(4,1,6,650,-20,10,
             IE.PLAGUE, ResourceLevel.LOTSOFHERBS, ResourceLevel.NEVER, 400, 700,6),
     MACHINES(4,3,5,900,-30,5, IE.LACKOFWORK,ResourceLevel.NEVER, ResourceLevel.NEVER, 600, 800,7),
-    NARCOTICS(5,0,5,3500,-125,150,
+    NARCOTICS(5,0,5,80,-125,150,
             IE.BOREDOM,ResourceLevel.WEIRDMUSHROOMS, ResourceLevel.NEVER, 2000, 3000,8),
     ROBOTS(6,4,7,5000,-150,100,
             IE.LACKOFWORK, ResourceLevel.NEVER, ResourceLevel.NEVER, 3500, 5000,9),
